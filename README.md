@@ -41,3 +41,72 @@ SELECT * FROM kit_info WHERE customer_id = 'cust002';
     WHERE c.customer_id = 'C002'
     GROUP BY c.customer_id, c.first_name, c.last_name;
 11. ![img_1.png](img_1.png)
+
+12. Json will be formatted as below - for bth post and get apis
+- {
+    "customerId": "C002",
+    "firstName": "Priya",
+    "lastName": "Sharma",
+    "gender": "F",
+    "addressInfo": [
+        {
+            "id": 1,
+            "addressType": "PERMANENT",
+            "addressLine": "Flat No. 101, Rose Apartments",
+            "city": "Thane",
+            "pincode": "421301"
+        },
+        {
+            "id": 2,
+            "addressType": "PERMANENT",
+            "addressLine": "Flat No. 101, Rose Apartments",
+            "city": "Thane",
+            "pincode": "421301"
+        }
+    ],
+    "accountInfo": [
+        {
+            "id": 1,
+            "accountNo": "ACC002",
+            "accountType": "SAVING",
+            "currency": "INR",
+            "branchId": "BR002"
+        },
+        {
+            "id": 2,
+            "accountNo": "ACC003",
+            "accountType": "CHECKINGS",
+            "currency": "INR",
+            "branchId": "BR003"
+        }
+    ],
+    "communicationInfo": [
+        {
+            "id": 1,
+            "phone": "+919876543210",
+            "email": "priya.sharma@gmail.com"
+        }
+    ],
+    "dateInfo": [
+        {
+            "id": 1,
+            "birthDate": "1980-03-22"
+        }
+    ],
+    "kitInfo": [
+        {
+            "id": 1,
+            "cardType": "PHYSICAL",
+            "cardCategory": "DEBIT",
+            "cardStatus": "ACTIVE",
+            "aliasName": "CARD003"
+        },
+        {
+            "id": 2,
+            "cardType": "VIRTUAL",
+            "cardCategory": "CREDIT",
+            "cardStatus": "ACTIVE",
+            "aliasName": "CARD004"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 ====> Load data into H2 using data.sql at the start up of app. YOu can directly start querying on H2. 
+- one customer has addresses, accounts,cards example. 
 1. Use H2 in memory database. Do set up using yaml config. 
 2. Create a folder in some location in local machine, as testdb or customerdb. 
 3. Reference to that location from JDBC URL -

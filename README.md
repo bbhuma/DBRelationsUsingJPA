@@ -111,3 +111,20 @@ SELECT * FROM kit_info WHERE customer_id = 'cust002';
         }
     ]
 }
+13. Sample API Calls
+1. Create Students
+   - POST /api/students
+   {
+   "name": "Alice"
+   }
+2. Create Courses
+   - POST /api/courses
+   {
+   "title": "Mathematics"
+   }
+3. Enroll a student in a course
+   - POST /api/enroll?studentId=1&courseId=1&grade=A
+4. Multiple students accessed by students/id , has multiple enrollments. git add
+5. Get all enrollments of a student
+   GET /api/students/1/enrollments
+   GET /api/students/2/enrollments

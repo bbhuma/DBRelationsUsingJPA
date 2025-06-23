@@ -128,3 +128,26 @@ SELECT * FROM kit_info WHERE customer_id = 'cust002';
 5. Get all enrollments of a student
    GET /api/students/1/enrollments
    GET /api/students/2/enrollments
+6. ✅ To make Enrollment dependent on Student and Course (i.e., must always have both):
+   We should mark the associations as non-nullable like this:
+
+@ManyToOne(optional = false)
+@JoinColumn(nullable = false)
+private Student student;
+
+@ManyToOne(optional = false)
+@JoinColumn(nullable = false)
+private Course course;
+This enforces that:
+You cannot insert an enrollment unless both student_id and course_id are provided.
+
+So yes, Enrollment becomes dependent on both Student and Course.
+7. 🔁 Optional Cascade?
+- If you want deleting a Student to also delete related Enrollment records, you add:
+
+In Student.java:
+@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Enrollment> enrollments = new ArrayList<>();
+Same for Course if needed.
+
+![img_2.png](img_2.png)

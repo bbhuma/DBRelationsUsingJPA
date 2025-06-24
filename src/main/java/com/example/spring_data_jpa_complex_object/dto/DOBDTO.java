@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class DOBDTO {
     // Getters and Setters
-//    private Long id;
+    private Long id;
     private String birthDate;
 
 }

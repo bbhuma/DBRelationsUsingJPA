@@ -165,3 +165,9 @@ private List<Enrollment> enrollments = new ArrayList<>();
 Same for Course if needed.
 
 ![img_2.png](img_2.png)
+
+8. org.springframework.orm.jpa.JpaSystemException: A collection with orphan deletion was no longer referenced by the owning entity instance
+- **means Hibernate tried to delete orphaned child entities**, but the parent entity no longer had a reference to the original collection, which caused an issue.
+
+# - @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, **orphanRemoval = true**)
+  private List<Account> accounts;

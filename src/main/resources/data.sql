@@ -1,25 +1,25 @@
 insert into customer (customer_id, first_name, last_name, gender) values
-('CUST001', 'Sunil', 'Darekar', 'M');
+('1', 'Sunil', 'Darekar', 'M');
 
 insert into address (customer_id, address_type, address_line, city, pincode) values
-('CUST001', 'PERMANENT', 'Room No. 90, Shree Sai Aakansha', 'Thane', '401305'),
-('CUST001', 'DELIVERY', 'Room No. 90, Shree Sai Aakansha', 'Thane', '401305');
+('1', 'PERMANENT', 'Room No. 90, Shree Sai Aakansha', 'Thane', '401305'),
+('1', 'DELIVERY', 'Room No. 90, Shree Sai Aakansha', 'Thane', '401305');
 
 insert into communication (customer_id, phone, email) values
-('CUST001', '+919167447650', 'sunil.darekar@gmail.com');
+('1', '+919167447650', 'sunil.darekar@gmail.com');
 
 insert into dob (customer_id, birth_date) values
-('CUST001', '1976-01-15');
+('1', '1976-01-15');
 
 -- First row fixed to match column count
 insert into kit_info (customer_id, card_type, card_category, alias_name) values
-('CUST001', 'PHYSICAL', 'CARD001', null);
+('1', 'PHYSICAL', 'CARD001', null);
 
 insert into kit_info (customer_id, card_type, card_category, card_status, alias_name) values
-('CUST001', 'VIRTUAL', 'CREDIT', 'ACTIVE', 'CARD002');
+('1', 'VIRTUAL', 'CREDIT', 'ACTIVE', 'CARD002');
 
 insert into account_info (customer_id, account_no, account_type, currency, branch_id) values
-('CUST001', 'ACC001', 'SAVING', 'INR', 'BR001');
+('1', 'ACC001', 'SAVING', 'INR', 'BR001');
 
 
 INSERT INTO student (name) VALUES ('Student1');

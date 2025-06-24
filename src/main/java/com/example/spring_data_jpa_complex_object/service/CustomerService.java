@@ -2,7 +2,6 @@ package com.example.spring_data_jpa_complex_object.service;
 
 import com.example.spring_data_jpa_complex_object.dto.*;
 import com.example.spring_data_jpa_complex_object.entity.*;
-
 import com.example.spring_data_jpa_complex_object.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     // Create
-    public CustomerDTO createCustomer(CustomerDTO dto) {
+    public CustomerDTO createCustomer(CustomerCreateDTO dto) {
         Customer customer = new Customer();
 //        customer.setCustomerId(dto.getCustomerId());
         customer.setFirstName(dto.getFirstName());
@@ -31,6 +30,7 @@ public class CustomerService {
             Customer finalCustomer = customer;
             List<Address> addresses = dto.getAddressInfo().stream().map(adto -> {
                 Address addr = new Address();
+//                addr.setId(adto.getId());
                 addr.setAddressType(adto.getAddressType());
                 addr.setAddressLine(adto.getAddressLine());
                 addr.setCity(adto.getCity());
@@ -46,6 +46,7 @@ public class CustomerService {
             Customer finalCustomer1 = customer;
             List<AccountInfo> accounts = dto.getAccountInfo().stream().map(acdto -> {
                 AccountInfo acc = new AccountInfo();
+//                acc.setId(acdto.getId());
                 acc.setAccountNo(acdto.getAccountNo());
                 acc.setAccountType(acdto.getAccountType());
                 acc.setCurrency(acdto.getCurrency());
@@ -61,6 +62,7 @@ public class CustomerService {
             Customer finalCustomer2 = customer;
             List<Communication> comms = dto.getCommunicationInfo().stream().map(cdto -> {
                 Communication comm = new Communication();
+//                comm.setId(cdto.getId());
                 comm.setPhone(cdto.getPhone());
                 comm.setEmail(cdto.getEmail());
                 comm.setCustomer(finalCustomer2);
@@ -74,6 +76,7 @@ public class CustomerService {
             Customer finalCustomer3 = customer;
             List<DOB> dobs = dto.getDateInfo().stream().map(ddto -> {
                 DOB dob = new DOB();
+//                dob.setId(ddto.getId());
                 dob.setBirthDate(ddto.getBirthDate());
                 dob.setCustomer(finalCustomer3);
                 return dob;
@@ -86,6 +89,7 @@ public class CustomerService {
             Customer finalCustomer4 = customer;
             List<KitInfo> kits = dto.getKitInfo().stream().map(kdto -> {
                 KitInfo kit = new KitInfo();
+//                kit.setId(kdto.getId());
                 kit.setCardType(kdto.getCardType());
                 kit.setCardCategory(kdto.getCardCategory());
                 kit.setCardStatus(kdto.getCardStatus());
@@ -124,32 +128,35 @@ public class CustomerService {
         customer.setGender(dto.getGender());
 
         // Clear existing relationships
-        customer.getAddresses().clear();
-        customer.getAccounts().clear();
-        customer.getCommunications().clear();
-        customer.getDobs().clear();
-        customer.getKits().clear();
+
+
+
+
+
 
         // Update Addresses
         if (dto.getAddressInfo() != null) {
-            Customer finalCustomer = customer;
-            List<Address> addresses = dto.getAddressInfo().stream().map(adto -> {
+            customer.getAddresses().clear(); // ✅ Clear the managed collection
+
+            for (AddressDTO adto : dto.getAddressInfo()) {
                 Address addr = new Address();
+                addr.setId(adto.getId()); // Optional, if you support updating existing addresses
                 addr.setAddressType(adto.getAddressType());
                 addr.setAddressLine(adto.getAddressLine());
                 addr.setCity(adto.getCity());
                 addr.setPincode(adto.getPincode());
-                addr.setCustomer(finalCustomer);
-                return addr;
-            }).collect(Collectors.toList());
-            customer.setAddresses(addresses);
+                addr.setCustomer(customer); // ✅ Set back-reference
+                customer.getAddresses().add(addr); // ✅ Add to the existing list
+            }
         }
-
+    /*
         // Update Accounts
         if (dto.getAccountInfo() != null) {
+            customer.getAccounts().clear();
             Customer finalCustomer1 = customer;
             List<AccountInfo> accounts = dto.getAccountInfo().stream().map(acdto -> {
                 AccountInfo acc = new AccountInfo();
+                acc.setId(acdto.getId());
                 acc.setAccountNo(acdto.getAccountNo());
                 acc.setAccountType(acdto.getAccountType());
                 acc.setCurrency(acdto.getCurrency());
@@ -162,9 +169,11 @@ public class CustomerService {
 
         // Update Communications
         if (dto.getCommunicationInfo() != null) {
+            customer.getCommunications().clear();
             Customer finalCustomer2 = customer;
             List<Communication> comms = dto.getCommunicationInfo().stream().map(cdto -> {
                 Communication comm = new Communication();
+                comm.setId(cdto.getId());
                 comm.setPhone(cdto.getPhone());
                 comm.setEmail(cdto.getEmail());
                 comm.setCustomer(finalCustomer2);
@@ -175,9 +184,11 @@ public class CustomerService {
 
         // Update DOBs
         if (dto.getDateInfo() != null) {
+            customer.getDobs().clear();
             Customer finalCustomer3 = customer;
             List<DOB> dobs = dto.getDateInfo().stream().map(ddto -> {
                 DOB dob = new DOB();
+                dob.setId(ddto.getId());
                 dob.setBirthDate(ddto.getBirthDate());
                 dob.setCustomer(finalCustomer3);
                 return dob;
@@ -187,9 +198,11 @@ public class CustomerService {
 
         // Update Kits
         if (dto.getKitInfo() != null) {
+            customer.getKits().clear();
             Customer finalCustomer4 = customer;
             List<KitInfo> kits = dto.getKitInfo().stream().map(kdto -> {
                 KitInfo kit = new KitInfo();
+                kit.setId(kdto.getId());
                 kit.setCardType(kdto.getCardType());
                 kit.setCardCategory(kdto.getCardCategory());
                 kit.setCardStatus(kdto.getCardStatus());
@@ -199,6 +212,62 @@ public class CustomerService {
             }).collect(Collectors.toList());
             customer.setKits(kits);
         }
+        */
+        // Update Accounts
+        if (dto.getAccountInfo() != null) {
+            customer.getAccounts().clear();
+            for (AccountInfoDTO acdto : dto.getAccountInfo()) {
+                AccountInfo acc = new AccountInfo();
+                acc.setId(acdto.getId()); // Optional: only if you support updating existing records
+                acc.setAccountNo(acdto.getAccountNo());
+                acc.setAccountType(acdto.getAccountType());
+                acc.setCurrency(acdto.getCurrency());
+                acc.setBranchId(acdto.getBranchId());
+                acc.setCustomer(customer);
+                customer.getAccounts().add(acc); // ✅ Add to existing collection
+            }
+        }
+
+// Update Communications
+        if (dto.getCommunicationInfo() != null) {
+            customer.getCommunications().clear();
+            for (CommunicationDTO cdto : dto.getCommunicationInfo()) {
+                Communication comm = new Communication();
+                comm.setId(cdto.getId());
+                comm.setPhone(cdto.getPhone());
+                comm.setEmail(cdto.getEmail());
+                comm.setCustomer(customer);
+                customer.getCommunications().add(comm);
+            }
+        }
+
+// Update DOBs
+        if (dto.getDateInfo() != null) {
+            customer.getDobs().clear();
+            for (DOBDTO ddto : dto.getDateInfo()) {
+                DOB dob = new DOB();
+                dob.setId(ddto.getId());
+                dob.setBirthDate(ddto.getBirthDate());
+                dob.setCustomer(customer);
+                customer.getDobs().add(dob);
+            }
+        }
+
+// Update Kits
+        if (dto.getKitInfo() != null) {
+            customer.getKits().clear();
+            for (KitInfoDTO kdto : dto.getKitInfo()) {
+                KitInfo kit = new KitInfo();
+                kit.setId(kdto.getId());
+                kit.setCardType(kdto.getCardType());
+                kit.setCardCategory(kdto.getCardCategory());
+                kit.setCardStatus(kdto.getCardStatus());
+                kit.setAliasName(kdto.getAliasName());
+                kit.setCustomer(customer);
+                customer.getKits().add(kit);
+            }
+        }
+
 
         customer = customerRepository.save(customer);
         return toDTO(customer);
@@ -215,7 +284,7 @@ public class CustomerService {
     // Convert Entity to DTO
     private CustomerDTO toDTO(Customer customer) {
         CustomerDTO dto = new CustomerDTO();
-//        dto.setCustomerId(customer.getCustomerId());
+        dto.setCustomerId(customer.getCustomerId());
         dto.setFirstName(customer.getFirstName());
         dto.setLastName(customer.getLastName());
         dto.setGender(customer.getGender());
@@ -223,7 +292,7 @@ public class CustomerService {
         // Addresses
         dto.setAddressInfo(customer.getAddresses().stream().map(a -> {
             AddressDTO adto = new AddressDTO();
-//            adto.setId(a.getId());
+            adto.setId(a.getId());
             adto.setAddressType(a.getAddressType());
             adto.setAddressLine(a.getAddressLine());
             adto.setCity(a.getCity());
@@ -234,7 +303,7 @@ public class CustomerService {
         // Accounts
         dto.setAccountInfo(customer.getAccounts().stream().map(ai -> {
             AccountInfoDTO aidto = new AccountInfoDTO();
-//            aidto.setId(ai.getId());
+            aidto.setId(ai.getId());
             aidto.setAccountNo(ai.getAccountNo());
             aidto.setAccountType(ai.getAccountType());
             aidto.setCurrency(ai.getCurrency());
@@ -245,7 +314,7 @@ public class CustomerService {
         // Communications
         dto.setCommunicationInfo(customer.getCommunications().stream().map(c -> {
             CommunicationDTO cdto = new CommunicationDTO();
-//            cdto.setId(c.getId());
+            cdto.setId(c.getId());
             cdto.setPhone(c.getPhone());
             cdto.setEmail(c.getEmail());
             return cdto;
@@ -254,7 +323,7 @@ public class CustomerService {
         // DOBs
         dto.setDateInfo(customer.getDobs().stream().map(d -> {
             DOBDTO ddto = new DOBDTO();
-//            ddto.setId(d.getId());
+            ddto.setId(d.getId());
             ddto.setBirthDate(d.getBirthDate());
             return ddto;
         }).collect(Collectors.toList()));
@@ -262,7 +331,7 @@ public class CustomerService {
         // Kits
         dto.setKitInfo(customer.getKits().stream().map(k -> {
             KitInfoDTO kdto = new KitInfoDTO();
-//            kdto.setId(k.getId());
+            kdto.setId(k.getId());
             kdto.setCardType(k.getCardType());
             kdto.setCardCategory(k.getCardCategory());
             kdto.setCardStatus(k.getCardStatus());

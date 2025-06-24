@@ -23,3 +23,4 @@
 3.Get List of student-enrollments in a particular courseId 
 - List<Enrollment> of a particular course. 
 - http://localhost:9090/api/courses/1/enrollments
+

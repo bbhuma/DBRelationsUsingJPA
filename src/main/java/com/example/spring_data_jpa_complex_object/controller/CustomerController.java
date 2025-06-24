@@ -1,5 +1,6 @@
 package com.example.spring_data_jpa_complex_object.controller;
 
+import com.example.spring_data_jpa_complex_object.dto.CustomerCreateDTO;
 import com.example.spring_data_jpa_complex_object.dto.CustomerDTO;
 import com.example.spring_data_jpa_complex_object.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerCreateDTO customerDTO) {
         CustomerDTO created = customerService.createCustomer(customerDTO);
         return ResponseEntity.ok(created);
     }

@@ -21,7 +21,7 @@ public class CustomerService {
     // Create
     public CustomerDTO createCustomer(CustomerDTO dto) {
         Customer customer = new Customer();
-        customer.setCustomerId(dto.getCustomerId());
+//        customer.setCustomerId(dto.getCustomerId());
         customer.setFirstName(dto.getFirstName());
         customer.setLastName(dto.getLastName());
         customer.setGender(dto.getGender());
@@ -101,7 +101,7 @@ public class CustomerService {
     }
 
     // Read (by ID)
-    public CustomerDTO getCustomer(String customerId) {
+    public CustomerDTO getCustomer(Long customerId) {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
         return toDTO(customer);
@@ -115,7 +115,7 @@ public class CustomerService {
     }
 
     // Update
-    public CustomerDTO updateCustomer(String customerId, CustomerDTO dto) {
+    public CustomerDTO updateCustomer(Long customerId, CustomerDTO dto) {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
 
@@ -205,7 +205,7 @@ public class CustomerService {
     }
 
     // Delete
-    public void deleteCustomer(String customerId) {
+    public void deleteCustomer(Long customerId) {
         if (!customerRepository.existsById(customerId)) {
             throw new RuntimeException("Customer not found");
         }
@@ -215,7 +215,7 @@ public class CustomerService {
     // Convert Entity to DTO
     private CustomerDTO toDTO(Customer customer) {
         CustomerDTO dto = new CustomerDTO();
-        dto.setCustomerId(customer.getCustomerId());
+//        dto.setCustomerId(customer.getCustomerId());
         dto.setFirstName(customer.getFirstName());
         dto.setLastName(customer.getLastName());
         dto.setGender(customer.getGender());
@@ -223,7 +223,7 @@ public class CustomerService {
         // Addresses
         dto.setAddressInfo(customer.getAddresses().stream().map(a -> {
             AddressDTO adto = new AddressDTO();
-            adto.setId(a.getId());
+//            adto.setId(a.getId());
             adto.setAddressType(a.getAddressType());
             adto.setAddressLine(a.getAddressLine());
             adto.setCity(a.getCity());
@@ -234,7 +234,7 @@ public class CustomerService {
         // Accounts
         dto.setAccountInfo(customer.getAccounts().stream().map(ai -> {
             AccountInfoDTO aidto = new AccountInfoDTO();
-            aidto.setId(ai.getId());
+//            aidto.setId(ai.getId());
             aidto.setAccountNo(ai.getAccountNo());
             aidto.setAccountType(ai.getAccountType());
             aidto.setCurrency(ai.getCurrency());
@@ -245,7 +245,7 @@ public class CustomerService {
         // Communications
         dto.setCommunicationInfo(customer.getCommunications().stream().map(c -> {
             CommunicationDTO cdto = new CommunicationDTO();
-            cdto.setId(c.getId());
+//            cdto.setId(c.getId());
             cdto.setPhone(c.getPhone());
             cdto.setEmail(c.getEmail());
             return cdto;
@@ -254,7 +254,7 @@ public class CustomerService {
         // DOBs
         dto.setDateInfo(customer.getDobs().stream().map(d -> {
             DOBDTO ddto = new DOBDTO();
-            ddto.setId(d.getId());
+//            ddto.setId(d.getId());
             ddto.setBirthDate(d.getBirthDate());
             return ddto;
         }).collect(Collectors.toList()));
@@ -262,7 +262,7 @@ public class CustomerService {
         // Kits
         dto.setKitInfo(customer.getKits().stream().map(k -> {
             KitInfoDTO kdto = new KitInfoDTO();
-            kdto.setId(k.getId());
+//            kdto.setId(k.getId());
             kdto.setCardType(k.getCardType());
             kdto.setCardCategory(k.getCardCategory());
             kdto.setCardStatus(k.getCardStatus());

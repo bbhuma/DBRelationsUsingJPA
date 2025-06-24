@@ -1,3 +1,17 @@
+Many-to-Many uses @JsonIgnoreProperties("Join_Table")
+-Student is one-to-many to enrollments, independent entity.
+@JsonIgnoreProperties("students")
+-Course is one-to-many to enrollments, independent entity.
+@JsonIgnoreProperties("courses")
+-Enrollments depends on both student and course, in many-to-many.
+- Also include @JsonIgnoreProperties("enrollments")
+- When you want to query enrollments, you need studentId, courseId exist. 
+-Both student and course findById, return optional. 
+-  Student student = studentRepo.findById(studentId).orElseThrow();
+- Other-wise get an exception.
+4.@Column vs @JoinColumn(name = "customerId", nullable = false)
+- Join column is used for joining the referenced object by using the pk of that object.
+- This references to the FK of the child table. 
 ====> Load data into H2 using data.sql at the start up of app. YOu can directly start querying on H2. 
 - one customer has addresses, accounts,cards example. 
 1. Use H2 in memory database. Do set up using yaml config. 

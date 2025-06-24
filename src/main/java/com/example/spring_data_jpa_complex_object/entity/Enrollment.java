@@ -1,24 +1,31 @@
 package com.example.spring_data_jpa_complex_object.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
+@Data
 @Entity
 public class Enrollment {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne
-    private Student student;
-
-    @ManyToOne
-    private Course course;
 
     private LocalDate enrollmentDate;
     private String grade;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+//    @JsonIgnore
+    @JsonIgnoreProperties("enrollments")
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+//    @JsonIgnore
+    @JsonIgnoreProperties("enrollments")
+    private Course course ;
+
 }

@@ -1,10 +1,17 @@
 package com.example.spring_data_jpa_complex_object.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "KitInfo")
 public class KitInfo {
+    // Getters and Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,17 +33,4 @@ public class KitInfo {
     @Column(name = "aliasName")
     private String aliasName;
 
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public Customer getCustomer() { return customer; }
-    public void setCustomer(Customer customer) { this.customer = customer; }
-    public String getCardType() { return cardType; }
-    public void setCardType(String cardType) { this.cardType = cardType; }
-    public String getCardCategory() { return cardCategory; }
-    public void setCardCategory(String cardCategory) { this.cardCategory = cardCategory; }
-    public String getCardStatus() { return cardStatus; }
-    public void setCardStatus(String cardStatus) { this.cardStatus = cardStatus; }
-    public String getAliasName() { return aliasName; }
-    public void setAliasName(String aliasName) { this.aliasName = aliasName; }
 }

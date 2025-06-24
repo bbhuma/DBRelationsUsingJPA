@@ -9,9 +9,11 @@ import java.util.List;
 @Entity
 @Table(name = "Customer")
 public class Customer {
+    // Getters and Setters
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customerId")
-    private String customerId;
+    private Long customerId;
 
     @Column(name = "firstName", nullable = false)
     private String firstName;
@@ -37,23 +39,4 @@ public class Customer {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<KitInfo> kits;
 
-    // Getters and Setters
-    public String getCustomerId() { return customerId; }
-    public void setCustomerId(String customerId) { this.customerId = customerId; }
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
-    public String getGender() { return gender; }
-    public void setGender(String gender) { this.gender = gender; }
-    public List<Address> getAddresses() { return addresses; }
-    public void setAddresses(List<Address> addresses) { this.addresses = addresses; }
-    public List<AccountInfo> getAccounts() { return accounts; }
-    public void setAccounts(List<AccountInfo> accounts) { this.accounts = accounts; }
-    public List<Communication> getCommunications() { return communications; }
-    public void setCommunications(List<Communication> communications) { this.communications = communications; }
-    public List<DOB> getDobs() { return dobs; }
-    public void setDobs(List<DOB> dobs) { this.dobs = dobs; }
-    public List<KitInfo> getKits() { return kits; }
-    public void setKits(List<KitInfo> kits) { this.kits = kits; }
 }

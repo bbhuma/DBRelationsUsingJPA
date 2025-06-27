@@ -45,4 +45,12 @@ public class CustomerController {
         customerService.deleteCustomer(customerId);
         return ResponseEntity.noContent().build();
     }
+    @DeleteMapping("/cleanup")
+    public ResponseEntity<String> cleanDatabase() {
+        // Delete child tables first to avoid FK constraint violations
+     customerService.cleanDatabase();
+        return ResponseEntity.ok("Database cleaned.");
+    }
+
+
 }

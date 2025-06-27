@@ -3,7 +3,9 @@ package com.example.spring_data_jpa_complex_object.service;
 import com.example.spring_data_jpa_complex_object.dto.*;
 import com.example.spring_data_jpa_complex_object.entity.*;
 import com.example.spring_data_jpa_complex_object.repository.CustomerRepository;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +18,12 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    public void cleanDatabase() {
+        // Delete child tables first to avoid FK constraint violations
+        customerRepository.deleteAll();
+        ResponseEntity.ok("Database cleaned.");
+    }
 
     // Create
     public CustomerDTO createCustomer(CustomerCreateDTO dto) {
@@ -119,20 +127,13 @@ public class CustomerService {
     }
 
     // Update
-    public CustomerDTO updateCustomer(Long customerId, CustomerDTO dto) {
+    public CustomerDTO updateCustomer(Long customerId, @NotNull CustomerDTO dto) {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
 
         customer.setFirstName(dto.getFirstName());
         customer.setLastName(dto.getLastName());
         customer.setGender(dto.getGender());
-
-        // Clear existing relationships
-
-
-
-
-
 
         // Update Addresses
         if (dto.getAddressInfo() != null) {

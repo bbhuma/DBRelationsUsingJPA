@@ -8,13 +8,14 @@ import java.time.LocalDate;
 
 @Data
 @Entity
+@Table(name= "Student_Enrollment")
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private LocalDate enrollmentDate;
-    private String grade;
+    private Long marks;
 
     @ManyToOne
     @JoinColumn(name = "student_id")

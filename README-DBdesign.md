@@ -80,7 +80,38 @@
 10. ![img_6.png](img_6.png)
 11. ![img_7.png](img_7.png)
 12. ![img_8.png](img_8.png)
+    - All child tables will have customer_id as FK, it becomes a main fields of table, must enter the value. 
+    - This is different from parent table columns, since parent can exist with out child info. 
+    - But child can not exist without parent info, concept of **Cascade and Orphans.**
+    - [img_9.png](img_9.png)
+13. Explanation of mappedBy, LAZY, orphanRemoval, CASCADE.ALL.
+    - @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+      private List<Address> addresses;
+    - ![img_10.png](img_10.png)
 
+    - Customer customer = customerRepository.findById(id).orElseThrow();
+      // JPA has NOT yet loaded addresses
+
+    - List<Address> addresses = **customer.getAddresses()**; // triggers lazy load here!
+    - When Spring returns customer in a REST response, **it accesses customer.getAddresses(), which triggers lazy loading** → this is why full address list appears in the JSON output.
+14. Option:1 Issue of infinite recursion of JSON between customer and children.
+    - This issue you're seeing is a classic case of infinite recursion in JSON serialization — caused by bi-directional relationships between Customer and Address. 
+    - ![img_11.png](img_11.png)
+    - ✅ Solution: 
+    - Use @JsonManagedReference and 
+    ![img_12.png](img_12.png)
+    - @JsonBackReference
+    ![img_13.png](img_13.png)
+    - ![img_14.png](img_14.png)
+15. Add a customer mapper to map DTO's and Entity
+    - @PostMapping("/customers")
+      public ResponseEntity<?> createCustomer(@RequestBody CustomerDTO dto) {
+      Customer customer = customerMapper.toEntity(dto);
+      Customer saved = customerRepo.save(customer);
+      return ResponseEntity.ok(customerMapper.toDto(saved));
+      }
+16. ![alt text](image.png)
+Here is a PlantUML code snippet for your student-related ER diagram. You can copy and paste this into any PlantUML editor (like https://plantuml.com/ or https://www.planttext.com/) to generate a graphical ER diagram:
 
 
 

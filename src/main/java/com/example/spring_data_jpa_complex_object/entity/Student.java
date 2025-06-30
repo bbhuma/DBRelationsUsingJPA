@@ -18,4 +18,8 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("student")
     private List<Enrollment> enrollments = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "classroom_id")
+    private Classroom classroom;
 }

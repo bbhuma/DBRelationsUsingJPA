@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -18,4 +19,7 @@ public class Course {
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("course")
     private List<Enrollment> enrollments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "course")
+    private Set<TeacherCourseClass> teacherCourseClasses;
 }

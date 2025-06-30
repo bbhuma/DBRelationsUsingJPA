@@ -1,5 +1,6 @@
 package com.example.spring_data_jpa_complex_object.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class DOB {
 
     @ManyToOne
     @JoinColumn(name = "customerId", nullable = false)
+    @JsonBackReference
     private Customer customer;
 
     @Column(name = "birthDate", nullable = false)

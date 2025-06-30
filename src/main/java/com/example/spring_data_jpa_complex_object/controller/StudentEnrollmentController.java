@@ -3,9 +3,11 @@ package com.example.spring_data_jpa_complex_object.controller;
 import com.example.spring_data_jpa_complex_object.entity.Course;
 import com.example.spring_data_jpa_complex_object.entity.Enrollment;
 import com.example.spring_data_jpa_complex_object.entity.Student;
+import com.example.spring_data_jpa_complex_object.entity.TeacherCourseClass;
 import com.example.spring_data_jpa_complex_object.repository.CourseRepository;
 import com.example.spring_data_jpa_complex_object.repository.EnrollmentRepository;
 import com.example.spring_data_jpa_complex_object.repository.StudentRepository;
+import com.example.spring_data_jpa_complex_object.repository.TeacherCourseClassRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,7 @@ public class StudentEnrollmentController {
     private final StudentRepository studentRepo;
     private final CourseRepository courseRepo;
     private final EnrollmentRepository enrollmentRepo;
+    private final TeacherCourseClassRepository teacherCourseClassRepo;
 
     @PostMapping("/students")
     public Student createStudent(@RequestBody Student student) {
@@ -83,24 +86,32 @@ public class StudentEnrollmentController {
         courseRepo.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-    //Enroll a student into new course, studentId and courseId
+    // Enroll a student in a course with a specific teacher (no marks at this stage)
     @PostMapping("/enroll-student")
-    public Enrollment enrollStudent(
+    public Enrollment enrollStudentWithTeacher(
             @RequestParam Long studentId,
             @RequestParam Long courseId,
-            @RequestParam Long marks
-
+            @RequestParam Long teacherId,
+            @RequestParam Long classroomId
     ) {
-
         Student student = studentRepo.findById(studentId).orElseThrow();
         Course course = courseRepo.findById(courseId).orElseThrow();
-
+        // Find the TeacherCourseClass join entity
+        Optional<TeacherCourseClass> tccOpt = teacherCourseClassRepo.findByTeacherIdAndCourseIdAndClassroomId(teacherId, courseId, classroomId);
+        if (!tccOpt.isPresent()) throw new RuntimeException("No such teacher-course-class assignment");
         Enrollment enrollment = new Enrollment();
         enrollment.setStudent(student);
         enrollment.setCourse(course);
         enrollment.setEnrollmentDate(LocalDate.now());
-        enrollment.setMarks(marks);
+        enrollment.setMarks(null); // No marks at enrollment
+        return enrollmentRepo.save(enrollment);
+    }
 
+    // Update marks for a student's enrollment (after exams)
+    @PutMapping("/enrollments/{enrollmentId}/marks")
+    public Enrollment updateEnrollmentMarks(@PathVariable Long enrollmentId, @RequestParam Long marks) {
+        Enrollment enrollment = enrollmentRepo.findById(enrollmentId).orElseThrow();
+        enrollment.setMarks(marks);
         return enrollmentRepo.save(enrollment);
     }
 

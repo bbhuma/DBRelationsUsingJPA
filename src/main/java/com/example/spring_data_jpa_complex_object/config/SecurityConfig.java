@@ -18,7 +18,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .csrf(csrf -> csrf.disable())
-                .headers(headers -> headers.frameOptions().disable())
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();

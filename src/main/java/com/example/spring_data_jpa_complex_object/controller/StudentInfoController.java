@@ -260,45 +260,21 @@ public class StudentInfoController {
 
     @Operation(summary = "Dashboard: all marks in a class", description = "Returns all marks scored by students in a class.")
     @GetMapping("/dashboard/marks-in-class/{classId}")
-    public List<Map<String, Object>> getAllMarksInClass(@PathVariable Long classId) {
+    public List<Map<String, Object>> getAllMarksScoredInClass(@PathVariable Long classId) {
         return studentRepository.findAll().stream()
             .filter(s -> s.getClassroom() != null && s.getClassroom().getId().equals(classId))
-            .flatMap(s -> s.getEnrollments().stream().map(e -> Map.of(
-                "studentId", s.getId(),
-                "studentName", s.getName(),
-                "course", e.getCourse().getTitle(),
-                "marks", e.getMarks()
-            )))
-            .collect(Collectors.toList());
-    }
-
-    @Operation(summary = "Dashboard: topper, top 10, last 10 in class", description = "Returns the topper, top 10, and last 10 students in a class by average marks. Supports pagination.")
-    @GetMapping("/dashboard/class-ranking/{classId}")
-    public Map<String, Object> getClassRanking(@PathVariable Long classId,
-                                               @RequestParam(defaultValue = "0") int page,
-                                               @RequestParam(defaultValue = "5") int size) {
-        List<Map<String, Object>> ranked = studentRepository.findAll().stream()
-            .filter(s -> s.getClassroom() != null && s.getClassroom().getId().equals(classId))
-            .map(s -> {
-                double avg = s.getEnrollments().stream().filter(e -> e.getMarks() != null).mapToInt(e -> e.getMarks().intValue()).average().orElse(0);
+            .flatMap(s -> s.getEnrollments().stream().map(e -> {
                 Map<String, Object> map = new LinkedHashMap<>();
                 map.put("studentId", s.getId());
                 map.put("studentName", s.getName());
-                map.put("averageMarks", avg);
+                map.put("course", e.getCourse().getTitle());
+                map.put("marks", e.getMarks());
                 return map;
-            })
-            .sorted((a, b) -> Double.compare((double) b.get("averageMarks"), (double) a.get("averageMarks")))
-            .toList();
-        Map<String, Object> result = new HashMap<>();
-        result.put("topper", ranked.isEmpty() ? null : ranked.get(0));
-        result.put("top10", ranked.stream().limit(10).toList());
-        result.put("last10", ranked.stream().skip(Math.max(0, ranked.size() - 10)).toList());
-        int from = page * size;
-        int to = Math.min(from + size, ranked.size());
-        result.put("page", ranked.subList(Math.min(from, ranked.size()), to));
-        result.put("total", ranked.size());
-        return result;
+            }))
+            .collect(Collectors.toList());
     }
+
+    // REMOVED: Duplicate getClassRanking method by average marks to resolve compilation error.
 
     // --- DASHBOARD ENDPOINTS ---
 

@@ -1,0 +1,1022 @@
+{
+  "info": {
+    "_postman_id": "b1e2c3d4-5678-1234-9abc-def012345678",
+    "name": "Spring Data JPA Complex Object API",
+    "description": "Postman collection to test all main endpoints for Student, Teacher, Classroom, Course, Enrollment, and Customer management.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://localhost:8443" },
+    { "key": "studentId", "value": "1" },
+    { "key": "classroomId", "value": "1" },
+    { "key": "courseId", "value": "1" },
+    { "key": "teacherId", "value": "7" },
+    { "key": "enrollmentId", "value": "721" },
+    { "key": "authToken", "value": "{{YOUR_JWT_TOKEN}}" }
+  ],
+  "item": [
+    {
+      "name": "Students",
+      "description": "Endpoints for managing students, their info, analytics, and dashboard.",
+      "item": [
+        {
+          "name": "Get All Students",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students"]
+            }
+          },
+          "description": "Retrieves all students. Example response uses real data from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"name\": \"Student_1\",\n  \"classroomId\": 1\n}, {\n  \"id\": 2,\n  \"name\": \"Student_2\",\n  \"classroomId\": 1\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Student By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/{{studentId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "{{studentId}}"]
+            },
+            "description": "Retrieves a student by ID. Example uses Student_1 from data.sql. Uses parameterized studentId."
+          },
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 1,\n  \"name\": \"Student_1\",\n  \"classroomId\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Student_501\",\n  \"classroomId\": {{classroomId}}\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students"]
+            },
+            "description": "Creates a new student in a parameterized classroom using real data from data.sql. Uses parameterized classroomId."
+          },
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 501,\n  \"name\": \"Student_501\",\n  \"classroomId\": 6\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Student Full Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/{{studentId}}/full-info",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "{{studentId}}", "full-info"]
+            }
+          },
+          "description": "Retrieves full info for a student, including enrollments and marks. Example uses Student_1 from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 1,\n  \"name\": \"Student_1\",\n  \"classroomId\": 1,\n  \"enrollments\": [{\n    \"courseId\": 1,\n    \"teacherId\": 7,\n    \"marks\": 85\n  }]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Student Analytics",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/analytics",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "analytics"]
+            }
+          },
+          "description": "Retrieves analytics for all students (e.g., pass/fail rates, average marks, etc.). Example response uses representative data.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"totalStudents\": 200,\n  \"passCount\": 180,\n  \"failCount\": 20,\n  \"averageMarks\": 76.5\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "dashboard"]
+            }
+          },
+          "description": "Retrieves dashboard analytics summary (example data shown).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"totalStudents\": 200,\n  \"totalTeachers\": 10,\n  \"totalCourses\": 5,\n  \"totalEnrollments\": 400\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Student By Class",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/by-class/{{classroomId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "by-class", "{{classroomId}}"]
+            }
+          },
+          "description": "Retrieves all students in a given class (parameterized classroomId).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"name\": \"Student_1\",\n  \"classroomId\": 1\n}, {\n  \"id\": 2,\n  \"name\": \"Student_2\",\n  \"classroomId\": 1\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Student By Course",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/by-course/{{courseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "by-course", "{{courseId}}"]
+            }
+          },
+          "description": "Retrieves all students enrolled in a given course (parameterized courseId).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 101,\n  \"name\": \"Student_101\",\n  \"classroomId\": 2\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Student By Teacher",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/by-teacher/{{teacherId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "by-teacher", "{{teacherId}}"]
+            }
+          },
+          "description": "Retrieves all students taught by a given teacher (parameterized teacherId).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 101,\n  \"name\": \"Student_101\",\n  \"classroomId\": 2\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Students By Class, Course, Teacher",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/by-class/{{classroomId}}/by-course/{{courseId}}/by-teacher/{{teacherId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "by-class", "{{classroomId}}", "by-course", "{{courseId}}", "by-teacher", "{{teacherId}}"]
+            }
+          },
+          "description": "Retrieves all students filtered by class, course, and teacher (all parameterized).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"name\": \"Student_1\",\n  \"classroomId\": 1\n}, {\n  \"id\": 2,\n  \"name\": \"Student_2\",\n  \"classroomId\": 1\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Student Count By Class",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/count-by-class",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "count-by-class"]
+            }
+          },
+          "description": "Retrieves the number of students in each class.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"classroomId\": 1,\n  \"studentCount\": 30\n}, {\n  \"classroomId\": 2,\n  \"studentCount\": 28\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Marks By Course For Student",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/{{studentId}}/marks-by-course",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "{{studentId}}", "marks-by-course"]
+            }
+          },
+          "description": "Retrieves marks for each course for a given student (studentId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"courseId\": 1,\n  \"marks\": 85\n}, {\n  \"courseId\": 2,\n  \"marks\": 78\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Students Of Teacher With Class",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/by-teacher/{{teacherId}}/students-with-class",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "by-teacher", "{{teacherId}}", "students-with-class"]
+            }
+          },
+          "description": "Retrieves all students taught by a given teacher, grouped by class (teacherId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"classroomId\": 1,\n  \"students\": [{\n    \"id\": 101,\n    \"name\": \"Student_101\"\n  }]\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Pass/Fail Count",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/pass-fail-count",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "pass-fail-count"]
+            }
+          },
+          "description": "Retrieves the number of students who passed and failed across all classes.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"pass\": 180,\n  \"fail\": 20\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Top Scorers By Course",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/top-scorers-by-course/{{courseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "top-scorers-by-course", "{{courseId}}"]
+            }
+          },
+          "description": "Retrieves the top scoring students for a given course (courseId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"studentId\": 101,\n  \"name\": \"Student_101\",\n  \"marks\": 98\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Average Marks By Course",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/average-marks-by-course",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "average-marks-by-course"]
+            }
+          },
+          "description": "Retrieves the average marks for each course.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"courseId\": 1,\n  \"averageMarks\": 82.5\n}, {\n  \"courseId\": 2,\n  \"averageMarks\": 78.0\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Course Popularity",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/course-popularity",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "course-popularity"]
+            }
+          },
+          "description": "Retrieves the popularity (enrollment count) of each course.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"courseId\": 1,\n  \"enrollmentCount\": 120\n}, {\n  \"courseId\": 2,\n  \"enrollmentCount\": 110\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Class Performance Distribution",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/class-performance-distribution/{{classroomId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "class-performance-distribution", "{{classroomId}}"]
+            }
+          },
+          "description": "Retrieves the performance distribution (e.g., grade bands) for a class (classId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"A\": 10,\n  \"B\": 15,\n  \"C\": 5,\n  \"D\": 0,\n  \"F\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Pass/Fail Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/dashboard/pass-fail?classId={{classroomId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "dashboard", "pass-fail"],
+              "query": [
+                { "key": "classId", "value": "{{classroomId}}" }
+              ]
+            }
+          },
+          "description": "Retrieves pass/fail statistics for a class (classId=1) for dashboard display.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"classId\": 1,\n  \"pass\": 28,\n  \"fail\": 2\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Average Marks By Class (Dashboard)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/dashboard/average-marks-by-class/{{classroomId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "dashboard", "average-marks-by-class", "{{classroomId}}"]
+            }
+          },
+          "description": "Retrieves the average marks for a class (classId=1) for dashboard display.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"classId\": 1,\n  \"averageMarks\": 81.2\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Marks In Class (Dashboard)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/dashboard/all-marks-in-class/{{classroomId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "dashboard", "all-marks-in-class", "{{classroomId}}"]
+            }
+          },
+          "description": "Retrieves all marks for students in a class (classId=1) for dashboard display.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"studentId\": 1,\n  \"marks\": 85\n}, {\n  \"studentId\": 2,\n  \"marks\": 78\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Class Ranking (Dashboard)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/dashboard/class-ranking/{{classroomId}}?page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "dashboard", "class-ranking", "{{classroomId}}"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          },
+          "description": "Retrieves the ranking of students in a class (classId=1) for dashboard display, paginated.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"rank\": 1,\n  \"studentId\": 1,\n  \"name\": \"Student_1\",\n  \"marks\": 95\n}, {\n  \"rank\": 2,\n  \"studentId\": 2,\n  \"name\": \"Student_2\",\n  \"marks\": 90\n}]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Teachers",
+      "description": "Endpoints for managing teachers and their workload.",
+      "item": [
+        {
+          "name": "Get All Teachers",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/teachers",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "teachers"]
+            }
+          },
+          "description": "Retrieves all teachers. Example response uses real data from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 7,\n  \"name\": \"Teacher_7\"\n}, {\n  \"id\": 8,\n  \"name\": \"Teacher_8\"\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Teacher Workload",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/teacher-workload",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "teacher-workload"]
+            }
+          },
+          "description": "Retrieves the workload (number of classes/courses) for each teacher.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"teacherId\": 7,\n  \"classCount\": 2,\n  \"courseCount\": 3\n}]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Courses",
+      "description": "Endpoints for managing courses and course analytics.",
+      "item": [
+        {
+          "name": "Get All Courses",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses"]
+            }
+          },
+          "description": "Retrieves all courses. Example response uses real data from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"name\": \"English\"\n}, {\n  \"id\": 2,\n  \"name\": \"Math\"\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Courses By Class",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/courses-by-class/{{classroomId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "courses-by-class", "{{classroomId}}"]
+            }
+          },
+          "description": "Retrieves all courses available for a given class (classId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"name\": \"English\"\n}, {\n  \"id\": 2,\n  \"name\": \"Math\"\n}]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Classrooms",
+      "description": "Endpoints for managing classrooms and class analytics.",
+      "item": [
+        {
+          "name": "Get All Classrooms",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/classrooms",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "classrooms"]
+            }
+          },
+          "description": "Retrieves all classrooms. Example response uses real data from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"name\": \"Class 1\"\n}, {\n  \"id\": 2,\n  \"name\": \"Class 2\"\n}]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Enrollments",
+      "description": "Endpoints for managing enrollments, marks, and related analytics.",
+      "item": [
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Priya\",\n  \"lastName\": \"Singh\",\n  \"gender\": \"F\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/customers",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "customers"]
+            }
+          },
+          "description": "Creates a new customer using real data from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 1,\n  \"firstName\": \"Priya\",\n  \"lastName\": \"Singh\",\n  \"gender\": \"F\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/customers",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "customers"]
+            }
+          },
+          "description": "Retrieves all customers. Example response uses real data from data.sql.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 1,\n  \"firstName\": \"Priya\",\n  \"lastName\": \"Singh\",\n  \"gender\": \"F\"\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Student Enrollments",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/{{studentId}}/enrollments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "{{studentId}}", "enrollments"]
+            }
+          },
+          "description": "Retrieves all enrollments for a student (studentId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 721,\n  \"studentId\": 1,\n  \"courseId\": 1,\n  \"teacherId\": 7,\n  \"classroomId\": 1,\n  \"marks\": 85\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Course Enrollments",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/enrollments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses", "{{courseId}}", "enrollments"]
+            }
+          },
+          "description": "Retrieves all enrollments for a course (courseId=1).",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 721,\n  \"studentId\": 101,\n  \"courseId\": 1,\n  \"teacherId\": 7,\n  \"classroomId\": 2,\n  \"marks\": 85\n}]"
+            }
+          ]
+        },
+        {
+          "name": "Get Enrollment By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/enrollments/{{enrollmentId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "enrollments", "{{enrollmentId}}"]
+            }
+          },
+          "description": "Retrieves a specific enrollment by ID.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 721,\n  \"studentId\": 101,\n  \"courseId\": 1,\n  \"teacherId\": 7,\n  \"classroomId\": 2,\n  \"marks\": 85\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Enrollments",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/enrollments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "enrollments"]
+            }
+          },
+          "description": "Retrieves all enrollments in the system.",
+          "response": [
+            {
+              "name": "Sample Response",
+              "originalRequest": {},
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "[{\n  \"id\": 721,\n  \"studentId\": 101,\n  \"courseId\": 1,\n  \"teacherId\": 7,\n  \"classroomId\": 2,\n  \"marks\": 85\n}]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "// Example: Set dynamic auth token from environment if present",
+          "if (pm.environment.get('authToken')) {",
+          "    pm.variables.set('authToken', pm.environment.get('authToken'));",
+          "}"
+        ],
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          "// Example: Enterprise-level test to ensure all responses are JSON and status is 2xx",
+          "pm.test('Response is JSON', function () {",
+          "    pm.response.to.have.header('Content-Type', /application\/json/);",
+          "});",
+          "pm.test('Status code is 2xx', function () {",
+          "    pm.expect(pm.response.code).to.be.within(200, 299);",
+          "});"
+        ],
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "protocolProfileBehavior": {
+    "disableBodyPruning": true
+  }
+}

@@ -14,7 +14,10 @@ public class OAuth2SecurityConfig {
                 .requestMatchers("/api/public/**", "/login**").permitAll()
                 .anyRequest().authenticated()
             )
-            .oauth2Login(); // Enables OAuth2 login
+            .oauth2Login(oauth2 -> oauth2
+                .loginPage("/login")
+                // You can add a custom success handler or user service here if needed
+            );
         return http.build();
     }
 }

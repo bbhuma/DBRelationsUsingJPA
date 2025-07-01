@@ -3,6 +3,7 @@ package com.example.spring_data_jpa_complex_object.controller;
 import com.example.spring_data_jpa_complex_object.dto.StudentFullInfoDTO;
 import com.example.spring_data_jpa_complex_object.entity.*;
 import com.example.spring_data_jpa_complex_object.repository.StudentRepository;
+import com.example.spring_data_jpa_complex_object.service.SecurityService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +18,25 @@ import java.util.stream.Collectors;
 public class StudentInfoController {
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
+    private SecurityService securityService;
 
     @Operation(summary = "Get full info for a student", description = "Returns all details for a student, including class, courses, marks, and teachers.")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN') or (hasRole('TEACHER') and @securityService.isTeacherOfStudent(authentication, #id)) or (hasRole('STUDENT') and @securityService.isCurrentStudent(authentication, #id))")
     @GetMapping("/{id}/full-info")
     public StudentFullInfoDTO getStudentFullInfo(@PathVariable Long id) {
         return studentRepository.findById(id).map(this::toFullInfo).orElse(null);
     }
 
     @Operation(summary = "Get full info for all students", description = "Returns a list of all students with their class, courses, marks, and teachers.")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/full-info")
     public List<StudentFullInfoDTO> getAllStudentsFullInfo() {
         return studentRepository.findAll().stream().map(this::toFullInfo).collect(Collectors.toList());
     }
 
     @Operation(summary = "Get students by class", description = "Returns all students in a specific class, with their full info.")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN') or (hasRole('TEACHER') and @securityService.isTeacherOfStudent(authentication, #classId))")
     @GetMapping("/by-class/{classId}")
     public List<StudentFullInfoDTO> getByClass(@PathVariable Long classId) {
         return studentRepository.findAll().stream()
@@ -42,7 +45,7 @@ public class StudentInfoController {
     }
 
     @Operation(summary = "Get students by course", description = "Returns all students enrolled in a specific course, with their full info.")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN') or (hasRole('TEACHER') and @securityService.isTeacherOfStudent(authentication, #courseId))")
     @GetMapping("/by-course/{courseId}")
     public List<StudentFullInfoDTO> getByCourse(@PathVariable Long courseId) {
         return studentRepository.findAll().stream()
@@ -51,7 +54,7 @@ public class StudentInfoController {
     }
 
     @Operation(summary = "Get students by teacher", description = "Returns all students taught by a specific teacher (in any course/class), with their full info.")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN') or (hasRole('TEACHER') and @securityService.isTeacherOfStudent(authentication, #teacherId))")
     @GetMapping("/by-teacher/{teacherId}")
     public List<StudentFullInfoDTO> getByTeacher(@PathVariable Long teacherId) {
         return studentRepository.findAll().stream()
@@ -62,7 +65,7 @@ public class StudentInfoController {
     }
 
     @Operation(summary = "Get students by class, course, and teacher", description = "Returns all students in a specific class, for a specific course, taught by a specific teacher, with their full info.")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN') or (hasRole('TEACHER') and @securityService.isTeacherOfStudent(authentication, #classId))")
     @GetMapping("/by-class/{classId}/by-course/{courseId}/by-teacher/{teacherId}")
     public List<StudentFullInfoDTO> getByClassCourseTeacher(@PathVariable Long classId, @PathVariable Long courseId, @PathVariable Long teacherId) {
         return studentRepository.findAll().stream()

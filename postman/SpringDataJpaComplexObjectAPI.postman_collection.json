@@ -12,12 +12,15 @@
     { "key": "courseId", "value": "1" },
     { "key": "teacherId", "value": "7" },
     { "key": "enrollmentId", "value": "721" },
-    { "key": "authToken", "value": "{{YOUR_JWT_TOKEN}}" }
+    { "key": "authToken", "value": "{{YOUR_JWT_TOKEN}}" },
+    { "key": "adminToken", "value": "{{ADMIN_JWT_TOKEN}}" },
+    { "key": "userToken", "value": "{{USER_JWT_TOKEN}}" },
+    { "key": "role", "value": "ADMIN" }
   ],
   "item": [
     {
       "name": "Students",
-      "description": "Endpoints for managing students, their info, analytics, and dashboard.",
+      "description": "Endpoints for managing students, their info, analytics, and dashboard.\n\n**Role Requirements:**\n- GET endpoints: USER or ADMIN\n- POST/PUT/DELETE endpoints: ADMIN only\n\nSet the `role` variable to 'admin' or 'user' to test different access levels.",
       "item": [
         {
           "name": "Get All Students",
@@ -32,7 +35,7 @@
               "path": ["api", "students"]
             }
           },
-          "description": "Retrieves all students. Example response uses real data from data.sql.",
+          "description": "Retrieves all students.\n\n**Required Role:** USER or ADMIN\n\n**Example (USER):**\n- Request with userToken: 200 OK, list of students.\n\n**Example (ADMIN):**\n- Request with adminToken: 200 OK, list of students.\n\n**Example (No/Invalid Token):**\n- 401 Unauthorized.",
           "response": [
             {
               "name": "Sample Response",
@@ -92,21 +95,22 @@
               "host": ["{{baseUrl}}"],
               "path": ["api", "students"]
             },
-            "description": "Creates a new student in a parameterized classroom using real data from data.sql. Uses parameterized classroomId."
+            "description": "Creates a new student.\n\n**Required Role:** ADMIN only\n\n**Example (ADMIN):**\n- Request with adminToken: 200 OK, student created.\n\n**Example (USER):**\n- Request with userToken: 403 Forbidden.\n\n**Example (No/Invalid Token):**\n- 401 Unauthorized.",
+            "response": [
+              {
+                "name": "Sample Response",
+                "originalRequest": {},
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": "{\n  \"id\": 501,\n  \"name\": \"Student_501\",\n  \"classroomId\": 6\n}"
+              }
+            ]
           },
-          "response": [
-            {
-              "name": "Sample Response",
-              "originalRequest": {},
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                { "key": "Content-Type", "value": "application/json" }
-              ],
-              "body": "{\n  \"id\": 501,\n  \"name\": \"Student_501\",\n  \"classroomId\": 6\n}"
-            }
-          ]
+          "description": "Creates a new student in a parameterized classroom using real data from data.sql. Uses parameterized classroomId."
         },
         {
           "name": "Get Student Full Info",
@@ -992,9 +996,15 @@
       "listen": "prerequest",
       "script": {
         "exec": [
-          "// Example: Set dynamic auth token from environment if present",
-          "if (pm.environment.get('authToken')) {",
+          "// Set authToken based on role variable (ADMIN/USER)",
+          "if (pm.variables.get('role') === 'ADMIN' && pm.environment.get('adminToken')) {",
+          "    pm.variables.set('authToken', pm.environment.get('adminToken'));",
+          "} else if (pm.variables.get('role') === 'USER' && pm.environment.get('userToken')) {",
+          "    pm.variables.set('authToken', pm.environment.get('userToken'));",
+          "} else if (pm.environment.get('authToken')) {",
           "    pm.variables.set('authToken', pm.environment.get('authToken'));",
+          "} else {",
+          "    pm.variables.unset('authToken');",
           "}"
         ],
         "type": "text/javascript"
@@ -1004,13 +1014,25 @@
       "listen": "test",
       "script": {
         "exec": [
-          "// Example: Enterprise-level test to ensure all responses are JSON and status is 2xx",
+          "// Enterprise-level test: Ensure all responses are JSON and status is 2xx or expected error for role",
           "pm.test('Response is JSON', function () {",
-          "    pm.response.to.have.header('Content-Type', /application\/json/);",
+          "    pm.response.to.have.header('Content-Type', /application\\/json/);",
           "});",
-          "pm.test('Status code is 2xx', function () {",
-          "    pm.expect(pm.response.code).to.be.within(200, 299);",
-          "});"
+          "if (pm.variables.get('role') === 'ADMIN') {",
+          "    pm.test('ADMIN: Status code is 2xx', function () {",
+          "        pm.expect(pm.response.code).to.be.within(200, 299);",
+          "    });",
+          "} else if (pm.variables.get('role') === 'USER') {",
+          "    if (pm.request.method === 'GET') {",
+          "        pm.test('USER: GET endpoints should succeed', function () {",
+          "            pm.expect(pm.response.code).to.be.within(200, 299);",
+          "        });",
+          "    } else {",
+          "        pm.test('USER: Non-GET endpoints should be forbidden', function () {",
+          "            pm.expect([401, 403]).to.include(pm.response.code);",
+          "        });",
+          "    }",
+          "}"
         ],
         "type": "text/javascript"
       }
@@ -1018,5 +1040,6 @@
   ],
   "protocolProfileBehavior": {
     "disableBodyPruning": true
-  }
+  },
+  "_documentation": "\n# Spring Data JPA Complex Object API Postman Collection\n\n## Overview\nThis collection tests all main endpoints for Student, Teacher, Classroom, Course, Enrollment, and Customer management.\n\n## Authentication & Role-Based Testing\n- Uses JWT tokens for authentication.\n- Variables: `adminToken`, `userToken`, `role` (ADMIN/USER), and `authToken` (auto-set by pre-request script).\n- Pre-request script sets the correct token based on the `role` variable.\n- Test script checks for correct access: ADMIN can access all, USER can only GET.\n\n## Endpoint Documentation & Examples\n- Each endpoint description includes required roles and example outcomes for ADMIN and USER.\n- Example requests/responses for both roles are provided.\n- 401/403 examples included for forbidden access.\n\n## Usage\n- Set `adminToken` and `userToken` in your environment.\n- Set `role` to test as ADMIN or USER.\n- Run requests to verify access control and see example responses.\n\n## Example: Create Student\n- **ADMIN**: 200 OK, student created.\n- **USER**: 403 Forbidden.\n\n## Example: Get All Students\n- **ADMIN/USER**: 200 OK, list of students.\n\n## Example: Create Customer\n- **ADMIN**: 200 OK, customer created.\n- **USER**: 403 Forbidden.\n\n## Example: Get All Customers\n- **ADMIN/USER**: 200 OK, list of customers.\n\n---\nFor more details, see README-Postman.md.\n"
 }

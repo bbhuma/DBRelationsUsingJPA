@@ -11,6 +11,7 @@ import com.example.spring_data_jpa_complex_object.repository.TeacherCourseClassR
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -27,20 +28,24 @@ public class StudentEnrollmentController {
     private final EnrollmentRepository enrollmentRepo;
     private final TeacherCourseClassRepository teacherCourseClassRepo;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/students")
     public Student createStudent(@RequestBody Student student) {
         return studentRepo.save(student);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/students")
     public List<Student> getAllStudents() {
         return studentRepo.findAll();
     }
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/students/{id}")
     public Optional<Student> getStudents(@PathVariable Long id) {
         return studentRepo.findById(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/students/{id}")
     public Student updateStudents(@PathVariable Long id,@RequestBody Student student) {
         Student student1 = studentRepo.findById(id).orElseThrow(()->  new RuntimeException("Student with Id"+ id +"not found"));
@@ -51,42 +56,43 @@ public class StudentEnrollmentController {
         return studentRepo.save(student1);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/students/{id}")
     public ResponseEntity<Void> deleteStudents(@PathVariable Long id) {
         studentRepo.deleteById(id);
          return ResponseEntity.noContent().build();
     }
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/courses/{id}")
     public Optional<Course> getCourseById(@PathVariable Long id) {
         return courseRepo.findById(id);
     }
-
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/courses")
     public List<Course> getAllCourses(@RequestBody Course course) {
         return courseRepo.findAll();
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/courses")
     public Course createCourse(@RequestBody Course course) {
         return courseRepo.save(course);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/courses/{id}")
     public Course updateCourse(@PathVariable Long id,@RequestBody Course course) {
         Course course1 = courseRepo.findById(id).orElseThrow(()->  new RuntimeException("Student with Id"+ id +"not found"));
         course1.getEnrollments().clear();
         course1.setId(id);
         course1.setTitle(course.getTitle());
-
         return courseRepo.save(course1);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/courses/{id}")
     public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
         courseRepo.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-    // Enroll a student in a course with a specific teacher (no marks at this stage)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/enroll-student")
     public Enrollment enrollStudentWithTeacher(
             @RequestParam Long studentId,
@@ -106,33 +112,34 @@ public class StudentEnrollmentController {
         enrollment.setMarks(null); // No marks at enrollment
         return enrollmentRepo.save(enrollment);
     }
-
-    // Update marks for a student's enrollment (after exams)
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/enrollments/{enrollmentId}/marks")
     public Enrollment updateEnrollmentMarks(@PathVariable Long enrollmentId, @RequestParam Long marks) {
         Enrollment enrollment = enrollmentRepo.findById(enrollmentId).orElseThrow();
         enrollment.setMarks(marks);
         return enrollmentRepo.save(enrollment);
     }
-
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/students/{id}/enrollments")
     public List<Enrollment> getStudentsEnrollments(@PathVariable Long id) {
         return enrollmentRepo.findByStudentId(id);
     }
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/courses/{id}/enrollments")
     public List<Enrollment> getCourseEnrollments(@PathVariable Long id) {
-
         return enrollmentRepo.findByCourseId(id);
     }
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/enrollments/{id}")
     public Optional<Enrollment> getEnrollmentById(@PathVariable Long id) {
         return enrollmentRepo.findById(id);
     }
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/enrollments")
     public List<Enrollment> getAllEnrollments() {
         return enrollmentRepo.findAll();
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/studentsdb/cleanup")
     @Transactional
     public ResponseEntity<String> cleanDatabase() {

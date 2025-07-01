@@ -290,7 +290,16 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/by-class/{{classroomId}}/by-course/{{courseId}}/by-teacher/{{teacherId}}",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "by-class", "{{classroomId}}", "by-course", "{{courseId}}", "by-teacher", "{{teacherId}}"]
+              "path": [
+                "api",
+                "students",
+                "by-class",
+                "{{classroomId}}",
+                "by-course",
+                "{{courseId}}",
+                "by-teacher",
+                "{{teacherId}}"
+              ]
             }
           },
           "description": "Retrieves all students filtered by class, course, and teacher (all parameterized).",
@@ -374,7 +383,13 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/by-teacher/{{teacherId}}/students-with-class",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "by-teacher", "{{teacherId}}", "students-with-class"]
+              "path": [
+                "api",
+                "students",
+                "by-teacher",
+                "{{teacherId}}",
+                "students-with-class"
+              ]
             }
           },
           "description": "Retrieves all students taught by a given teacher, grouped by class (teacherId=1).",
@@ -430,7 +445,12 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/top-scorers-by-course/{{courseId}}",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "top-scorers-by-course", "{{courseId}}"]
+              "path": [
+                "api",
+                "students",
+                "top-scorers-by-course",
+                "{{courseId}}"
+              ]
             }
           },
           "description": "Retrieves the top scoring students for a given course (courseId=1).",
@@ -514,7 +534,12 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/class-performance-distribution/{{classroomId}}",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "class-performance-distribution", "{{classroomId}}"]
+              "path": [
+                "api",
+                "students",
+                "class-performance-distribution",
+                "{{classroomId}}"
+              ]
             }
           },
           "description": "Retrieves the performance distribution (e.g., grade bands) for a class (classId=1).",
@@ -543,9 +568,7 @@
               "raw": "{{baseUrl}}/api/students/dashboard/pass-fail?classId={{classroomId}}",
               "host": ["{{baseUrl}}"],
               "path": ["api", "students", "dashboard", "pass-fail"],
-              "query": [
-                { "key": "classId", "value": "{{classroomId}}" }
-              ]
+              "query": [{ "key": "classId", "value": "{{classroomId}}" }]
             }
           },
           "description": "Retrieves pass/fail statistics for a class (classId=1) for dashboard display.",
@@ -573,7 +596,13 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/dashboard/average-marks-by-class/{{classroomId}}",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "dashboard", "average-marks-by-class", "{{classroomId}}"]
+              "path": [
+                "api",
+                "students",
+                "dashboard",
+                "average-marks-by-class",
+                "{{classroomId}}"
+              ]
             }
           },
           "description": "Retrieves the average marks for a class (classId=1) for dashboard display.",
@@ -601,7 +630,13 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/dashboard/all-marks-in-class/{{classroomId}}",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "dashboard", "all-marks-in-class", "{{classroomId}}"]
+              "path": [
+                "api",
+                "students",
+                "dashboard",
+                "all-marks-in-class",
+                "{{classroomId}}"
+              ]
             }
           },
           "description": "Retrieves all marks for students in a class (classId=1) for dashboard display.",
@@ -629,7 +664,13 @@
             "url": {
               "raw": "{{baseUrl}}/api/students/dashboard/class-ranking/{{classroomId}}?page=0&size=10",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "dashboard", "class-ranking", "{{classroomId}}"],
+              "path": [
+                "api",
+                "students",
+                "dashboard",
+                "class-ranking",
+                "{{classroomId}}"
+              ],
               "query": [
                 { "key": "page", "value": "0" },
                 { "key": "size", "value": "10" }
@@ -648,6 +689,204 @@
                 { "key": "Content-Type", "value": "application/json" }
               ],
               "body": "[{\n  \"rank\": 1,\n  \"studentId\": 1,\n  \"name\": \"Student_1\",\n  \"marks\": 95\n}, {\n  \"rank\": 2,\n  \"studentId\": 2,\n  \"name\": \"Student_2\",\n  \"marks\": 90\n}]"
+            }
+          ]
+        },
+        {
+          "name": "OAuth2 Authentication",
+          "description": "\nThis folder contains instructions and example requests for testing OAuth2 login with your Spring Boot app.\n\n**How to Use:**\n- Use the Authorization tab in Postman and select OAuth 2.0.\n- Click 'Get New Access Token' and fill in the details as described in the documentation.\n- Use the acquired access token as a Bearer token for secured endpoints.\n\n**Note:** OAuth2 login is handled by Spring Security at endpoints like `/oauth2/authorization/google` and `/login/oauth2/code/google`. You do not POST credentials to your backend directly.\n",
+          "item": [
+            {
+              "name": "Get OAuth2 Access Token (Google Example)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "https://accounts.google.com/o/oauth2/v2/auth?client_id={{clientId}}&redirect_uri={{redirectUri}}&response_type=code&scope=openid%20profile%20email&state=state123",
+                  "host": ["https://accounts.google.com"],
+                  "path": ["o", "oauth2", "v2", "auth"],
+                  "query": [
+                    { "key": "client_id", "value": "{{clientId}}" },
+                    { "key": "redirect_uri", "value": "{{redirectUri}}" },
+                    { "key": "response_type", "value": "code" },
+                    { "key": "scope", "value": "openid profile email" },
+                    { "key": "state", "value": "state123" }
+                  ]
+                },
+                "description": "Initiates the OAuth2 Authorization Code flow for Google. You will be redirected to the Google login page. After login, Google will redirect to your app's callback URL with a code. Use this code to exchange for an access token."
+              }
+            },
+            {
+              "name": "Get OAuth2 Access Token (Microsoft Example)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={{msClientId}}&redirect_uri={{msRedirectUri}}&response_type=code&scope=openid%20profile%20email&state=state123",
+                  "host": ["https://login.microsoftonline.com"],
+                  "path": ["common", "oauth2", "v2.0", "authorize"],
+                  "query": [
+                    { "key": "client_id", "value": "{{msClientId}}" },
+                    { "key": "redirect_uri", "value": "{{msRedirectUri}}" },
+                    { "key": "response_type", "value": "code" },
+                    { "key": "scope", "value": "openid profile email" },
+                    { "key": "state", "value": "state123" }
+                  ]
+                },
+                "description": "Initiates the OAuth2 Authorization Code flow for Microsoft. You will be redirected to the Microsoft login page. After login, Microsoft will redirect to your app's callback URL with a code. Use this code to exchange for an access token."
+              }
+            },
+            {
+              "name": "Get OAuth2 Access Token (GitHub Example)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "https://github.com/login/oauth/authorize?client_id={{ghClientId}}&redirect_uri={{ghRedirectUri}}&scope=read:user%20user:email&state=state123",
+                  "host": ["https://github.com"],
+                  "path": ["login", "oauth", "authorize"],
+                  "query": [
+                    { "key": "client_id", "value": "{{ghClientId}}" },
+                    { "key": "redirect_uri", "value": "{{ghRedirectUri}}" },
+                    { "key": "scope", "value": "read:user user:email" },
+                    { "key": "state", "value": "state123" }
+                  ]
+                },
+                "description": "Initiates the OAuth2 Authorization Code flow for GitHub. You will be redirected to the GitHub login page. After login, GitHub will redirect to your app's callback URL with a code. Use this code to exchange for an access token."
+              }
+            },
+            {
+              "name": "Exchange Authorization Code for Access Token (GitHub Example)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Accept", "value": "application/json" },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    { "key": "client_id", "value": "{{ghClientId}}" },
+                    { "key": "client_secret", "value": "{{ghClientSecret}}" },
+                    { "key": "code", "value": "{{ghAuthCode}}" },
+                    { "key": "redirect_uri", "value": "{{ghRedirectUri}}" },
+                    { "key": "state", "value": "state123" }
+                  ]
+                },
+                "url": {
+                  "raw": "https://github.com/login/oauth/access_token",
+                  "host": ["https://github.com"],
+                  "path": ["login", "oauth", "access_token"]
+                },
+                "description": "Exchange the authorization code for an access token (GitHub). Set the `ghAuthCode` variable with the code received from the previous step."
+              }
+            },
+            {
+              "name": "Get OAuth2 Access Token (Facebook Example)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "https://www.facebook.com/v19.0/dialog/oauth?client_id={{fbClientId}}&redirect_uri={{fbRedirectUri}}&state=state123&scope=email,public_profile",
+                  "host": ["https://www.facebook.com"],
+                  "path": ["v19.0", "dialog", "oauth"],
+                  "query": [
+                    { "key": "client_id", "value": "{{fbClientId}}" },
+                    { "key": "redirect_uri", "value": "{{fbRedirectUri}}" },
+                    { "key": "state", "value": "state123" },
+                    { "key": "scope", "value": "email,public_profile" }
+                  ]
+                },
+                "description": "Initiates the OAuth2 Authorization Code flow for Facebook. You will be redirected to the Facebook login page. After login, Facebook will redirect to your app's callback URL with a code. Use this code to exchange for an access token."
+              }
+            },
+            {
+              "name": "Exchange Authorization Code for Access Token (Facebook Example)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "https://graph.facebook.com/v19.0/oauth/access_token?client_id={{fbClientId}}&redirect_uri={{fbRedirectUri}}&client_secret={{fbClientSecret}}&code={{fbAuthCode}}",
+                  "host": ["https://graph.facebook.com"],
+                  "path": ["v19.0", "oauth", "access_token"],
+                  "query": [
+                    { "key": "client_id", "value": "{{fbClientId}}" },
+                    { "key": "redirect_uri", "value": "{{fbRedirectUri}}" },
+                    { "key": "client_secret", "value": "{{fbClientSecret}}" },
+                    { "key": "code", "value": "{{fbAuthCode}}" }
+                  ]
+                },
+                "description": "Exchange the authorization code for an access token (Facebook). Set the `fbAuthCode` variable with the code received from the previous step."
+              }
+            },
+            {
+              "name": "Call Secured Endpoint with OAuth2 Token",
+              "request": {
+                "method": "GET",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{oauth2Token}}" }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/students/full-info",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "students", "full-info"]
+                },
+                "description": "Example of calling a secured endpoint using an OAuth2 access token. Set the `oauth2Token` variable in your environment after obtaining it via the OAuth2 flow."
+              }
+            },
+            {
+              "name": "Exchange Authorization Code for Access Token (Google Example)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    { "key": "code", "value": "{{authCode}}" },
+                    { "key": "client_id", "value": "{{clientId}}" },
+                    { "key": "client_secret", "value": "{{clientSecret}}" },
+                    { "key": "redirect_uri", "value": "{{redirectUri}}" },
+                    { "key": "grant_type", "value": "authorization_code" }
+                  ]
+                },
+                "url": {
+                  "raw": "https://oauth2.googleapis.com/token",
+                  "host": ["https://oauth2.googleapis.com"],
+                  "path": ["token"]
+                },
+                "description": "Exchange the authorization code for an access token (Google). Set the `authCode` variable with the code received from the previous step."
+              }
+            },
+            {
+              "name": "Exchange Authorization Code for Access Token (Microsoft Example)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    { "key": "code", "value": "{{msAuthCode}}" },
+                    { "key": "client_id", "value": "{{msClientId}}" },
+                    { "key": "client_secret", "value": "{{msClientSecret}}" },
+                    { "key": "redirect_uri", "value": "{{msRedirectUri}}" },
+                    { "key": "grant_type", "value": "authorization_code" }
+                  ]
+                },
+                "url": {
+                  "raw": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+                  "host": ["https://login.microsoftonline.com"],
+                  "path": ["common", "oauth2", "v2.0", "token"]
+                },
+                "description": "Exchange the authorization code for an access token (Microsoft). Set the `msAuthCode` variable with the code received from the previous step."
+              }
             }
           ]
         }

@@ -14,11 +14,11 @@ spring:
       roles: ADMIN
   application:
     name: spring-data-jpa-complex-object
-#  datasource:
-#    url: jdbc:h2:file:C:/Users/mf11475/customerdb #by defualt it will be test, you can create a folder as needed in root locn.
-#    driverClassName: org.h2.Driver
-#    username: sa
-#    password: sa
+  #  datasource:
+  #    url: jdbc:h2:file:C:/Users/mf11475/customerdb #by defualt it will be test, you can create a folder as needed in root locn.
+  #    driverClassName: org.h2.Driver
+  #    username: sa
+  #    password: sa
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
     driver-class-name: oracle.jdbc.OracleDriver
@@ -29,11 +29,11 @@ spring:
       enabled: true
       path: /h2-console
   jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
+    #    database-platform: org.hibernate.dialect.H2Dialect
     database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
       ddl-auto: create-drop
-#      ddl-auto: update
+    #      ddl-auto: update
     show-sql: true
 #  sql:
 #    init:
@@ -43,19 +43,19 @@ spring:
 #  GRANT CONNECT, RESOURCE TO system;
 
 # --- OAuth2 Client Configuration Example ---
-spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: YOUR_GOOGLE_CLIENT_ID
-            client-secret: YOUR_GOOGLE_CLIENT_SECRET
-            scope: openid, profile, email
-        provider:
-          google:
-            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
-            token-uri: https://oauth2.googleapis.com/token
-            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
-            user-name-attribute: sub
+# spring:
+#   security:
+#     oauth2:
+#       client:
+#         registration:
+#           google:
+#             client-id: YOUR_GOOGLE_CLIENT_ID
+#             client-secret: YOUR_GOOGLE_CLIENT_SECRET
+#             scope: openid, profile, email
+#         provider:
+#           google:
+#             authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+#             token-uri: https://oauth2.googleapis.com/token
+#             user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+#             user-name-attribute: sub
 # Add more providers as needed (e.g., Microsoft, Facebook)

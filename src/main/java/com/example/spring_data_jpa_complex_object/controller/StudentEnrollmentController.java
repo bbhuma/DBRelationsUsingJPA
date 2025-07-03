@@ -3,18 +3,18 @@ package com.example.spring_data_jpa_complex_object.controller;
 import com.example.spring_data_jpa_complex_object.entity.Course;
 import com.example.spring_data_jpa_complex_object.entity.Enrollment;
 import com.example.spring_data_jpa_complex_object.entity.Student;
-import com.example.spring_data_jpa_complex_object.entity.TeacherCourseClass;
+import com.example.spring_data_jpa_complex_object.entity.Teacher;
+import com.example.spring_data_jpa_complex_object.entity.Classroom;
 import com.example.spring_data_jpa_complex_object.repository.CourseRepository;
 import com.example.spring_data_jpa_complex_object.repository.EnrollmentRepository;
 import com.example.spring_data_jpa_complex_object.repository.StudentRepository;
-import com.example.spring_data_jpa_complex_object.repository.TeacherCourseClassRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +26,11 @@ public class StudentEnrollmentController {
     private final StudentRepository studentRepo;
     private final CourseRepository courseRepo;
     private final EnrollmentRepository enrollmentRepo;
-    private final TeacherCourseClassRepository teacherCourseClassRepo;
+
+    @Autowired
+    private com.example.spring_data_jpa_complex_object.repository.TeacherRepository teacherRepo;
+    @Autowired
+    private com.example.spring_data_jpa_complex_object.repository.ClassroomRepository classroomRepo;
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/students")
@@ -49,7 +53,6 @@ public class StudentEnrollmentController {
     @PutMapping ("/students/{id}")
     public Student updateStudents(@PathVariable Long id,@RequestBody Student student) {
         Student student1 = studentRepo.findById(id).orElseThrow(()->  new RuntimeException("Student with Id"+ id +"not found"));
-        student1.getEnrollments().clear();
         student1.setId(id);
         student1.setName(student.getName());
 
@@ -81,7 +84,6 @@ public class StudentEnrollmentController {
     @PutMapping ("/courses/{id}")
     public Course updateCourse(@PathVariable Long id,@RequestBody Course course) {
         Course course1 = courseRepo.findById(id).orElseThrow(()->  new RuntimeException("Student with Id"+ id +"not found"));
-        course1.getEnrollments().clear();
         course1.setId(id);
         course1.setTitle(course.getTitle());
         return courseRepo.save(course1);
@@ -94,7 +96,7 @@ public class StudentEnrollmentController {
     }
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/enroll-student")
-    public Enrollment enrollStudentWithTeacher(
+    public Enrollment enrollStudent(
             @RequestParam Long studentId,
             @RequestParam Long courseId,
             @RequestParam Long teacherId,
@@ -102,13 +104,13 @@ public class StudentEnrollmentController {
     ) {
         Student student = studentRepo.findById(studentId).orElseThrow();
         Course course = courseRepo.findById(courseId).orElseThrow();
-        // Find the TeacherCourseClass join entity
-        Optional<TeacherCourseClass> tccOpt = teacherCourseClassRepo.findByTeacherIdAndCourseIdAndClassroomId(teacherId, courseId, classroomId);
-        if (!tccOpt.isPresent()) throw new RuntimeException("No such teacher-course-class assignment");
+        Teacher teacher = teacherRepo.findById(teacherId).orElseThrow();
+        Classroom classroom = classroomRepo.findById(classroomId).orElseThrow();
         Enrollment enrollment = new Enrollment();
         enrollment.setStudent(student);
         enrollment.setCourse(course);
-        enrollment.setEnrollmentDate(LocalDate.now());
+        enrollment.setTeacher(teacher);
+        enrollment.setClassroom(classroom);
         enrollment.setMarks(null); // No marks at enrollment
         return enrollmentRepo.save(enrollment);
     }
@@ -118,16 +120,6 @@ public class StudentEnrollmentController {
         Enrollment enrollment = enrollmentRepo.findById(enrollmentId).orElseThrow();
         enrollment.setMarks(marks);
         return enrollmentRepo.save(enrollment);
-    }
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    @GetMapping("/students/{id}/enrollments")
-    public List<Enrollment> getStudentsEnrollments(@PathVariable Long id) {
-        return enrollmentRepo.findByStudentId(id);
-    }
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    @GetMapping("/courses/{id}/enrollments")
-    public List<Enrollment> getCourseEnrollments(@PathVariable Long id) {
-        return enrollmentRepo.findByCourseId(id);
     }
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/enrollments/{id}")

@@ -1,2901 +1,1048 @@
--- CLASSES
-INSERT INTO classroom (id, name) VALUES
-(1, 'Class 1'),
-(2, 'Class 2'),
-(3, 'Class 3'),
-(4, 'Class 4'),
-(5, 'Class 5'),
-(6, 'Class 6'),
-(7, 'Class 7'),
-(8, 'Class 8'),
-(9, 'Class 9'),
-(10, 'Class 10');
+-- ORACLE-COMPATIBLE INSERTS (GROUPED AT TOP)
+-- CLASSES (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO classroom (id, name) VALUES (1, 'Class 1')
+  INTO classroom (id, name) VALUES (2, 'Class 2')
+  INTO classroom (id, name) VALUES (3, 'Class 3')
+  INTO classroom (id, name) VALUES (4, 'Class 4')
+  INTO classroom (id, name) VALUES (5, 'Class 5')
+  INTO classroom (id, name) VALUES (6, 'Class 6')
+  INTO classroom (id, name) VALUES (7, 'Class 7')
+  INTO classroom (id, name) VALUES (8, 'Class 8')
+  INTO classroom (id, name) VALUES (9, 'Class 9')
+  INTO classroom (id, name) VALUES (10, 'Class 10')
+SELECT * FROM DUAL;
 
--- SUBJECTS/COURSES
-INSERT INTO course (id, title) VALUES
-(1, 'English'),
-(2, 'Hindi'),
-(3, 'Telugu'),
-(4, 'Social'),
-(5, 'Science'),
-(6, 'Maths');
+-- SUBJECTS/COURSES (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO course (id, title) VALUES (1, 'English')
+  INTO course (id, title) VALUES (2, 'Hindi')
+  INTO course (id, title) VALUES (3, 'Telugu')
+  INTO course (id, title) VALUES (4, 'Social')
+  INTO course (id, title) VALUES (5, 'Science')
+  INTO course (id, title) VALUES (6, 'Maths')
+SELECT * FROM DUAL;
 
--- TEACHERS (updated to 60)
-INSERT INTO teacher (id, name) VALUES
-(1, 'Alice Johnson'), (2, 'Bob Smith'), (3, 'Carol Lee'), (4, 'David Kim'), (5, 'Eva Brown'),
-(6, 'Frank White'), (7, 'Grace Green'), (8, 'Henry Black'), (9, 'Ivy Young'), (10, 'Jack King'),
-(11, 'Kathy Hall'), (12, 'Leo Scott'), (13, 'Mona Adams'), (14, 'Nina Clark'), (15, 'Oscar Lewis'),
-(16, 'Paul Walker'), (17, 'Quinn Allen'), (18, 'Rita Baker'), (19, 'Sam Carter'), (20, 'Tina Davis'),
-(21, 'Uma Evans'), (22, 'Vera Foster'), (23, 'Will Harris'), (24, 'Xena James'), (25, 'Yuri Kelly'),
-(26, 'Zane Lopez'), (27, 'Amy Moore'), (28, 'Ben Nelson'), (29, 'Cody Ortiz'), (30, 'Dina Perez'),
-(31, 'Eli Reed'), (32, 'Fay Shaw'), (33, 'Gus Turner'), (34, 'Hope Underwood'), (35, 'Ian Vincent'),
-(36, 'Jill Ward'), (37, 'Kyle Xu'), (38, 'Lara Young'), (39, 'Mick Zane'), (40, 'Nora Abbott'),
-(41, 'Omar Brooks'), (42, 'Pia Cruz'), (43, 'Qing Du'), (44, 'Rex Fox'), (45, 'Sia Grant'),
-(46, 'Tom Hill'), (47, 'Usha Iyer'), (48, 'Vic Jones'), (49, 'Walt Kim'), (50, 'Yana Lin'),
-(51, 'Zara Patel'), (52, 'Rohan Mehta'), (53, 'Priya Singh'), (54, 'Anil Kumar'), (55, 'Meena Rao'),
-(56, 'Deepak Shah'), (57, 'Sonal Jain'), (58, 'Vikas Gupta'), (59, 'Ritu Verma'), (60, 'Amit Sinha');
+-- TEACHERS (Oracle-compatible multi-row insert, 60 records)
+INSERT ALL
+  INTO teacher (id, name) VALUES (1, 'Alice Johnson')
+  INTO teacher (id, name) VALUES (2, 'Bob Smith')
+  INTO teacher (id, name) VALUES (3, 'Carol Lee')
+  INTO teacher (id, name) VALUES (4, 'David Kim')
+  INTO teacher (id, name) VALUES (5, 'Eva Brown')
+  INTO teacher (id, name) VALUES (6, 'Frank White')
+  INTO teacher (id, name) VALUES (7, 'Grace Green')
+  INTO teacher (id, name) VALUES (8, 'Henry Black')
+  INTO teacher (id, name) VALUES (9, 'Ivy Young')
+  INTO teacher (id, name) VALUES (10, 'Jack King')
+  INTO teacher (id, name) VALUES (11, 'Kathy Hall')
+  INTO teacher (id, name) VALUES (12, 'Leo Scott')
+  INTO teacher (id, name) VALUES (13, 'Mona Adams')
+  INTO teacher (id, name) VALUES (14, 'Nina Clark')
+  INTO teacher (id, name) VALUES (15, 'Oscar Lewis')
+  INTO teacher (id, name) VALUES (16, 'Paul Walker')
+  INTO teacher (id, name) VALUES (17, 'Quinn Allen')
+  INTO teacher (id, name) VALUES (18, 'Rita Baker')
+  INTO teacher (id, name) VALUES (19, 'Sam Carter')
+  INTO teacher (id, name) VALUES (20, 'Tina Davis')
+  INTO teacher (id, name) VALUES (21, 'Uma Evans')
+  INTO teacher (id, name) VALUES (22, 'Vera Foster')
+  INTO teacher (id, name) VALUES (23, 'Will Harris')
+  INTO teacher (id, name) VALUES (24, 'Xena James')
+  INTO teacher (id, name) VALUES (25, 'Yuri Kelly')
+  INTO teacher (id, name) VALUES (26, 'Zane Lopez')
+  INTO teacher (id, name) VALUES (27, 'Amy Moore')
+  INTO teacher (id, name) VALUES (28, 'Ben Nelson')
+  INTO teacher (id, name) VALUES (29, 'Cody Ortiz')
+  INTO teacher (id, name) VALUES (30, 'Dina Perez')
+  INTO teacher (id, name) VALUES (31, 'Eli Reed')
+  INTO teacher (id, name) VALUES (32, 'Fay Shaw')
+  INTO teacher (id, name) VALUES (33, 'Gus Turner')
+  INTO teacher (id, name) VALUES (34, 'Hope Underwood')
+  INTO teacher (id, name) VALUES (35, 'Ian Vincent')
+  INTO teacher (id, name) VALUES (36, 'Jill Ward')
+  INTO teacher (id, name) VALUES (37, 'Kyle Xu')
+  INTO teacher (id, name) VALUES (38, 'Lara Young')
+  INTO teacher (id, name) VALUES (39, 'Mick Zane')
+  INTO teacher (id, name) VALUES (40, 'Nora Abbott')
+  INTO teacher (id, name) VALUES (41, 'Omar Brooks')
+  INTO teacher (id, name) VALUES (42, 'Pia Cruz')
+  INTO teacher (id, name) VALUES (43, 'Qing Du')
+  INTO teacher (id, name) VALUES (44, 'Rex Fox')
+  INTO teacher (id, name) VALUES (45, 'Sia Grant')
+  INTO teacher (id, name) VALUES (46, 'Tom Hill')
+  INTO teacher (id, name) VALUES (47, 'Usha Iyer')
+  INTO teacher (id, name) VALUES (48, 'Vic Jones')
+  INTO teacher (id, name) VALUES (49, 'Walt Kim')
+  INTO teacher (id, name) VALUES (50, 'Yana Lin')
+  INTO teacher (id, name) VALUES (51, 'Zara Patel')
+  INTO teacher (id, name) VALUES (52, 'Rohan Mehta')
+  INTO teacher (id, name) VALUES (53, 'Priya Singh')
+  INTO teacher (id, name) VALUES (54, 'Anil Kumar')
+  INTO teacher (id, name) VALUES (55, 'Meena Rao')
+  INTO teacher (id, name) VALUES (56, 'Deepak Shah')
+  INTO teacher (id, name) VALUES (57, 'Sonal Jain')
+  INTO teacher (id, name) VALUES (58, 'Vikas Gupta')
+  INTO teacher (id, name) VALUES (59, 'Ritu Verma')
+  INTO teacher (id, name) VALUES (60, 'Amit Sinha')
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 1
-INSERT INTO student (id, name, classroom_id) VALUES
-(1, 'Student_1', 1),
-(2, 'Student_2', 1),
-(3, 'Student_3', 1),
-(4, 'Student_4', 1),
-(5, 'Student_5', 1),
-(6, 'Student_6', 1),
-(7, 'Student_7', 1),
-(8, 'Student_8', 1),
-(9, 'Student_9', 1),
-(10, 'Student_10', 1),
-(11, 'Student_11', 1),
-(12, 'Student_12', 1),
-(13, 'Student_13', 1),
-(14, 'Student_14', 1),
-(15, 'Student_15', 1),
-(16, 'Student_16', 1),
-(17, 'Student_17', 1),
-(18, 'Student_18', 1),
-(19, 'Student_19', 1),
-(20, 'Student_20', 1),
-(21, 'Student_21', 1),
-(22, 'Student_22', 1),
-(23, 'Student_23', 1),
-(24, 'Student_24', 1),
-(25, 'Student_25', 1),
-(26, 'Student_26', 1),
-(27, 'Student_27', 1),
-(28, 'Student_28', 1),
-(29, 'Student_29', 1),
-(30, 'Student_30', 1),
-(31, 'Student_31', 1),
-(32, 'Student_32', 1),
-(33, 'Student_33', 1),
-(34, 'Student_34', 1),
-(35, 'Student_35', 1),
-(36, 'Student_36', 1),
-(37, 'Student_37', 1),
-(38, 'Student_38', 1),
-(39, 'Student_39', 1),
-(40, 'Student_40', 1),
-(41, 'Student_41', 1),
-(42, 'Student_42', 1),
-(43, 'Student_43', 1),
-(44, 'Student_44', 1),
-(45, 'Student_45', 1),
-(46, 'Student_46', 1),
-(47, 'Student_47', 1),
-(48, 'Student_48', 1),
-(49, 'Student_49', 1),
-(50, 'Student_50', 1),
-(51, 'Student_51', 1),
-(52, 'Student_52', 1),
-(53, 'Student_53', 1),
-(54, 'Student_54', 1),
-(55, 'Student_55', 1),
-(56, 'Student_56', 1),
-(57, 'Student_57', 1),
-(58, 'Student_58', 1),
-(59, 'Student_59', 1),
-(60, 'Student_60', 1),
-(61, 'Student_61', 1),
-(62, 'Student_62', 1),
-(63, 'Student_63', 1),
-(64, 'Student_64', 1),
-(65, 'Student_65', 1),
-(66, 'Student_66', 1),
-(67, 'Student_67', 1),
-(68, 'Student_68', 1),
-(69, 'Student_69', 1),
-(70, 'Student_70', 1),
-(71, 'Student_71', 1),
-(72, 'Student_72', 1),
-(73, 'Student_73', 1),
-(74, 'Student_74', 1),
-(75, 'Student_75', 1),
-(76, 'Student_76', 1),
-(77, 'Student_77', 1),
-(78, 'Student_78', 1),
-(79, 'Student_79', 1),
-(80, 'Student_80', 1),
-(81, 'Student_81', 1),
-(82, 'Student_82', 1),
-(83, 'Student_83', 1),
-(84, 'Student_84', 1),
-(85, 'Student_85', 1),
-(86, 'Student_86', 1),
-(87, 'Student_87', 1),
-(88, 'Student_88', 1),
-(89, 'Student_89', 1),
-(90, 'Student_90', 1),
-(91, 'Student_91', 1),
-(92, 'Student_92', 1),
-(93, 'Student_93', 1),
-(94, 'Student_94', 1),
-(95, 'Student_95', 1),
-(96, 'Student_96', 1),
-(97, 'Student_97', 1),
-(98, 'Student_98', 1),
-(99, 'Student_99', 1),
-(100, 'Student_100', 1);
+-- STUDENTS: Records 101–200 (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO student (id, name, classroom_id) VALUES (101, 'Student_101', 2)
+  INTO student (id, name, classroom_id) VALUES (102, 'Student_102', 2)
+  INTO student (id, name, classroom_id) VALUES (103, 'Student_103', 2)
+  INTO student (id, name, classroom_id) VALUES (104, 'Student_104', 2)
+  INTO student (id, name, classroom_id) VALUES (105, 'Student_105', 2)
+  INTO student (id, name, classroom_id) VALUES (106, 'Student_106', 2)
+  INTO student (id, name, classroom_id) VALUES (107, 'Student_107', 2)
+  INTO student (id, name, classroom_id) VALUES (108, 'Student_108', 2)
+  INTO student (id, name, classroom_id) VALUES (109, 'Student_109', 2)
+  INTO student (id, name, classroom_id) VALUES (110, 'Student_110', 2)
+  INTO student (id, name, classroom_id) VALUES (111, 'Student_111', 2)
+  INTO student (id, name, classroom_id) VALUES (112, 'Student_112', 2)
+  INTO student (id, name, classroom_id) VALUES (113, 'Student_113', 2)
+  INTO student (id, name, classroom_id) VALUES (114, 'Student_114', 2)
+  INTO student (id, name, classroom_id) VALUES (115, 'Student_115', 2)
+  INTO student (id, name, classroom_id) VALUES (116, 'Student_116', 2)
+  INTO student (id, name, classroom_id) VALUES (117, 'Student_117', 2)
+  INTO student (id, name, classroom_id) VALUES (118, 'Student_118', 2)
+  INTO student (id, name, classroom_id) VALUES (119, 'Student_119', 2)
+  INTO student (id, name, classroom_id) VALUES (120, 'Student_120', 2)
+  INTO student (id, name, classroom_id) VALUES (121, 'Student_121', 2)
+  INTO student (id, name, classroom_id) VALUES (122, 'Student_122', 2)
+  INTO student (id, name, classroom_id) VALUES (123, 'Student_123', 2)
+  INTO student (id, name, classroom_id) VALUES (124, 'Student_124', 2)
+  INTO student (id, name, classroom_id) VALUES (125, 'Student_125', 2)
+  INTO student (id, name, classroom_id) VALUES (126, 'Student_126', 2)
+  INTO student (id, name, classroom_id) VALUES (127, 'Student_127', 2)
+  INTO student (id, name, classroom_id) VALUES (128, 'Student_128', 2)
+  INTO student (id, name, classroom_id) VALUES (129, 'Student_129', 2)
+  INTO student (id, name, classroom_id) VALUES (130, 'Student_130', 2)
+  INTO student (id, name, classroom_id) VALUES (131, 'Student_131', 2)
+  INTO student (id, name, classroom_id) VALUES (132, 'Student_132', 2)
+  INTO student (id, name, classroom_id) VALUES (133, 'Student_133', 2)
+  INTO student (id, name, classroom_id) VALUES (134, 'Student_134', 2)
+  INTO student (id, name, classroom_id) VALUES (135, 'Student_135', 2)
+  INTO student (id, name, classroom_id) VALUES (136, 'Student_136', 2)
+  INTO student (id, name, classroom_id) VALUES (137, 'Student_137', 2)
+  INTO student (id, name, classroom_id) VALUES (138, 'Student_138', 2)
+  INTO student (id, name, classroom_id) VALUES (139, 'Student_139', 2)
+  INTO student (id, name, classroom_id) VALUES (140, 'Student_140', 2)
+  INTO student (id, name, classroom_id) VALUES (141, 'Student_141', 2)
+  INTO student (id, name, classroom_id) VALUES (142, 'Student_142', 2)
+  INTO student (id, name, classroom_id) VALUES (143, 'Student_143', 2)
+  INTO student (id, name, classroom_id) VALUES (144, 'Student_144', 2)
+  INTO student (id, name, classroom_id) VALUES (145, 'Student_145', 2)
+  INTO student (id, name, classroom_id) VALUES (146, 'Student_146', 2)
+  INTO student (id, name, classroom_id) VALUES (147, 'Student_147', 2)
+  INTO student (id, name, classroom_id) VALUES (148, 'Student_148', 2)
+  INTO student (id, name, classroom_id) VALUES (149, 'Student_149', 2)
+  INTO student (id, name, classroom_id) VALUES (150, 'Student_150', 2)
+  INTO student (id, name, classroom_id) VALUES (151, 'Student_151', 2)
+  INTO student (id, name, classroom_id) VALUES (152, 'Student_152', 2)
+  INTO student (id, name, classroom_id) VALUES (153, 'Student_153', 2)
+  INTO student (id, name, classroom_id) VALUES (154, 'Student_154', 2)
+  INTO student (id, name, classroom_id) VALUES (155, 'Student_155', 2)
+  INTO student (id, name, classroom_id) VALUES (156, 'Student_156', 2)
+  INTO student (id, name, classroom_id) VALUES (157, 'Student_157', 2)
+  INTO student (id, name, classroom_id) VALUES (158, 'Student_158', 2)
+  INTO student (id, name, classroom_id) VALUES (159, 'Student_159', 2)
+  INTO student (id, name, classroom_id) VALUES (160, 'Student_160', 2)
+  INTO student (id, name, classroom_id) VALUES (161, 'Student_161', 2)
+  INTO student (id, name, classroom_id) VALUES (162, 'Student_162', 2)
+  INTO student (id, name, classroom_id) VALUES (163, 'Student_163', 2)
+  INTO student (id, name, classroom_id) VALUES (164, 'Student_164', 2)
+  INTO student (id, name, classroom_id) VALUES (165, 'Student_165', 2)
+  INTO student (id, name, classroom_id) VALUES (166, 'Student_166', 2)
+  INTO student (id, name, classroom_id) VALUES (167, 'Student_167', 2)
+  INTO student (id, name, classroom_id) VALUES (168, 'Student_168', 2)
+  INTO student (id, name, classroom_id) VALUES (169, 'Student_169', 2)
+  INTO student (id, name, classroom_id) VALUES (170, 'Student_170', 2)
+  INTO student (id, name, classroom_id) VALUES (171, 'Student_171', 2)
+  INTO student (id, name, classroom_id) VALUES (172, 'Student_172', 2)
+  INTO student (id, name, classroom_id) VALUES (173, 'Student_173', 2)
+  INTO student (id, name, classroom_id) VALUES (174, 'Student_174', 2)
+  INTO student (id, name, classroom_id) VALUES (175, 'Student_175', 2)
+  INTO student (id, name, classroom_id) VALUES (176, 'Student_176', 2)
+  INTO student (id, name, classroom_id) VALUES (177, 'Student_177', 2)
+  INTO student (id, name, classroom_id) VALUES (178, 'Student_178', 2)
+  INTO student (id, name, classroom_id) VALUES (179, 'Student_179', 2)
+  INTO student (id, name, classroom_id) VALUES (180, 'Student_180', 2)
+  INTO student (id, name, classroom_id) VALUES (181, 'Student_181', 2)
+  INTO student (id, name, classroom_id) VALUES (182, 'Student_182', 2)
+  INTO student (id, name, classroom_id) VALUES (183, 'Student_183', 2)
+  INTO student (id, name, classroom_id) VALUES (184, 'Student_184', 2)
+  INTO student (id, name, classroom_id) VALUES (185, 'Student_185', 2)
+  INTO student (id, name, classroom_id) VALUES (186, 'Student_186', 2)
+  INTO student (id, name, classroom_id) VALUES (187, 'Student_187', 2)
+  INTO student (id, name, classroom_id) VALUES (188, 'Student_188', 2)
+  INTO student (id, name, classroom_id) VALUES (189, 'Student_189', 2)
+  INTO student (id, name, classroom_id) VALUES (190, 'Student_190', 2)
+  INTO student (id, name, classroom_id) VALUES (191, 'Student_191', 2)
+  INTO student (id, name, classroom_id) VALUES (192, 'Student_192', 2)
+  INTO student (id, name, classroom_id) VALUES (193, 'Student_193', 2)
+  INTO student (id, name, classroom_id) VALUES (194, 'Student_194', 2)
+  INTO student (id, name, classroom_id) VALUES (195, 'Student_195', 2)
+  INTO student (id, name, classroom_id) VALUES (196, 'Student_196', 2)
+  INTO student (id, name, classroom_id) VALUES (197, 'Student_197', 2)
+  INTO student (id, name, classroom_id) VALUES (198, 'Student_198', 2)
+  INTO student (id, name, classroom_id) VALUES (199, 'Student_199', 2)
+  INTO student (id, name, classroom_id) VALUES (200, 'Student_200', 2)
+SELECT * FROM DUAL;
 
--- STUDENTS
-INSERT INTO student (id, name, classroom_id) VALUES
--- 1000 students, 100 per class
-(1, 'Student_1', 1),
-(2, 'Student_2', 1),
-(3, 'Student_3', 1),
-(4, 'Student_4', 1),
-(5, 'Student_5', 1),
-(6, 'Student_6', 1),
-(7, 'Student_7', 1),
-(8, 'Student_8', 1),
-(9, 'Student_9', 1),
-(10, 'Student_10', 1),
-(11, 'Student_11', 1),
-(12, 'Student_12', 1),
-(13, 'Student_13', 1),
-(14, 'Student_14', 1),
-(15, 'Student_15', 1),
-(16, 'Student_16', 1),
-(17, 'Student_17', 1),
-(18, 'Student_18', 1),
-(19, 'Student_19', 1),
-(20, 'Student_20', 1),
-(21, 'Student_21', 1),
-(22, 'Student_22', 1),
-(23, 'Student_23', 1),
-(24, 'Student_24', 1),
-(25, 'Student_25', 1),
-(26, 'Student_26', 1),
-(27, 'Student_27', 1),
-(28, 'Student_28', 1),
-(29, 'Student_29', 1),
-(30, 'Student_30', 1),
-(31, 'Student_31', 1),
-(32, 'Student_32', 1),
-(33, 'Student_33', 1),
-(34, 'Student_34', 1),
-(35, 'Student_35', 1),
-(36, 'Student_36', 1),
-(37, 'Student_37', 1),
-(38, 'Student_38', 1),
-(39, 'Student_39', 1),
-(40, 'Student_40', 1),
-(41, 'Student_41', 1),
-(42, 'Student_42', 1),
-(43, 'Student_43', 1),
-(44, 'Student_44', 1),
-(45, 'Student_45', 1),
-(46, 'Student_46', 1),
-(47, 'Student_47', 1),
-(48, 'Student_48', 1),
-(49, 'Student_49', 1),
-(50, 'Student_50', 1),
-(51, 'Student_51', 1),
-(52, 'Student_52', 1),
-(53, 'Student_53', 1),
-(54, 'Student_54', 1),
-(55, 'Student_55', 1),
-(56, 'Student_56', 1),
-(57, 'Student_57', 1),
-(58, 'Student_58', 1),
-(59, 'Student_59', 1),
-(60, 'Student_60', 1),
-(61, 'Student_61', 1),
-(62, 'Student_62', 1),
-(63, 'Student_63', 1),
-(64, 'Student_64', 1),
-(65, 'Student_65', 1),
-(66, 'Student_66', 1),
-(67, 'Student_67', 1),
-(68, 'Student_68', 1),
-(69, 'Student_69', 1),
-(70, 'Student_70', 1),
-(71, 'Student_71', 1),
-(72, 'Student_72', 1),
-(73, 'Student_73', 1),
-(74, 'Student_74', 1),
-(75, 'Student_75', 1),
-(76, 'Student_76', 1),
-(77, 'Student_77', 1),
-(78, 'Student_78', 1),
-(79, 'Student_79', 1),
-(80, 'Student_80', 1),
-(81, 'Student_81', 1),
-(82, 'Student_82', 1),
-(83, 'Student_83', 1),
-(84, 'Student_84', 1),
-(85, 'Student_85', 1),
-(86, 'Student_86', 1),
-(87, 'Student_87', 1),
-(88, 'Student_88', 1),
-(89, 'Student_89', 1),
-(90, 'Student_90', 1),
-(91, 'Student_91', 1),
-(92, 'Student_92', 1),
-(93, 'Student_93', 1),
-(94, 'Student_94', 1),
-(95, 'Student_95', 1),
-(96, 'Student_96', 1),
-(97, 'Student_97', 1),
-(98, 'Student_98', 1),
-(99, 'Student_99', 1),
-(100, 'Student_100', 1),
-(101, 'Student_101', 2),
-(102, 'Student_102', 2),
-(103, 'Student_103', 2),
-(104, 'Student_104', 2),
-(105, 'Student_105', 2),
-(106, 'Student_106', 2),
-(107, 'Student_107', 2),
-(108, 'Student_108', 2),
-(109, 'Student_109', 2),
-(110, 'Student_110', 2),
-(111, 'Student_111', 2),
-(112, 'Student_112', 2),
-(113, 'Student_113', 2),
-(114, 'Student_114', 2),
-(115, 'Student_115', 2),
-(116, 'Student_116', 2),
-(117, 'Student_117', 2),
-(118, 'Student_118', 2),
-(119, 'Student_119', 2),
-(120, 'Student_120', 2),
-(121, 'Student_121', 2),
-(122, 'Student_122', 2),
-(123, 'Student_123', 2),
-(124, 'Student_124', 2),
-(125, 'Student_125', 2),
-(126, 'Student_126', 2),
-(127, 'Student_127', 2),
-(128, 'Student_128', 2),
-(129, 'Student_129', 2),
-(130, 'Student_130', 2),
-(131, 'Student_131', 2),
-(132, 'Student_132', 2),
-(133, 'Student_133', 2),
-(134, 'Student_134', 2),
-(135, 'Student_135', 2),
-(136, 'Student_136', 2),
-(137, 'Student_137', 2),
-(138, 'Student_138', 2),
-(139, 'Student_139', 2),
-(140, 'Student_140', 2),
-(141, 'Student_141', 2),
-(142, 'Student_142', 2),
-(143, 'Student_143', 2),
-(144, 'Student_144', 2),
-(145, 'Student_145', 2),
-(146, 'Student_146', 2),
-(147, 'Student_147', 2),
-(148, 'Student_148', 2),
-(149, 'Student_149', 2),
-(150, 'Student_150', 2),
-(151, 'Student_151', 2),
-(152, 'Student_152', 2),
-(153, 'Student_153', 2),
-(154, 'Student_154', 2),
-(155, 'Student_155', 2),
-(156, 'Student_156', 2),
-(157, 'Student_157', 2),
-(158, 'Student_158', 2),
-(159, 'Student_159', 2),
-(160, 'Student_160', 2),
-(161, 'Student_161', 2),
-(162, 'Student_162', 2),
-(163, 'Student_163', 2),
-(164, 'Student_164', 2),
-(165, 'Student_165', 2),
-(166, 'Student_166', 2),
-(167, 'Student_167', 2),
-(168, 'Student_168', 2),
-(169, 'Student_169', 2),
-(170, 'Student_170', 2),
-(171, 'Student_171', 2),
-(172, 'Student_172', 2),
-(173, 'Student_173', 2),
-(174, 'Student_174', 2),
-(175, 'Student_175', 2),
-(176, 'Student_176', 2),
-(177, 'Student_177', 2),
-(178, 'Student_178', 2),
-(179, 'Student_179', 2),
-(180, 'Student_180', 2),
-(181, 'Student_181', 2),
-(182, 'Student_182', 2),
-(183, 'Student_183', 2),
-(184, 'Student_184', 2),
-(185, 'Student_185', 2),
-(186, 'Student_186', 2),
-(187, 'Student_187', 2),
-(188, 'Student_188', 2),
-(189, 'Student_189', 2),
-(190, 'Student_190', 2),
-(191, 'Student_191', 2),
-(192, 'Student_192', 2),
-(193, 'Student_193', 2),
-(194, 'Student_194', 2),
-(195, 'Student_195', 2),
-(196, 'Student_196', 2),
-(197, 'Student_197', 2),
-(198, 'Student_198', 2),
-(199, 'Student_199', 2),
-(200, 'Student_200', 2),
-(201, 'Student_201', 3),
-(202, 'Student_202', 3),
-(203, 'Student_203', 3),
-(204, 'Student_204', 3),
-(205, 'Student_205', 3),
-(206, 'Student_206', 3),
-(207, 'Student_207', 3),
-(208, 'Student_208', 3),
-(209, 'Student_209', 3),
-(210, 'Student_210', 3),
-(211, 'Student_211', 3),
-(212, 'Student_212', 3),
-(213, 'Student_213', 3),
-(214, 'Student_214', 3),
-(215, 'Student_215', 3),
-(216, 'Student_216', 3),
-(217, 'Student_217', 3),
-(218, 'Student_218', 3),
-(219, 'Student_219', 3),
-(220, 'Student_220', 3),
-(221, 'Student_221', 3),
-(222, 'Student_222', 3),
-(223, 'Student_223', 3),
-(224, 'Student_224', 3),
-(225, 'Student_225', 3),
-(226, 'Student_226', 3),
-(227, 'Student_227', 3),
-(228, 'Student_228', 3),
-(229, 'Student_229', 3),
-(230, 'Student_230', 3),
-(231, 'Student_231', 3),
-(232, 'Student_232', 3),
-(233, 'Student_233', 3),
-(234, 'Student_234', 3),
-(235, 'Student_235', 3),
-(236, 'Student_236', 3),
-(237, 'Student_237', 3),
-(238, 'Student_238', 3),
-(239, 'Student_239', 3),
-(240, 'Student_240', 3),
-(241, 'Student_241', 3),
-(242, 'Student_242', 3),
-(243, 'Student_243', 3),
-(244, 'Student_244', 3),
-(245, 'Student_245', 3),
-(246, 'Student_246', 3),
-(247, 'Student_247', 3),
-(248, 'Student_248', 3),
-(249, 'Student_249', 3),
-(250, 'Student_250', 3);
+-- STUDENTS: First 100 records (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO student (id, name, classroom_id) VALUES (1, 'Student_1', 1)
+  INTO student (id, name, classroom_id) VALUES (2, 'Student_2', 1)
+  INTO student (id, name, classroom_id) VALUES (3, 'Student_3', 1)
+  INTO student (id, name, classroom_id) VALUES (4, 'Student_4', 1)
+  INTO student (id, name, classroom_id) VALUES (5, 'Student_5', 1)
+  INTO student (id, name, classroom_id) VALUES (6, 'Student_6', 1)
+  INTO student (id, name, classroom_id) VALUES (7, 'Student_7', 1)
+  INTO student (id, name, classroom_id) VALUES (8, 'Student_8', 1)
+  INTO student (id, name, classroom_id) VALUES (9, 'Student_9', 1)
+  INTO student (id, name, classroom_id) VALUES (10, 'Student_10', 1)
+  INTO student (id, name, classroom_id) VALUES (11, 'Student_11', 1)
+  INTO student (id, name, classroom_id) VALUES (12, 'Student_12', 1)
+  INTO student (id, name, classroom_id) VALUES (13, 'Student_13', 1)
+  INTO student (id, name, classroom_id) VALUES (14, 'Student_14', 1)
+  INTO student (id, name, classroom_id) VALUES (15, 'Student_15', 1)
+  INTO student (id, name, classroom_id) VALUES (16, 'Student_16', 1)
+  INTO student (id, name, classroom_id) VALUES (17, 'Student_17', 1)
+  INTO student (id, name, classroom_id) VALUES (18, 'Student_18', 1)
+  INTO student (id, name, classroom_id) VALUES (19, 'Student_19', 1)
+  INTO student (id, name, classroom_id) VALUES (20, 'Student_20', 1)
+  INTO student (id, name, classroom_id) VALUES (21, 'Student_21', 1)
+  INTO student (id, name, classroom_id) VALUES (22, 'Student_22', 1)
+  INTO student (id, name, classroom_id) VALUES (23, 'Student_23', 1)
+  INTO student (id, name, classroom_id) VALUES (24, 'Student_24', 1)
+  INTO student (id, name, classroom_id) VALUES (25, 'Student_25', 1)
+  INTO student (id, name, classroom_id) VALUES (26, 'Student_26', 1)
+  INTO student (id, name, classroom_id) VALUES (27, 'Student_27', 1)
+  INTO student (id, name, classroom_id) VALUES (28, 'Student_28', 1)
+  INTO student (id, name, classroom_id) VALUES (29, 'Student_29', 1)
+  INTO student (id, name, classroom_id) VALUES (30, 'Student_30', 1)
+  INTO student (id, name, classroom_id) VALUES (31, 'Student_31', 1)
+  INTO student (id, name, classroom_id) VALUES (32, 'Student_32', 1)
+  INTO student (id, name, classroom_id) VALUES (33, 'Student_33', 1)
+  INTO student (id, name, classroom_id) VALUES (34, 'Student_34', 1)
+  INTO student (id, name, classroom_id) VALUES (35, 'Student_35', 1)
+  INTO student (id, name, classroom_id) VALUES (36, 'Student_36', 1)
+  INTO student (id, name, classroom_id) VALUES (37, 'Student_37', 1)
+  INTO student (id, name, classroom_id) VALUES (38, 'Student_38', 1)
+  INTO student (id, name, classroom_id) VALUES (39, 'Student_39', 1)
+  INTO student (id, name, classroom_id) VALUES (40, 'Student_40', 1)
+  INTO student (id, name, classroom_id) VALUES (41, 'Student_41', 1)
+  INTO student (id, name, classroom_id) VALUES (42, 'Student_42', 1)
+  INTO student (id, name, classroom_id) VALUES (43, 'Student_43', 1)
+  INTO student (id, name, classroom_id) VALUES (44, 'Student_44', 1)
+  INTO student (id, name, classroom_id) VALUES (45, 'Student_45', 1)
+  INTO student (id, name, classroom_id) VALUES (46, 'Student_46', 1)
+  INTO student (id, name, classroom_id) VALUES (47, 'Student_47', 1)
+  INTO student (id, name, classroom_id) VALUES (48, 'Student_48', 1)
+  INTO student (id, name, classroom_id) VALUES (49, 'Student_49', 1)
+  INTO student (id, name, classroom_id) VALUES (50, 'Student_50', 1)
+  INTO student (id, name, classroom_id) VALUES (51, 'Student_51', 1)
+  INTO student (id, name, classroom_id) VALUES (52, 'Student_52', 1)
+  INTO student (id, name, classroom_id) VALUES (53, 'Student_53', 1)
+  INTO student (id, name, classroom_id) VALUES (54, 'Student_54', 1)
+  INTO student (id, name, classroom_id) VALUES (55, 'Student_55', 1)
+  INTO student (id, name, classroom_id) VALUES (56, 'Student_56', 1)
+  INTO student (id, name, classroom_id) VALUES (57, 'Student_57', 1)
+  INTO student (id, name, classroom_id) VALUES (58, 'Student_58', 1)
+  INTO student (id, name, classroom_id) VALUES (59, 'Student_59', 1)
+  INTO student (id, name, classroom_id) VALUES (60, 'Student_60', 1)
+  INTO student (id, name, classroom_id) VALUES (61, 'Student_61', 1)
+  INTO student (id, name, classroom_id) VALUES (62, 'Student_62', 1)
+  INTO student (id, name, classroom_id) VALUES (63, 'Student_63', 1)
+  INTO student (id, name, classroom_id) VALUES (64, 'Student_64', 1)
+  INTO student (id, name, classroom_id) VALUES (65, 'Student_65', 1)
+  INTO student (id, name, classroom_id) VALUES (66, 'Student_66', 1)
+  INTO student (id, name, classroom_id) VALUES (67, 'Student_67', 1)
+  INTO student (id, name, classroom_id) VALUES (68, 'Student_68', 1)
+  INTO student (id, name, classroom_id) VALUES (69, 'Student_69', 1)
+  INTO student (id, name, classroom_id) VALUES (70, 'Student_70', 1)
+  INTO student (id, name, classroom_id) VALUES (71, 'Student_71', 1)
+  INTO student (id, name, classroom_id) VALUES (72, 'Student_72', 1)
+  INTO student (id, name, classroom_id) VALUES (73, 'Student_73', 1)
+  INTO student (id, name, classroom_id) VALUES (74, 'Student_74', 1)
+  INTO student (id, name, classroom_id) VALUES (75, 'Student_75', 1)
+  INTO student (id, name, classroom_id) VALUES (76, 'Student_76', 1)
+  INTO student (id, name, classroom_id) VALUES (77, 'Student_77', 1)
+  INTO student (id, name, classroom_id) VALUES (78, 'Student_78', 1)
+  INTO student (id, name, classroom_id) VALUES (79, 'Student_79', 1)
+  INTO student (id, name, classroom_id) VALUES (80, 'Student_80', 1)
+  INTO student (id, name, classroom_id) VALUES (81, 'Student_81', 1)
+  INTO student (id, name, classroom_id) VALUES (82, 'Student_82', 1)
+  INTO student (id, name, classroom_id) VALUES (83, 'Student_83', 1)
+  INTO student (id, name, classroom_id) VALUES (84, 'Student_84', 1)
+  INTO student (id, name, classroom_id) VALUES (85, 'Student_85', 1)
+  INTO student (id, name, classroom_id) VALUES (86, 'Student_86', 1)
+  INTO student (id, name, classroom_id) VALUES (87, 'Student_87', 1)
+  INTO student (id, name, classroom_id) VALUES (88, 'Student_88', 1)
+  INTO student (id, name, classroom_id) VALUES (89, 'Student_89', 1)
+  INTO student (id, name, classroom_id) VALUES (90, 'Student_90', 1)
+  INTO student (id, name, classroom_id) VALUES (91, 'Student_91', 1)
+  INTO student (id, name, classroom_id) VALUES (92, 'Student_92', 1)
+  INTO student (id, name, classroom_id) VALUES (93, 'Student_93', 1)
+  INTO student (id, name, classroom_id) VALUES (94, 'Student_94', 1)
+  INTO student (id, name, classroom_id) VALUES (95, 'Student_95', 1)
+  INTO student (id, name, classroom_id) VALUES (96, 'Student_96', 1)
+  INTO student (id, name, classroom_id) VALUES (97, 'Student_97', 1)
+  INTO student (id, name, classroom_id) VALUES (98, 'Student_98', 1)
+  INTO student (id, name, classroom_id) VALUES (99, 'Student_99', 1)
+  INTO student (id, name, classroom_id) VALUES (100, 'Student_100', 1)
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 5
-INSERT INTO student (id, name, classroom_id) VALUES
-(401, 'Student_401', 5),
-(402, 'Student_402', 5),
-(403, 'Student_403', 5),
-(404, 'Student_404', 5),
-(405, 'Student_405', 5),
-(406, 'Student_406', 5),
-(407, 'Student_407', 5),
-(408, 'Student_408', 5),
-(409, 'Student_409', 5),
-(410, 'Student_410', 5),
-(411, 'Student_411', 5),
-(412, 'Student_412', 5),
-(413, 'Student_413', 5),
-(414, 'Student_414', 5),
-(415, 'Student_415', 5),
-(416, 'Student_416', 5),
-(417, 'Student_417', 5),
-(418, 'Student_418', 5),
-(419, 'Student_419', 5),
-(420, 'Student_420', 5),
-(421, 'Student_421', 5),
-(422, 'Student_422', 5),
-(423, 'Student_423', 5),
-(424, 'Student_424', 5),
-(425, 'Student_425', 5),
-(426, 'Student_426', 5),
-(427, 'Student_427', 5),
-(428, 'Student_428', 5),
-(429, 'Student_429', 5),
-(430, 'Student_430', 5),
-(431, 'Student_431', 5),
-(432, 'Student_432', 5),
-(433, 'Student_433', 5),
-(434, 'Student_434', 5),
-(435, 'Student_435', 5),
-(436, 'Student_436', 5),
-(437, 'Student_437', 5),
-(438, 'Student_438', 5),
-(439, 'Student_439', 5),
-(440, 'Student_440', 5),
-(441, 'Student_441', 5),
-(442, 'Student_442', 5),
-(443, 'Student_443', 5),
-(444, 'Student_444', 5),
-(445, 'Student_445', 5),
-(446, 'Student_446', 5),
-(447, 'Student_447', 5),
-(448, 'Student_448', 5),
-(449, 'Student_449', 5),
-(450, 'Student_450', 5);
+-- STUDENTS: Records 501–600 (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO student (id, name, classroom_id) VALUES (400, 'Student_400', 5)
+  INTO student (id, name, classroom_id) VALUES (401, 'Student_401', 5)
+  INTO student (id, name, classroom_id) VALUES (402, 'Student_402', 5)
+  INTO student (id, name, classroom_id) VALUES (403, 'Student_403', 5)
+  INTO student (id, name, classroom_id) VALUES (404, 'Student_404', 5)
+  INTO student (id, name, classroom_id) VALUES (405, 'Student_405', 5)
+  INTO student (id, name, classroom_id) VALUES (406, 'Student_406', 5)
+  INTO student (id, name, classroom_id) VALUES (407, 'Student_407', 5)
+  INTO student (id, name, classroom_id) VALUES (408, 'Student_408', 5)
+  INTO student (id, name, classroom_id) VALUES (409, 'Student_409', 5)
+  INTO student (id, name, classroom_id) VALUES (410, 'Student_410', 5)
+  INTO student (id, name, classroom_id) VALUES (411, 'Student_411', 5)
+  INTO student (id, name, classroom_id) VALUES (412, 'Student_412', 5)
+  INTO student (id, name, classroom_id) VALUES (413, 'Student_413', 5)
+  INTO student (id, name, classroom_id) VALUES (414, 'Student_414', 5)
+  INTO student (id, name, classroom_id) VALUES (415, 'Student_415', 5)
+  INTO student (id, name, classroom_id) VALUES (416, 'Student_416', 5)
+  INTO student (id, name, classroom_id) VALUES (417, 'Student_417', 5)
+  INTO student (id, name, classroom_id) VALUES (418, 'Student_418', 5)
+  INTO student (id, name, classroom_id) VALUES (419, 'Student_419', 5)
+  INTO student (id, name, classroom_id) VALUES (420, 'Student_420', 5)
+  INTO student (id, name, classroom_id) VALUES (421, 'Student_421', 5)
+  INTO student (id, name, classroom_id) VALUES (422, 'Student_422', 5)
+  INTO student (id, name, classroom_id) VALUES (423, 'Student_423', 5)
+  INTO student (id, name, classroom_id) VALUES (424, 'Student_424', 5)
+  INTO student (id, name, classroom_id) VALUES (425, 'Student_425', 5)
+  INTO student (id, name, classroom_id) VALUES (426, 'Student_426', 5)
+  INTO student (id, name, classroom_id) VALUES (427, 'Student_427', 5)
+  INTO student (id, name, classroom_id) VALUES (428, 'Student_428', 5)
+  INTO student (id, name, classroom_id) VALUES (429, 'Student_429', 5)
+  INTO student (id, name, classroom_id) VALUES (430, 'Student_430', 5)
+  INTO student (id, name, classroom_id) VALUES (431, 'Student_431', 5)
+  INTO student (id, name, classroom_id) VALUES (432, 'Student_432', 5)
+  INTO student (id, name, classroom_id) VALUES (433, 'Student_433', 5)
+  INTO student (id, name, classroom_id) VALUES (434, 'Student_434', 5)
+  INTO student (id, name, classroom_id) VALUES (435, 'Student_435', 5)
+  INTO student (id, name, classroom_id) VALUES (436, 'Student_436', 5)
+  INTO student (id, name, classroom_id) VALUES (437, 'Student_437', 5)
+  INTO student (id, name, classroom_id) VALUES (438, 'Student_438', 5)
+  INTO student (id, name, classroom_id) VALUES (439, 'Student_439', 5)
+  INTO student (id, name, classroom_id) VALUES (440, 'Student_440', 5)
+  INTO student (id, name, classroom_id) VALUES (441, 'Student_441', 5)
+  INTO student (id, name, classroom_id) VALUES (442, 'Student_442', 5)
+  INTO student (id, name, classroom_id) VALUES (443, 'Student_443', 5)
+  INTO student (id, name, classroom_id) VALUES (444, 'Student_444', 5)
+  INTO student (id, name, classroom_id) VALUES (445, 'Student_445', 5)
+  INTO student (id, name, classroom_id) VALUES (446, 'Student_446', 5)
+  INTO student (id, name, classroom_id) VALUES (447, 'Student_447', 5)
+  INTO student (id, name, classroom_id) VALUES (448, 'Student_448', 5)
+  INTO student (id, name, classroom_id) VALUES (449, 'Student_449', 5)
+  INTO student (id, name, classroom_id) VALUES (450, 'Student_450', 5)
+  INTO student (id, name, classroom_id) VALUES (451, 'Student_451', 5)
+  INTO student (id, name, classroom_id) VALUES (452, 'Student_452', 5)
+  INTO student (id, name, classroom_id) VALUES (453, 'Student_453', 5)
+  INTO student (id, name, classroom_id) VALUES (454, 'Student_454', 5)
+  INTO student (id, name, classroom_id) VALUES (455, 'Student_455', 5)
+  INTO student (id, name, classroom_id) VALUES (456, 'Student_456', 5)
+  INTO student (id, name, classroom_id) VALUES (457, 'Student_457', 5)
+  INTO student (id, name, classroom_id) VALUES (458, 'Student_458', 5)
+  INTO student (id, name, classroom_id) VALUES (459, 'Student_459', 5)
+  INTO student (id, name, classroom_id) VALUES (460, 'Student_460', 5)
+  INTO student (id, name, classroom_id) VALUES (461, 'Student_461', 5)
+  INTO student (id, name, classroom_id) VALUES (462, 'Student_462', 5)
+  INTO student (id, name, classroom_id) VALUES (463, 'Student_463', 5)
+  INTO student (id, name, classroom_id) VALUES (464, 'Student_464', 5)
+  INTO student (id, name, classroom_id) VALUES (465, 'Student_465', 5)
+  INTO student (id, name, classroom_id) VALUES (466, 'Student_466', 5)
+  INTO student (id, name, classroom_id) VALUES (467, 'Student_467', 5)
+  INTO student (id, name, classroom_id) VALUES (468, 'Student_468', 5)
+  INTO student (id, name, classroom_id) VALUES (469, 'Student_469', 5)
+  INTO student (id, name, classroom_id) VALUES (470, 'Student_470', 5)
+  INTO student (id, name, classroom_id) VALUES (471, 'Student_471', 5)
+  INTO student (id, name, classroom_id) VALUES (472, 'Student_472', 5)
+  INTO student (id, name, classroom_id) VALUES (473, 'Student_473', 5)
+  INTO student (id, name, classroom_id) VALUES (474, 'Student_474', 5)
+  INTO student (id, name, classroom_id) VALUES (475, 'Student_475', 5)
+  INTO student (id, name, classroom_id) VALUES (476, 'Student_476', 5)
+  INTO student (id, name, classroom_id) VALUES (477, 'Student_477', 5)
+  INTO student (id, name, classroom_id) VALUES (478, 'Student_478', 5)
+  INTO student (id, name, classroom_id) VALUES (479, 'Student_479', 5)
+  INTO student (id, name, classroom_id) VALUES (480, 'Student_480', 5)
+  INTO student (id, name, classroom_id) VALUES (481, 'Student_481', 5)
+  INTO student (id, name, classroom_id) VALUES (482, 'Student_482', 5)
+  INTO student (id, name, classroom_id) VALUES (483, 'Student_483', 5)
+  INTO student (id, name, classroom_id) VALUES (484, 'Student_484', 5)
+  INTO student (id, name, classroom_id) VALUES (485, 'Student_485', 5)
+  INTO student (id, name, classroom_id) VALUES (486, 'Student_486', 5)
+  INTO student (id, name, classroom_id) VALUES (487, 'Student_487', 5)
+  INTO student (id, name, classroom_id) VALUES (488, 'Student_488', 5)
+  INTO student (id, name, classroom_id) VALUES (489, 'Student_489', 5)
+  INTO student (id, name, classroom_id) VALUES (490, 'Student_490', 5)
+  INTO student (id, name, classroom_id) VALUES (491, 'Student_491', 5)
+  INTO student (id, name, classroom_id) VALUES (492, 'Student_492', 5)
+  INTO student (id, name, classroom_id) VALUES (493, 'Student_493', 5)
+  INTO student (id, name, classroom_id) VALUES (494, 'Student_494', 5)
+  INTO student (id, name, classroom_id) VALUES (495, 'Student_495', 5)
+  INTO student (id, name, classroom_id) VALUES (496, 'Student_496', 5)
+  INTO student (id, name, classroom_id) VALUES (497, 'Student_497', 5)
+  INTO student (id, name, classroom_id) VALUES (498, 'Student_498', 5)
+  INTO student (id, name, classroom_id) VALUES (499, 'Student_499', 5)
+  INTO student (id, name, classroom_id) VALUES (500, 'Student_500', 5)
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 6
-INSERT INTO student (id, name, classroom_id) VALUES
-(501, 'Student_501', 6),
-(502, 'Student_502', 6),
-(503, 'Student_503', 6),
-(504, 'Student_504', 6),
-(505, 'Student_505', 6),
-(506, 'Student_506', 6),
-(507, 'Student_507', 6),
-(508, 'Student_508', 6),
-(509, 'Student_509', 6),
-(510, 'Student_510', 6),
-(511, 'Student_511', 6),
-(512, 'Student_512', 6),
-(513, 'Student_513', 6),
-(514, 'Student_514', 6),
-(515, 'Student_515', 6),
-(516, 'Student_516', 6),
-(517, 'Student_517', 6),
-(518, 'Student_518', 6),
-(519, 'Student_519', 6),
-(520, 'Student_520', 6),
-(521, 'Student_521', 6),
-(522, 'Student_522', 6),
-(523, 'Student_523', 6),
-(524, 'Student_524', 6),
-(525, 'Student_525', 6),
-(526, 'Student_526', 6),
-(527, 'Student_527', 6),
-(528, 'Student_528', 6),
-(529, 'Student_529', 6),
-(530, 'Student_530', 6),
-(531, 'Student_531', 6),
-(532, 'Student_532', 6),
-(533, 'Student_533', 6),
-(534, 'Student_534', 6),
-(535, 'Student_535', 6),
-(536, 'Student_536', 6),
-(537, 'Student_537', 6),
-(538, 'Student_538', 6),
-(539, 'Student_539', 6),
-(540, 'Student_540', 6),
-(541, 'Student_541', 6),
-(542, 'Student_542', 6),
-(543, 'Student_543', 6),
-(544, 'Student_544', 6),
-(545, 'Student_545', 6),
-(546, 'Student_546', 6),
-(547, 'Student_547', 6),
-(548, 'Student_548', 6),
-(549, 'Student_549', 6),
-(550, 'Student_550', 6),
-(551, 'Student_551', 6),
-(552, 'Student_552', 6),
-(553, 'Student_553', 6),
-(554, 'Student_554', 6),
-(555, 'Student_555', 6),
-(556, 'Student_556', 6),
-(557, 'Student_557', 6),
-(558, 'Student_558', 6),
-(559, 'Student_559', 6),
-(560, 'Student_560', 6),
-(561, 'Student_561', 6),
-(562, 'Student_562', 6),
-(563, 'Student_563', 6),
-(564, 'Student_564', 6),
-(565, 'Student_565', 6),
-(566, 'Student_566', 6),
-(567, 'Student_567', 6),
-(568, 'Student_568', 6),
-(569, 'Student_569', 6),
-(570, 'Student_570', 6),
-(571, 'Student_571', 6),
-(572, 'Student_572', 6),
-(573, 'Student_573', 6),
-(574, 'Student_574', 6),
-(575, 'Student_575', 6),
-(576, 'Student_576', 6),
-(577, 'Student_577', 6),
-(578, 'Student_578', 6),
-(579, 'Student_579', 6),
-(580, 'Student_580', 6),
-(581, 'Student_581', 6),
-(582, 'Student_582', 6),
-(583, 'Student_583', 6),
-(584, 'Student_584', 6),
-(585, 'Student_585', 6),
-(586, 'Student_586', 6),
-(587, 'Student_587', 6),
-(588, 'Student_588', 6),
-(589, 'Student_589', 6),
-(590, 'Student_590', 6),
-(591, 'Student_591', 6),
-(592, 'Student_592', 6),
-(593, 'Student_593', 6),
-(594, 'Student_594', 6),
-(595, 'Student_595', 6),
-(596, 'Student_596', 6),
-(597, 'Student_597', 6),
-(598, 'Student_598', 6),
-(599, 'Student_599', 6),
-(600, 'Student_600', 6);
+-- -- STUDENTS: First 100 records (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO student (id, name, classroom_id) VALUES (1, 'Student_1', 1)
+  INTO student (id, name, classroom_id) VALUES (2, 'Student_2', 1)
+  INTO student (id, name, classroom_id) VALUES (3, 'Student_3', 1)
+  INTO student (id, name, classroom_id) VALUES (4, 'Student_4', 1)
+  INTO student (id, name, classroom_id) VALUES (5, 'Student_5', 1)
+  INTO student (id, name, classroom_id) VALUES (6, 'Student_6', 1)
+  INTO student (id, name, classroom_id) VALUES (7, 'Student_7', 1)
+  INTO student (id, name, classroom_id) VALUES (8, 'Student_8', 1)
+  INTO student (id, name, classroom_id) VALUES (9, 'Student_9', 1)
+  INTO student (id, name, classroom_id) VALUES (10, 'Student_10', 1)
+  INTO student (id, name, classroom_id) VALUES (11, 'Student_11', 1)
+  INTO student (id, name, classroom_id) VALUES (12, 'Student_12', 1)
+  INTO student (id, name, classroom_id) VALUES (13, 'Student_13', 1)
+  INTO student (id, name, classroom_id) VALUES (14, 'Student_14', 1)
+  INTO student (id, name, classroom_id) VALUES (15, 'Student_15', 1)
+  INTO student (id, name, classroom_id) VALUES (16, 'Student_16', 1)
+  INTO student (id, name, classroom_id) VALUES (17, 'Student_17', 1)
+  INTO student (id, name, classroom_id) VALUES (18, 'Student_18', 1)
+  INTO student (id, name, classroom_id) VALUES (19, 'Student_19', 1)
+  INTO student (id, name, classroom_id) VALUES (20, 'Student_20', 1)
+  INTO student (id, name, classroom_id) VALUES (21, 'Student_21', 1)
+  INTO student (id, name, classroom_id) VALUES (22, 'Student_22', 1)
+  INTO student (id, name, classroom_id) VALUES (23, 'Student_23', 1)
+  INTO student (id, name, classroom_id) VALUES (24, 'Student_24', 1)
+  INTO student (id, name, classroom_id) VALUES (25, 'Student_25', 1)
+  INTO student (id, name, classroom_id) VALUES (26, 'Student_26', 1)
+  INTO student (id, name, classroom_id) VALUES (27, 'Student_27', 1)
+  INTO student (id, name, classroom_id) VALUES (28, 'Student_28', 1)
+  INTO student (id, name, classroom_id) VALUES (29, 'Student_29', 1)
+  INTO student (id, name, classroom_id) VALUES (30, 'Student_30', 1)
+  INTO student (id, name, classroom_id) VALUES (31, 'Student_31', 1)
+  INTO student (id, name, classroom_id) VALUES (32, 'Student_32', 1)
+  INTO student (id, name, classroom_id) VALUES (33, 'Student_33', 1)
+  INTO student (id, name, classroom_id) VALUES (34, 'Student_34', 1)
+  INTO student (id, name, classroom_id) VALUES (35, 'Student_35', 1)
+  INTO student (id, name, classroom_id) VALUES (36, 'Student_36', 1)
+  INTO student (id, name, classroom_id) VALUES (37, 'Student_37', 1)
+  INTO student (id, name, classroom_id) VALUES (38, 'Student_38', 1)
+  INTO student (id, name, classroom_id) VALUES (39, 'Student_39', 1)
+  INTO student (id, name, classroom_id) VALUES (40, 'Student_40', 1)
+  INTO student (id, name, classroom_id) VALUES (41, 'Student_41', 1)
+  INTO student (id, name, classroom_id) VALUES (42, 'Student_42', 1)
+  INTO student (id, name, classroom_id) VALUES (43, 'Student_43', 1)
+  INTO student (id, name, classroom_id) VALUES (44, 'Student_44', 1)
+  INTO student (id, name, classroom_id) VALUES (45, 'Student_45', 1)
+  INTO student (id, name, classroom_id) VALUES (46, 'Student_46', 1)
+  INTO student (id, name, classroom_id) VALUES (47, 'Student_47', 1)
+  INTO student (id, name, classroom_id) VALUES (48, 'Student_48', 1)
+  INTO student (id, name, classroom_id) VALUES (49, 'Student_49', 1)
+  INTO student (id, name, classroom_id) VALUES (50, 'Student_50', 1)
+  INTO student (id, name, classroom_id) VALUES (51, 'Student_51', 1)
+  INTO student (id, name, classroom_id) VALUES (52, 'Student_52', 1)
+  INTO student (id, name, classroom_id) VALUES (53, 'Student_53', 1)
+  INTO student (id, name, classroom_id) VALUES (54, 'Student_54', 1)
+  INTO student (id, name, classroom_id) VALUES (55, 'Student_55', 1)
+  INTO student (id, name, classroom_id) VALUES (56, 'Student_56', 1)
+  INTO student (id, name, classroom_id) VALUES (57, 'Student_57', 1)
+  INTO student (id, name, classroom_id) VALUES (58, 'Student_58', 1)
+  INTO student (id, name, classroom_id) VALUES (59, 'Student_59', 1)
+  INTO student (id, name, classroom_id) VALUES (60, 'Student_60', 1)
+  INTO student (id, name, classroom_id) VALUES (61, 'Student_61', 1)
+  INTO student (id, name, classroom_id) VALUES (62, 'Student_62', 1)
+  INTO student (id, name, classroom_id) VALUES (63, 'Student_63', 1)
+  INTO student (id, name, classroom_id) VALUES (64, 'Student_64', 1)
+  INTO student (id, name, classroom_id) VALUES (65, 'Student_65', 1)
+  INTO student (id, name, classroom_id) VALUES (66, 'Student_66', 1)
+  INTO student (id, name, classroom_id) VALUES (67, 'Student_67', 1)
+  INTO student (id, name, classroom_id) VALUES (68, 'Student_68', 1)
+  INTO student (id, name, classroom_id) VALUES (69, 'Student_69', 1)
+  INTO student (id, name, classroom_id) VALUES (70, 'Student_70', 1)
+  INTO student (id, name, classroom_id) VALUES (71, 'Student_71', 1)
+  INTO student (id, name, classroom_id) VALUES (72, 'Student_72', 1)
+  INTO student (id, name, classroom_id) VALUES (73, 'Student_73', 1)
+  INTO student (id, name, classroom_id) VALUES (74, 'Student_74', 1)
+  INTO student (id, name, classroom_id) VALUES (75, 'Student_75', 1)
+  INTO student (id, name, classroom_id) VALUES (76, 'Student_76', 1)
+  INTO student (id, name, classroom_id) VALUES (77, 'Student_77', 1)
+  INTO student (id, name, classroom_id) VALUES (78, 'Student_78', 1)
+  INTO student (id, name, classroom_id) VALUES (79, 'Student_79', 1)
+  INTO student (id, name, classroom_id) VALUES (80, 'Student_80', 1)
+  INTO student (id, name, classroom_id) VALUES (81, 'Student_81', 1)
+  INTO student (id, name, classroom_id) VALUES (82, 'Student_82', 1)
+  INTO student (id, name, classroom_id) VALUES (83, 'Student_83', 1)
+  INTO student (id, name, classroom_id) VALUES (84, 'Student_84', 1)
+  INTO student (id, name, classroom_id) VALUES (85, 'Student_85', 1)
+  INTO student (id, name, classroom_id) VALUES (86, 'Student_86', 1)
+  INTO student (id, name, classroom_id) VALUES (87, 'Student_87', 1)
+  INTO student (id, name, classroom_id) VALUES (88, 'Student_88', 1)
+  INTO student (id, name, classroom_id) VALUES (89, 'Student_89', 1)
+  INTO student (id, name, classroom_id) VALUES (90, 'Student_90', 1)
+  INTO student (id, name, classroom_id) VALUES (91, 'Student_91', 1)
+  INTO student (id, name, classroom_id) VALUES (92, 'Student_92', 1)
+  INTO student (id, name, classroom_id) VALUES (93, 'Student_93', 1)
+  INTO student (id, name, classroom_id) VALUES (94, 'Student_94', 1)
+  INTO student (id, name, classroom_id) VALUES (95, 'Student_95', 1)
+  INTO student (id, name, classroom_id) VALUES (96, 'Student_96', 1)
+  INTO student (id, name, classroom_id) VALUES (97, 'Student_97', 1)
+  INTO student (id, name, classroom_id) VALUES (98, 'Student_98', 1)
+  INTO student (id, name, classroom_id) VALUES (99, 'Student_99', 1)
+  INTO student (id, name, classroom_id) VALUES (100, 'Student_100', 1)
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 7
-INSERT INTO student (id, name, classroom_id) VALUES
-(601, 'Student_601', 7),
-(602, 'Student_602', 7),
-(603, 'Student_603', 7),
-(604, 'Student_604', 7),
-(605, 'Student_605', 7),
-(606, 'Student_606', 7),
-(607, 'Student_607', 7),
-(608, 'Student_608', 7),
-(609, 'Student_609', 7),
-(610, 'Student_610', 7),
-(611, 'Student_611', 7),
-(612, 'Student_612', 7),
-(613, 'Student_613', 7),
-(614, 'Student_614', 7),
-(615, 'Student_615', 7),
-(616, 'Student_616', 7),
-(617, 'Student_617', 7),
-(618, 'Student_618', 7),
-(619, 'Student_619', 7),
-(620, 'Student_620', 7),
-(621, 'Student_621', 7),
-(622, 'Student_622', 7),
-(623, 'Student_623', 7),
-(624, 'Student_624', 7),
-(625, 'Student_625', 7),
-(626, 'Student_626', 7),
-(627, 'Student_627', 7),
-(628, 'Student_628', 7),
-(629, 'Student_629', 7),
-(630, 'Student_630', 7),
-(631, 'Student_631', 7),
-(632, 'Student_632', 7),
-(633, 'Student_633', 7),
-(634, 'Student_634', 7),
-(635, 'Student_635', 7),
-(636, 'Student_636', 7),
-(637, 'Student_637', 7),
-(638, 'Student_638', 7),
-(639, 'Student_639', 7),
-(640, 'Student_640', 7),
-(641, 'Student_641', 7),
-(642, 'Student_642', 7),
-(643, 'Student_643', 7),
-(644, 'Student_644', 7),
-(645, 'Student_645', 7),
-(646, 'Student_646', 7),
-(647, 'Student_647', 7),
-(648, 'Student_648', 7),
-(649, 'Student_649', 7),
-(650, 'Student_650', 7),
-(651, 'Student_651', 7),
-(652, 'Student_652', 7),
-(653, 'Student_653', 7),
-(654, 'Student_654', 7),
-(655, 'Student_655', 7),
-(656, 'Student_656', 7),
-(657, 'Student_657', 7),
-(658, 'Student_658', 7),
-(659, 'Student_659', 7),
-(660, 'Student_660', 7),
-(661, 'Student_661', 7),
-(662, 'Student_662', 7),
-(663, 'Student_663', 7),
-(664, 'Student_664', 7),
-(665, 'Student_665', 7),
-(666, 'Student_666', 7),
-(667, 'Student_667', 7),
-(668, 'Student_668', 7),
-(669, 'Student_669', 7),
-(670, 'Student_670', 7),
-(671, 'Student_671', 7),
-(672, 'Student_672', 7),
-(673, 'Student_673', 7),
-(674, 'Student_674', 7),
-(675, 'Student_675', 7),
-(676, 'Student_676', 7),
-(677, 'Student_677', 7),
-(678, 'Student_678', 7),
-(679, 'Student_679', 7),
-(680, 'Student_680', 7),
-(681, 'Student_681', 7),
-(682, 'Student_682', 7),
-(683, 'Student_683', 7),
-(684, 'Student_684', 7),
-(685, 'Student_685', 7),
-(686, 'Student_686', 7),
-(687, 'Student_687', 7),
-(688, 'Student_688', 7),
-(689, 'Student_689', 7),
-(690, 'Student_690', 7),
-(691, 'Student_691', 7),
-(692, 'Student_692', 7),
-(693, 'Student_693', 7),
-(694, 'Student_694', 7),
-(695, 'Student_695', 7),
-(696, 'Student_696', 7),
-(697, 'Student_697', 7),
-(698, 'Student_698', 7),
-(699, 'Student_699', 7),
-(700, 'Student_700', 7);
+-- STUDENTS: Records 501–600 (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO student (id, name, classroom_id) VALUES (400, 'Student_400', 5)
+  INTO student (id, name, classroom_id) VALUES (401, 'Student_401', 5)
+  INTO student (id, name, classroom_id) VALUES (402, 'Student_402', 5)
+  INTO student (id, name, classroom_id) VALUES (403, 'Student_403', 5)
+  INTO student (id, name, classroom_id) VALUES (404, 'Student_404', 5)
+  INTO student (id, name, classroom_id) VALUES (405, 'Student_405', 5)
+  INTO student (id, name, classroom_id) VALUES (406, 'Student_406', 5)
+  INTO student (id, name, classroom_id) VALUES (407, 'Student_407', 5)
+  INTO student (id, name, classroom_id) VALUES (408, 'Student_408', 5)
+  INTO student (id, name, classroom_id) VALUES (409, 'Student_409', 5)
+  INTO student (id, name, classroom_id) VALUES (410, 'Student_410', 5)
+  INTO student (id, name, classroom_id) VALUES (411, 'Student_411', 5)
+  INTO student (id, name, classroom_id) VALUES (412, 'Student_412', 5)
+  INTO student (id, name, classroom_id) VALUES (413, 'Student_413', 5)
+  INTO student (id, name, classroom_id) VALUES (414, 'Student_414', 5)
+  INTO student (id, name, classroom_id) VALUES (415, 'Student_415', 5)
+  INTO student (id, name, classroom_id) VALUES (416, 'Student_416', 5)
+  INTO student (id, name, classroom_id) VALUES (417, 'Student_417', 5)
+  INTO student (id, name, classroom_id) VALUES (418, 'Student_418', 5)
+  INTO student (id, name, classroom_id) VALUES (419, 'Student_419', 5)
+  INTO student (id, name, classroom_id) VALUES (420, 'Student_420', 5)
+  INTO student (id, name, classroom_id) VALUES (421, 'Student_421', 5)
+  INTO student (id, name, classroom_id) VALUES (422, 'Student_422', 5)
+  INTO student (id, name, classroom_id) VALUES (423, 'Student_423', 5)
+  INTO student (id, name, classroom_id) VALUES (424, 'Student_424', 5)
+  INTO student (id, name, classroom_id) VALUES (425, 'Student_425', 5)
+  INTO student (id, name, classroom_id) VALUES (426, 'Student_426', 5)
+  INTO student (id, name, classroom_id) VALUES (427, 'Student_427', 5)
+  INTO student (id, name, classroom_id) VALUES (428, 'Student_428', 5)
+  INTO student (id, name, classroom_id) VALUES (429, 'Student_429', 5)
+  INTO student (id, name, classroom_id) VALUES (430, 'Student_430', 5)
+  INTO student (id, name, classroom_id) VALUES (431, 'Student_431', 5)
+  INTO student (id, name, classroom_id) VALUES (432, 'Student_432', 5)
+  INTO student (id, name, classroom_id) VALUES (433, 'Student_433', 5)
+  INTO student (id, name, classroom_id) VALUES (434, 'Student_434', 5)
+  INTO student (id, name, classroom_id) VALUES (435, 'Student_435', 5)
+  INTO student (id, name, classroom_id) VALUES (436, 'Student_436', 5)
+  INTO student (id, name, classroom_id) VALUES (437, 'Student_437', 5)
+  INTO student (id, name, classroom_id) VALUES (438, 'Student_438', 5)
+  INTO student (id, name, classroom_id) VALUES (439, 'Student_439', 5)
+  INTO student (id, name, classroom_id) VALUES (440, 'Student_440', 5)
+  INTO student (id, name, classroom_id) VALUES (441, 'Student_441', 5)
+  INTO student (id, name, classroom_id) VALUES (442, 'Student_442', 5)
+  INTO student (id, name, classroom_id) VALUES (443, 'Student_443', 5)
+  INTO student (id, name, classroom_id) VALUES (444, 'Student_444', 5)
+  INTO student (id, name, classroom_id) VALUES (445, 'Student_445', 5)
+  INTO student (id, name, classroom_id) VALUES (446, 'Student_446', 5)
+  INTO student (id, name, classroom_id) VALUES (447, 'Student_447', 5)
+  INTO student (id, name, classroom_id) VALUES (448, 'Student_448', 5)
+  INTO student (id, name, classroom_id) VALUES (449, 'Student_449', 5)
+  INTO student (id, name, classroom_id) VALUES (450, 'Student_450', 5)
+  INTO student (id, name, classroom_id) VALUES (451, 'Student_451', 5)
+  INTO student (id, name, classroom_id) VALUES (452, 'Student_452', 5)
+  INTO student (id, name, classroom_id) VALUES (453, 'Student_453', 5)
+  INTO student (id, name, classroom_id) VALUES (454, 'Student_454', 5)
+  INTO student (id, name, classroom_id) VALUES (455, 'Student_455', 5)
+  INTO student (id, name, classroom_id) VALUES (456, 'Student_456', 5)
+  INTO student (id, name, classroom_id) VALUES (457, 'Student_457', 5)
+  INTO student (id, name, classroom_id) VALUES (458, 'Student_458', 5)
+  INTO student (id, name, classroom_id) VALUES (459, 'Student_459', 5)
+  INTO student (id, name, classroom_id) VALUES (460, 'Student_460', 5)
+  INTO student (id, name, classroom_id) VALUES (461, 'Student_461', 5)
+  INTO student (id, name, classroom_id) VALUES (462, 'Student_462', 5)
+  INTO student (id, name, classroom_id) VALUES (463, 'Student_463', 5)
+  INTO student (id, name, classroom_id) VALUES (464, 'Student_464', 5)
+  INTO student (id, name, classroom_id) VALUES (465, 'Student_465', 5)
+  INTO student (id, name, classroom_id) VALUES (466, 'Student_466', 5)
+  INTO student (id, name, classroom_id) VALUES (467, 'Student_467', 5)
+  INTO student (id, name, classroom_id) VALUES (468, 'Student_468', 5)
+  INTO student (id, name, classroom_id) VALUES (469, 'Student_469', 5)
+  INTO student (id, name, classroom_id) VALUES (470, 'Student_470', 5)
+  INTO student (id, name, classroom_id) VALUES (471, 'Student_471', 5)
+  INTO student (id, name, classroom_id) VALUES (472, 'Student_472', 5)
+  INTO student (id, name, classroom_id) VALUES (473, 'Student_473', 5)
+  INTO student (id, name, classroom_id) VALUES (474, 'Student_474', 5)
+  INTO student (id, name, classroom_id) VALUES (475, 'Student_475', 5)
+  INTO student (id, name, classroom_id) VALUES (476, 'Student_476', 5)
+  INTO student (id, name, classroom_id) VALUES (477, 'Student_477', 5)
+  INTO student (id, name, classroom_id) VALUES (478, 'Student_478', 5)
+  INTO student (id, name, classroom_id) VALUES (479, 'Student_479', 5)
+  INTO student (id, name, classroom_id) VALUES (480, 'Student_480', 5)
+  INTO student (id, name, classroom_id) VALUES (481, 'Student_481', 5)
+  INTO student (id, name, classroom_id) VALUES (482, 'Student_482', 5)
+  INTO student (id, name, classroom_id) VALUES (483, 'Student_483', 5)
+  INTO student (id, name, classroom_id) VALUES (484, 'Student_484', 5)
+  INTO student (id, name, classroom_id) VALUES (485, 'Student_485', 5)
+  INTO student (id, name, classroom_id) VALUES (486, 'Student_486', 5)
+  INTO student (id, name, classroom_id) VALUES (487, 'Student_487', 5)
+  INTO student (id, name, classroom_id) VALUES (488, 'Student_488', 5)
+  INTO student (id, name, classroom_id) VALUES (489, 'Student_489', 5)
+  INTO student (id, name, classroom_id) VALUES (490, 'Student_490', 5)
+  INTO student (id, name, classroom_id) VALUES (491, 'Student_491', 5)
+  INTO student (id, name, classroom_id) VALUES (492, 'Student_492', 5)
+  INTO student (id, name, classroom_id) VALUES (493, 'Student_493', 5)
+  INTO student (id, name, classroom_id) VALUES (494, 'Student_494', 5)
+  INTO student (id, name, classroom_id) VALUES (495, 'Student_495', 5)
+  INTO student (id, name, classroom_id) VALUES (496, 'Student_496', 5)
+  INTO student (id, name, classroom_id) VALUES (497, 'Student_497', 5)
+  INTO student (id, name, classroom_id) VALUES (498, 'Student_498', 5)
+  INTO student (id, name, classroom_id) VALUES (499, 'Student_499', 5)
+  INTO student (id, name, classroom_id) VALUES (500, 'Student_500', 5)
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 8
-INSERT INTO student (id, name, classroom_id) VALUES
-(701, 'Student_701', 8),
-(702, 'Student_702', 8),
-(703, 'Student_703', 8),
-(704, 'Student_704', 8),
-(705, 'Student_705', 8),
-(706, 'Student_706', 8),
-(707, 'Student_707', 8),
-(708, 'Student_708', 8),
-(709, 'Student_709', 8),
-(710, 'Student_710', 8),
-(711, 'Student_711', 8),
-(712, 'Student_712', 8),
-(713, 'Student_713', 8),
-(714, 'Student_714', 8),
-(715, 'Student_715', 8),
-(716, 'Student_716', 8),
-(717, 'Student_717', 8),
-(718, 'Student_718', 8),
-(719, 'Student_719', 8),
-(720, 'Student_720', 8),
-(721, 'Student_721', 8),
-(722, 'Student_722', 8),
-(723, 'Student_723', 8),
-(724, 'Student_724', 8),
-(725, 'Student_725', 8),
-(726, 'Student_726', 8),
-(727, 'Student_727', 8),
-(728, 'Student_728', 8),
-(729, 'Student_729', 8),
-(730, 'Student_730', 8),
-(731, 'Student_731', 8),
-(732, 'Student_732', 8),
-(733, 'Student_733', 8),
-(734, 'Student_734', 8),
-(735, 'Student_735', 8),
-(736, 'Student_736', 8),
-(737, 'Student_737', 8),
-(738, 'Student_738', 8),
-(739, 'Student_739', 8),
-(740, 'Student_740', 8),
-(741, 'Student_741', 8),
-(742, 'Student_742', 8),
-(743, 'Student_743', 8),
-(744, 'Student_744', 8),
-(745, 'Student_745', 8),
-(746, 'Student_746', 8),
-(747, 'Student_747', 8),
-(748, 'Student_748', 8),
-(749, 'Student_749', 8),
-(750, 'Student_750', 8),
-(751, 'Student_751', 8),
-(752, 'Student_752', 8),
-(753, 'Student_753', 8),
-(754, 'Student_754', 8),
-(755, 'Student_755', 8),
-(756, 'Student_756', 8),
-(757, 'Student_757', 8),
-(758, 'Student_758', 8),
-(759, 'Student_759', 8),
-(760, 'Student_760', 8),
-(761, 'Student_761', 8),
-(762, 'Student_762', 8),
-(763, 'Student_763', 8),
-(764, 'Student_764', 8),
-(765, 'Student_765', 8),
-(766, 'Student_766', 8),
-(767, 'Student_767', 8),
-(768, 'Student_768', 8),
-(769, 'Student_769', 8),
-(770, 'Student_770', 8),
-(771, 'Student_771', 8),
-(772, 'Student_772', 8),
-(773, 'Student_773', 8),
-(774, 'Student_774', 8),
-(775, 'Student_775', 8),
-(776, 'Student_776', 8),
-(777, 'Student_777', 8),
-(778, 'Student_778', 8),
-(779, 'Student_779', 8),
-(780, 'Student_780', 8),
-(781, 'Student_781', 8),
-(782, 'Student_782', 8),
-(783, 'Student_783', 8),
-(784, 'Student_784', 8),
-(785, 'Student_785', 8),
-(786, 'Student_786', 8),
-(787, 'Student_787', 8),
-(788, 'Student_788', 8),
-(789, 'Student_789', 8),
-(790, 'Student_790', 8),
-(791, 'Student_791', 8),
-(792, 'Student_792', 8),
-(793, 'Student_793', 8),
-(794, 'Student_794', 8),
-(795, 'Student_795', 8),
-(796, 'Student_796', 8),
-(797, 'Student_797', 8),
-(798, 'Student_798', 8),
-(799, 'Student_799', 8),
-(800, 'Student_800', 8);
+-- ENROLLMENTS: Class 1 (Oracle-compatible multi-row insert, students 1–10, all 6 subjects, random teachers)
+INSERT ALL
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (1, 1, 1, 1, 2, 87)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (2, 1, 2, 1, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (3, 1, 3, 1, 1, 65)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (4, 1, 4, 1, 4, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (5, 1, 5, 1, 3, 56)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (6, 1, 6, 1, 6, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (7, 2, 1, 1, 4, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (8, 2, 2, 1, 2, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (9, 2, 3, 1, 5, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (10, 2, 4, 1, 1, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (11, 2, 5, 1, 6, 53)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (12, 2, 6, 1, 3, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (13, 3, 1, 1, 5, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (14, 3, 2, 1, 1, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (15, 3, 3, 1, 2, 62)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (16, 3, 4, 1, 6, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (17, 3, 5, 1, 4, 60)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (18, 3, 6, 1, 3, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (19, 4, 1, 1, 3, 93)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (20, 4, 2, 1, 2, 70)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (21, 4, 3, 1, 6, 66)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (22, 4, 4, 1, 5, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (23, 4, 5, 1, 1, 55)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (24, 4, 6, 1, 4, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (25, 5, 1, 1, 2, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (26, 5, 2, 1, 3, 73)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (27, 5, 3, 1, 4, 69)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (28, 5, 4, 1, 5, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (29, 5, 5, 1, 6, 61)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (30, 5, 6, 1, 1, 82)
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 9
-INSERT INTO student (id, name, classroom_id) VALUES
-(801, 'Student_801', 9),
-(802, 'Student_802', 9),
-(803, 'Student_803', 9),
-(804, 'Student_804', 9),
-(805, 'Student_805', 9),
-(806, 'Student_806', 9),
-(807, 'Student_807', 9),
-(808, 'Student_808', 9),
-(809, 'Student_809', 9),
-(810, 'Student_810', 9),
-(811, 'Student_811', 9),
-(812, 'Student_812', 9),
-(813, 'Student_813', 9),
-(814, 'Student_814', 9),
-(815, 'Student_815', 9),
-(816, 'Student_816', 9),
-(817, 'Student_817', 9),
-(818, 'Student_818', 9),
-(819, 'Student_819', 9),
-(820, 'Student_820', 9),
-(821, 'Student_821', 9),
-(822, 'Student_822', 9),
-(823, 'Student_823', 9),
-(824, 'Student_824', 9),
-(825, 'Student_825', 9),
-(826, 'Student_826', 9),
-(827, 'Student_827', 9),
-(828, 'Student_828', 9),
-(829, 'Student_829', 9),
-(830, 'Student_830', 9),
-(831, 'Student_831', 9),
-(832, 'Student_832', 9),
-(833, 'Student_833', 9),
-(834, 'Student_834', 9),
-(835, 'Student_835', 9),
-(836, 'Student_836', 9),
-(837, 'Student_837', 9),
-(838, 'Student_838', 9),
-(839, 'Student_839', 9),
-(840, 'Student_840', 9),
-(841, 'Student_841', 9),
-(842, 'Student_842', 9),
-(843, 'Student_843', 9),
-(844, 'Student_844', 9),
-(845, 'Student_845', 9),
-(846, 'Student_846', 9),
-(847, 'Student_847', 9),
-(848, 'Student_848', 9),
-(849, 'Student_849', 9),
-(850, 'Student_850', 9),
-(851, 'Student_851', 9),
-(852, 'Student_852', 9),
-(853, 'Student_853', 9),
-(854, 'Student_854', 9),
-(855, 'Student_855', 9),
-(856, 'Student_856', 9),
-(857, 'Student_857', 9),
-(858, 'Student_858', 9),
-(859, 'Student_859', 9),
-(860, 'Student_860', 9),
-(861, 'Student_861', 9),
-(862, 'Student_862', 9),
-(863, 'Student_863', 9),
-(864, 'Student_864', 9),
-(865, 'Student_865', 9),
-(866, 'Student_866', 9),
-(867, 'Student_867', 9),
-(868, 'Student_868', 9),
-(869, 'Student_869', 9),
-(870, 'Student_870', 9),
-(871, 'Student_871', 9),
-(872, 'Student_872', 9),
-(873, 'Student_873', 9),
-(874, 'Student_874', 9),
-(875, 'Student_875', 9),
-(876, 'Student_876', 9),
-(877, 'Student_877', 9),
-(878, 'Student_878', 9),
-(879, 'Student_879', 9),
-(880, 'Student_880', 9),
-(881, 'Student_881', 9),
-(882, 'Student_882', 9),
-(883, 'Student_883', 9),
-(884, 'Student_884', 9),
-(885, 'Student_885', 9),
-(886, 'Student_886', 9),
-(887, 'Student_887', 9),
-(888, 'Student_888', 9),
-(889, 'Student_889', 9),
-(890, 'Student_890', 9),
-(891, 'Student_891', 9),
-(892, 'Student_892', 9),
-(893, 'Student_893', 9),
-(894, 'Student_894', 9),
-(895, 'Student_895', 9),
-(896, 'Student_896', 9),
-(897, 'Student_897', 9),
-(898, 'Student_898', 9),
-(899, 'Student_899', 9),
-(900, 'Student_900', 9);
+-- ENROLLMENTS: Class 2, students 101–200, each assigned a course and teacher (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (101, 101, 1, 2, 1, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (102, 102, 2, 2, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (103, 103, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (104, 104, 4, 2, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (105, 105, 5, 2, 5, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (106, 106, 6, 2, 6, 89)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (107, 107, 1, 2, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (108, 108, 2, 2, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (109, 109, 3, 2, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (110, 110, 4, 2, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (111, 111, 5, 2, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (112, 112, 6, 2, 6, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (113, 113, 1, 2, 1, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (114, 114, 2, 2, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (115, 115, 3, 2, 3, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (116, 116, 4, 2, 4, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (117, 117, 5, 2, 5, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (118, 118, 6, 2, 6, 86)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (119, 119, 1, 2, 1, 83)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (120, 120, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (121, 121, 3, 2, 3, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (122, 122, 4, 2, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (123, 123, 5, 2, 5, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (124, 124, 6, 2, 6, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (125, 125, 1, 2, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (126, 126, 2, 2, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (127, 127, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (128, 128, 4, 2, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (129, 129, 5, 2, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (130, 130, 6, 2, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (131, 131, 1, 2, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (132, 132, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (133, 133, 3, 2, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (134, 134, 4, 2, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (135, 135, 5, 2, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (136, 136, 6, 2, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (137, 137, 1, 2, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (138, 138, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (139, 139, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (140, 140, 4, 2, 4, 73)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (141, 141, 5, 2, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (142, 142, 6, 2, 6, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (143, 143, 1, 2, 1, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (144, 144, 2, 2, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (145, 145, 3, 2, 3, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (146, 146, 4, 2, 4, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (147, 147, 5, 2, 5, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (148, 148, 6, 2, 6, 86)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (149, 149, 1, 2, 1, 83)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (150, 150, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (151, 151, 3, 2, 3, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (152, 152, 4, 2, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (153, 153, 5, 2, 5, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (154, 154, 6, 2, 6, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (155, 155, 1, 2, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (156, 156, 2, 2, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (157, 157, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (158, 158, 4, 2, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (159, 159, 5, 2, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (160, 160, 6, 2, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (161, 161, 1, 2, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (162, 162, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (163, 163, 3, 2, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (164, 164, 4, 2, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (165, 165, 5, 2, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (166, 166, 6, 2, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (167, 167, 1, 2, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (168, 168, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (169, 169, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (170, 170, 4, 2, 4, 73)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (171, 171, 5, 2, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (172, 172, 6, 2, 6, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (173, 173, 1, 2, 1, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (174, 174, 2, 2, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (175, 175, 3, 2, 3, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (176, 176, 4, 2, 4, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (177, 177, 5, 2, 5, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (178, 178, 6, 2, 6, 86)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (179, 179, 1, 2, 1, 83)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (180, 180, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (181, 181, 3, 2, 3, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (182, 182, 4, 2, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (183, 183, 5, 2, 5, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (184, 184, 6, 2, 6, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (185, 185, 1, 2, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (186, 186, 2, 2, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (187, 187, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (188, 188, 4, 2, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (189, 189, 5, 2, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (190, 190, 6, 2, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (191, 191, 1, 2, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (192, 192, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (193, 193, 3, 2, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (194, 194, 4, 2, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (195, 195, 5, 2, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (196, 196, 6, 2, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (197, 197, 1, 2, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (198, 198, 2, 2, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (199, 199, 3, 2, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (200, 200, 4, 2, 4, 76)
+SELECT * FROM DUAL;
 
--- STUDENTS: Class 10
-INSERT INTO student (id, name, classroom_id) VALUES
-(901, 'Student_901', 10),
-(902, 'Student_902', 10),
-(903, 'Student_903', 10),
-(904, 'Student_904', 10),
-(905, 'Student_905', 10),
-(906, 'Student_906', 10),
-(907, 'Student_907', 10),
-(908, 'Student_908', 10),
-(909, 'Student_909', 10),
-(910, 'Student_910', 10),
-(911, 'Student_911', 10),
-(912, 'Student_912', 10),
-(913, 'Student_913', 10),
-(914, 'Student_914', 10),
-(915, 'Student_915', 10),
-(916, 'Student_916', 10),
-(917, 'Student_917', 10),
-(918, 'Student_918', 10),
-(919, 'Student_919', 10),
-(920, 'Student_920', 10),
-(921, 'Student_921', 10),
-(922, 'Student_922', 10),
-(923, 'Student_923', 10),
-(924, 'Student_924', 10),
-(925, 'Student_925', 10),
-(926, 'Student_926', 10),
-(927, 'Student_927', 10),
-(928, 'Student_928', 10),
-(929, 'Student_929', 10),
-(930, 'Student_930', 10),
-(931, 'Student_931', 10),
-(932, 'Student_932', 10),
-(933, 'Student_933', 10),
-(934, 'Student_934', 10),
-(935, 'Student_935', 10),
-(936, 'Student_936', 10),
-(937, 'Student_937', 10),
-(938, 'Student_938', 10),
-(939, 'Student_939', 10),
-(940, 'Student_940', 10),
-(941, 'Student_941', 10),
-(942, 'Student_942', 10),
-(943, 'Student_943', 10),
-(944, 'Student_944', 10),
-(945, 'Student_945', 10),
-(946, 'Student_946', 10),
-(947, 'Student_947', 10),
-(948, 'Student_948', 10),
-(949, 'Student_949', 10),
-(950, 'Student_950', 10),
-(951, 'Student_951', 10),
-(952, 'Student_952', 10),
-(953, 'Student_953', 10),
-(954, 'Student_954', 10),
-(955, 'Student_955', 10),
-(956, 'Student_956', 10),
-(957, 'Student_957', 10),
-(958, 'Student_958', 10),
-(959, 'Student_959', 10),
-(960, 'Student_960', 10),
-(961, 'Student_961', 10),
-(962, 'Student_962', 10),
-(963, 'Student_963', 10),
-(964, 'Student_964', 10),
-(965, 'Student_965', 10),
-(966, 'Student_966', 10),
-(967, 'Student_967', 10),
-(968, 'Student_968', 10),
-(969, 'Student_969', 10),
-(970, 'Student_970', 10),
-(971, 'Student_971', 10),
-(972, 'Student_972', 10),
-(973, 'Student_973', 10),
-(974, 'Student_974', 10),
-(975, 'Student_975', 10),
-(976, 'Student_976', 10),
-(977, 'Student_977', 10),
-(978, 'Student_978', 10),
-(979, 'Student_979', 10),
-(980, 'Student_980', 10),
-(981, 'Student_981', 10),
-(982, 'Student_982', 10),
-(983, 'Student_983', 10),
-(984, 'Student_984', 10),
-(985, 'Student_985', 10),
-(986, 'Student_986', 10),
-(987, 'Student_987', 10),
-(988, 'Student_988', 10),
-(989, 'Student_989', 10),
-(990, 'Student_990', 10),
-(991, 'Student_991', 10),
-(992, 'Student_992', 10),
-(993, 'Student_993', 10),
-(994, 'Student_994', 10),
-(995, 'Student_995', 10),
-(996, 'Student_996', 10),
-(997, 'Student_997', 10),
-(998, 'Student_998', 10),
-(999, 'Student_999', 10),
-(1000, 'Student_1000', 10);
+-- -- CLASSES (Oracle-compatible multi-row insert)
+-- INSERT ALL
+--   INTO classroom (id, name) VALUES (1, 'Class 1')
+--   INTO classroom (id, name) VALUES (2, 'Class 2')
+--   INTO classroom (id, name) VALUES (3, 'Class 3')
+--   INTO classroom (id, name) VALUES (4, 'Class 4')
+--   INTO classroom (id, name) VALUES (5, 'Class 5')
+--   INTO classroom (id, name) VALUES (6, 'Class 6')
+--   INTO classroom (id, name) VALUES (7, 'Class 7')
+--   INTO classroom (id, name) VALUES (8, 'Class 8')
+--   INTO classroom (id, name) VALUES (9, 'Class 9')
+--   INTO classroom (id, name) VALUES (10, 'Class 10')
+-- SELECT * FROM DUAL;
 
--- ENROLLMENTS: Class 1 (students 1–20, all 6 subjects)
-INSERT INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES
--- Format: (enrollment_id, student_id, course_id, classroom_id, teacher_id, marks)
-(1, 1, 1, 1, 1, 87),
-(2, 1, 2, 1, 2, 74),
-(3, 1, 3, 1, 3, 65),
-(4, 1, 4, 1, 4, 92),
-(5, 1, 5, 1, 5, 56),
-(6, 1, 6, 1, 6, 78),
-(7, 2, 1, 1, 1, 90),
-(8, 2, 2, 1, 2, 81),
-(9, 2, 3, 1, 3, 67),
-(10, 2, 4, 1, 4, 88),
-(11, 2, 5, 1, 5, 53),
-(12, 2, 6, 1, 6, 79),
-(13, 3, 1, 1, 1, 84),
-(14, 3, 2, 1, 2, 77),
-(15, 3, 3, 1, 3, 62),
-(16, 3, 4, 1, 4, 91),
-(17, 3, 5, 1, 5, 60),
-(18, 3, 6, 1, 6, 80),
-(19, 4, 1, 1, 1, 93),
-(20, 4, 2, 1, 2, 70),
-(21, 4, 3, 1, 3, 66),
-(22, 4, 4, 1, 4, 85),
-(23, 4, 5, 1, 5, 55),
-(24, 4, 6, 1, 6, 77),
-(25, 5, 1, 1, 1, 88),
-(26, 5, 2, 1, 2, 73),
-(27, 5, 3, 1, 3, 69),
-(28, 5, 4, 1, 4, 90),
-(29, 5, 5, 1, 5, 61),
-(30, 5, 6, 1, 6, 82),
-(31, 6, 1, 1, 1, 85),
-(32, 6, 2, 1, 2, 76),
-(33, 6, 3, 1, 3, 68),
-(34, 6, 4, 1, 4, 89),
-(35, 6, 5, 1, 5, 54),
-(36, 6, 6, 1, 6, 81),
-(37, 7, 1, 1, 1, 91),
-(38, 7, 2, 1, 2, 75),
-(39, 7, 3, 1, 3, 63),
-(40, 7, 4, 1, 4, 87),
-(41, 7, 5, 1, 5, 57),
-(42, 7, 6, 1, 6, 83),
-(43, 8, 1, 1, 1, 86),
-(44, 8, 2, 1, 2, 78),
-(45, 8, 3, 1, 3, 64),
-(46, 8, 4, 1, 4, 90),
-(47, 8, 5, 1, 5, 59),
-(48, 8, 6, 1, 6, 80),
-(49, 9, 1, 1, 1, 89),
-(50, 9, 2, 1, 2, 72),
-(51, 9, 3, 1, 3, 66),
-(52, 9, 4, 1, 4, 88),
-(53, 9, 5, 1, 5, 58),
-(54, 9, 6, 1, 6, 79),
-(55, 10, 1, 1, 1, 92),
-(56, 10, 2, 1, 2, 74),
-(57, 10, 3, 1, 3, 67),
-(58, 10, 4, 1, 4, 86),
-(59, 10, 5, 1, 5, 60),
-(60, 10, 6, 1, 6, 82),
-(61, 11, 1, 1, 1, 88),
-(62, 11, 2, 1, 2, 77),
-(63, 11, 3, 1, 3, 65),
-(64, 11, 4, 1, 4, 91),
-(65, 11, 5, 1, 5, 55),
-(66, 11, 6, 1, 6, 80),
-(67, 12, 1, 1, 1, 90),
-(68, 12, 2, 1, 2, 73),
-(69, 12, 3, 1, 3, 69),
-(70, 12, 4, 1, 4, 89),
-(71, 12, 5, 1, 5, 62),
-(72, 12, 6, 1, 6, 81),
-(73, 13, 1, 1, 1, 87),
-(74, 13, 2, 1, 2, 75),
-(75, 13, 3, 1, 3, 64),
-(76, 13, 4, 1, 4, 92),
-(77, 13, 5, 1, 5, 59),
-(78, 13, 6, 1, 6, 83),
-(79, 14, 1, 1, 1, 86),
-(80, 14, 2, 1, 2, 78),
-(81, 14, 3, 1, 3, 67),
-(82, 14, 4, 1, 4, 90),
-(83, 14, 5, 1, 5, 61),
-(84, 14, 6, 1, 6, 80),
-(85, 15, 1, 1, 1, 89),
-(86, 15, 2, 1, 2, 76),
-(87, 15, 3, 1, 3, 68),
-(88, 15, 4, 1, 4, 88),
-(89, 15, 5, 1, 5, 57),
-(90, 15, 6, 1, 6, 82),
-(91, 16, 1, 1, 1, 91),
-(92, 16, 2, 1, 2, 74),
-(93, 16, 3, 1, 3, 66),
-(94, 16, 4, 1, 4, 87),
-(95, 16, 5, 1, 5, 60),
-(96, 16, 6, 1, 6, 79),
-(97, 17, 1, 1, 1, 85),
-(98, 17, 2, 1, 2, 77),
-(99, 17, 3, 1, 3, 65),
-(100, 17, 4, 1, 4, 90),
-(101, 17, 5, 1, 5, 58),
-(102, 17, 6, 1, 6, 81),
-(103, 18, 1, 1, 1, 88),
-(104, 18, 2, 1, 2, 73),
-(105, 18, 3, 1, 3, 69),
-(106, 18, 4, 1, 4, 89),
-(107, 18, 5, 1, 5, 62),
-(108, 18, 6, 1, 6, 81),
-(109, 19, 1, 1, 1, 87),
-(110, 19, 2, 1, 2, 75),
-(111, 19, 3, 1, 3, 64),
-(112, 19, 4, 1, 4, 92),
-(113, 19, 5, 1, 5, 59),
-(114, 19, 6, 1, 6, 83),
-(115, 20, 1, 1, 1, 86),
-(116, 20, 2, 1, 2, 78),
-(117, 20, 3, 1, 3, 67),
-(118, 20, 4, 1, 4, 90),
-(119, 20, 5, 1, 5, 61),
-(120, 20, 6, 1, 6, 80);
+-- --SUBJECTS/COURSES (Oracle-compatible multi-row insert)
+-- INSERT ALL
+--   INTO course (id, title) VALUES (1, 'English')
+--   INTO course (id, title) VALUES (2, 'Hindi')
+--   INTO course (id, title) VALUES (3, 'Telugu')
+--   INTO course (id, title) VALUES (4, 'Social')
+--   INTO course (id, title) VALUES (5, 'Science')
+--   INTO course (id, title) VALUES (6, 'Maths')
+-- SELECT * FROM DUAL;
 
--- ENROLLMENTS: Class 2 (students 101–200, all 6 subjects)
-INSERT INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES
--- Format: (enrollment_id, student_id, course_id, classroom_id, teacher_id, marks)
-(721, 101, 1, 2, 7, 85),
-(722, 101, 2, 2, 8, 78),
-(723, 101, 3, 2, 9, 66),
-(724, 101, 4, 2, 10, 91),
-(725, 101, 5, 2, 11, 59),
-(726, 101, 6, 2, 12, 80),
-(727, 102, 1, 2, 7, 88),
-(728, 102, 2, 2, 8, 75),
-(729, 102, 3, 2, 9, 67),
-(730, 102, 4, 2, 10, 90),
-(731, 102, 5, 2, 11, 61),
-(732, 102, 6, 2, 12, 82),
-(733, 103, 1, 2, 7, 84),
-(734, 103, 2, 2, 8, 76),
-(735, 103, 3, 2, 9, 65),
-(736, 103, 4, 2, 10, 92),
-(737, 103, 5, 2, 11, 58),
-(738, 103, 6, 2, 12, 81),
-(739, 104, 1, 2, 7, 90),
-(740, 104, 2, 2, 8, 79),
-(741, 104, 3, 2, 9, 66),
-(742, 104, 4, 2, 10, 88),
-(743, 104, 5, 2, 11, 54),
-(744, 104, 6, 2, 12, 82),
-(745, 105, 1, 2, 7, 87),
-(746, 105, 2, 2, 8, 75),
-(747, 105, 3, 2, 9, 64),
-(748, 105, 4, 2, 10, 91),
-(749, 105, 5, 2, 11, 60),
-(750, 105, 6, 2, 12, 80),
-(751, 106, 1, 2, 7, 89),
-(752, 106, 2, 2, 8, 78),
-(753, 106, 3, 2, 9, 67),
-(754, 106, 4, 2, 10, 90),
-(755, 106, 5, 2, 11, 61),
-(756, 106, 6, 2, 12, 82),
-(757, 107, 1, 2, 7, 85),
-(758, 107, 2, 2, 8, 76),
-(759, 107, 3, 2, 9, 68),
-(760, 107, 4, 2, 10, 92),
-(761, 107, 5, 2, 11, 59),
-(762, 107, 6, 2, 12, 80),
-(763, 108, 1, 2, 7, 88),
-(764, 108, 2, 2, 8, 75),
-(765, 108, 3, 2, 9, 67),
-(766, 108, 4, 2, 10, 90),
-(767, 108, 5, 2, 11, 61),
-(768, 108, 6, 2, 12, 82),
-(769, 109, 1, 2, 7, 84),
-(770, 109, 2, 2, 8, 76),
-(771, 109, 3, 2, 9, 65),
-(772, 109, 4, 2, 10, 92),
-(773, 109, 5, 2, 11, 58),
-(774, 109, 6, 2, 12, 81),
-(775, 110, 1, 2, 7, 90),
-(776, 110, 2, 2, 8, 79),
-(777, 110, 3, 2, 9, 66),
-(778, 110, 4, 2, 10, 88),
-(779, 110, 5, 2, 11, 54),
-(780, 110, 6, 2, 12, 82),
-(781, 111, 1, 2, 7, 87),
-(782, 111, 2, 2, 8, 75),
-(783, 111, 3, 2, 9, 64),
-(784, 111, 4, 2, 10, 91),
-(785, 111, 5, 2, 11, 60),
-(786, 111, 6, 2, 12, 80),
-(787, 112, 1, 2, 7, 89),
-(788, 112, 2, 2, 8, 78),
-(789, 112, 3, 2, 9, 67),
-(790, 112, 4, 2, 10, 90),
-(791, 112, 5, 2, 11, 61),
-(792, 112, 6, 2, 12, 82),
-(793, 113, 1, 2, 7, 85),
-(794, 113, 2, 2, 8, 76),
-(795, 113, 3, 2, 9, 68),
-(796, 113, 4, 2, 10, 92),
-(797, 113, 5, 2, 11, 59),
-(798, 113, 6, 2, 12, 80),
-(799, 114, 1, 2, 7, 88),
-(800, 114, 2, 2, 8, 75),
-(801, 114, 3, 2, 9, 67),
-(802, 114, 4, 2, 10, 90),
-(803, 114, 5, 2, 11, 61),
-(804, 114, 6, 2, 12, 82),
-(805, 115, 1, 2, 7, 84),
-(806, 115, 2, 2, 8, 76),
-(807, 115, 3, 2, 9, 68),
-(808, 115, 4, 2, 10, 92),
-(809, 115, 5, 2, 11, 59),
-(810, 115, 6, 2, 12, 80),
-(811, 116, 1, 2, 7, 90),
-(812, 116, 2, 2, 8, 79),
-(813, 116, 3, 2, 9, 66),
-(814, 116, 4, 2, 10, 88),
-(815, 116, 5, 2, 11, 54),
-(816, 116, 6, 2, 12, 82),
-(817, 117, 1, 2, 7, 87),
-(818, 117, 2, 2, 8, 75),
-(819, 117, 3, 2, 9, 64),
-(820, 117, 4, 2, 10, 91),
-(821, 117, 5, 2, 11, 60),
-(822, 117, 6, 2, 12, 80),
-(823, 118, 1, 2, 7, 89),
-(824, 118, 2, 2, 8, 78),
-(825, 118, 3, 2, 9, 67),
-(826, 118, 4, 2, 10, 90),
-(827, 118, 5, 2, 11, 61),
-(828, 118, 6, 2, 12, 82),
-(829, 119, 1, 2, 7, 85),
-(830, 119, 2, 2, 8, 76),
-(831, 119, 3, 2, 9, 68),
-(832, 119, 4, 2, 10, 92),
-(833, 119, 5, 2, 11, 59),
-(834, 119, 6, 2, 12, 80),
-(835, 120, 1, 2, 7, 88),
-(836, 120, 2, 2, 8, 75),
-(837, 120, 3, 2, 9, 67),
-(838, 120, 4, 2, 10, 90),
-(839, 120, 5, 2, 11, 61),
-(840, 120, 6, 2, 12, 82),
-(841, 121, 1, 2, 7, 84),
-(842, 121, 2, 2, 8, 76),
-(843, 121, 3, 2, 9, 65),
-(844, 121, 4, 2, 10, 92),
-(845, 121, 5, 2, 11, 58),
-(846, 121, 6, 2, 12, 81),
-(847, 122, 1, 2, 7, 90),
-(848, 122, 2, 2, 8, 79),
-(849, 122, 3, 2, 9, 66),
-(850, 122, 4, 2, 10, 88),
-(851, 122, 5, 2, 11, 54),
-(852, 122, 6, 2, 12, 82),
-(853, 123, 1, 2, 7, 87),
-(854, 123, 2, 2, 8, 75),
-(855, 123, 3, 2, 9, 64),
-(856, 123, 4, 2, 10, 91),
-(857, 123, 5, 2, 11, 60),
-(858, 123, 6, 2, 12, 82),
-(859, 124, 1, 2, 7, 89),
-(860, 124, 2, 2, 8, 78),
-(861, 124, 3, 2, 9, 67),
-(862, 124, 4, 2, 10, 90),
-(863, 124, 5, 2, 11, 61),
-(864, 124, 6, 2, 12, 82),
-(865, 125, 1, 2, 7, 85),
-(866, 125, 2, 2, 8, 76),
-(867, 125, 3, 2, 9, 68),
-(868, 125, 4, 2, 10, 92),
-(869, 125, 5, 2, 11, 59),
-(870, 125, 6, 2, 12, 80),
-(871, 126, 1, 2, 7, 88),
-(872, 126, 2, 2, 8, 75),
-(873, 126, 3, 2, 9, 67),
-(874, 126, 4, 2, 10, 90),
-(875, 126, 5, 2, 11, 61),
-(876, 126, 6, 2, 12, 82),
-(877, 127, 1, 2, 7, 84),
-(878, 127, 2,  2, 8, 76),
-(879, 127, 3, 2, 9, 65),
-(880, 127, 4, 2, 10, 92),
-(881, 127, 5, 2, 11, 58),
-(882, 127, 6, 2, 12, 81),
-(883, 128, 1, 2, 7, 90),
-(884, 128, 2, 2, 8, 79),
-(885, 128, 3, 2, 9, 66),
-(886, 128, 4, 2, 10, 90),
-(887, 128, 5, 2, 11, 54),
-(888, 128, 6, 2, 12, 82),
-(889, 129, 1, 2, 7, 87),
-(890, 129, 2, 2, 8, 75),
-(891, 129, 3, 2, 9, 64),
-(892, 129, 4, 2, 10, 91),
-(893, 129, 5, 2, 11, 60),
-(894, 129, 6, 2, 12, 82),
-(895, 130, 1, 2, 7, 89),
-(896, 130, 2, 2, 8, 78),
-(897, 130, 3, 2, 9, 67),
-(898, 130, 4, 2, 10, 90),
-(899, 130, 5, 2, 11, 61),
-(900, 130, 6, 2, 12, 82),
-(901, 131, 1, 2, 7, 85),
-(902, 131, 2, 2, 8, 78),
-(903, 131, 3, 2, 9, 66),
-(904, 131, 4, 2, 10, 91),
-(905, 131, 5, 2, 11, 59),
-(906, 131, 6, 2, 12, 82),
-(907, 132, 1, 2, 7, 88),
-(908, 132, 2, 2, 8, 75),
-(909, 132, 3, 2, 9, 67),
-(910, 132, 4, 2, 10, 90),
-(911, 132, 5, 2, 11, 61),
-(912, 132, 6, 2, 12, 82),
-(913, 133, 1, 2, 7, 84),
-(914, 133, 2, 2, 8, 76),
-(915, 133, 3, 2, 9, 65),
-(916, 133, 4, 2, 10, 92),
-(917, 133, 5, 2, 11, 58),
-(918, 133, 6, 2, 12, 81),
-(919, 134, 1, 2, 7, 90),
-(920, 134, 2, 2, 8, 79),
-(921, 134, 3, 2, 9, 66),
-(922, 134, 4, 2, 10, 88),
-(923, 134, 5, 2, 11, 54),
-(924, 134, 6, 2, 12, 82),
-(925, 135, 1, 2, 7, 87),
-(926, 135, 2, 2, 8, 75),
-(927, 135, 3, 2, 9, 64),
-(928, 135, 4, 2, 10, 91),
-(929, 135, 5, 2, 11, 60),
-(930, 135, 6, 2, 12, 82),
-(931, 136, 1, 2, 7, 89),
-(932, 136, 2, 2, 8, 78),
-(933, 136, 3, 2, 9, 67),
-(934, 136, 4, 2, 10, 90),
-(935, 136, 5, 2, 11, 61),
-(936, 136, 6, 2, 12, 82),
-(937, 137, 1, 2, 7, 85),
-(938, 137, 2, 2, 8, 76),
-(939, 137, 3, 2, 9, 68),
-(940, 137, 4, 2, 10, 92),
-(941, 137, 5, 2, 11, 59),
-(942, 137, 6, 2, 12, 82),
-(943, 138, 1, 2, 7, 88),
-(944, 138, 2, 2, 8, 75),
-(945, 138, 3, 2, 9, 67),
-(946, 138, 4, 2, 10, 90),
-(947, 138, 5, 2, 11, 61),
-(948, 138, 6, 2, 12, 82),
-(949, 139, 1, 2, 7, 84),
-(950, 139, 2, 2, 8, 76),
-(951, 139, 3, 2, 9, 65),
-(952, 139, 4, 2, 10, 92),
-(953, 139, 5, 2, 11, 58),
-(954, 139, 6, 2, 12, 81),
-(955, 140, 1, 2, 7, 90),
-(956, 140, 2, 2, 8, 79),
-(957, 140, 3, 2, 9, 66),
-(958, 140, 4, 2, 10, 88),
-(959, 140, 5, 2, 11, 54),
-(960, 140, 6, 2, 12, 82),
-(961, 141, 1, 2, 7, 87),
-(962, 141, 2, 2, 8, 75),
-(963, 141, 3, 2, 9, 64),
-(964, 141, 4, 2, 10, 91),
-(965, 141, 5, 2, 11, 60),
-(966, 141, 6, 2, 12, 82),
-(967, 142, 1, 2, 7, 89),
-(968, 142, 2, 2, 8, 78),
-(969, 142, 3, 2, 9, 67),
-(970, 142, 4, 2, 10, 90),
-(971, 142, 5, 2, 11, 61),
-(972, 142, 6, 2, 12, 82),
-(973, 143, 1, 2, 7, 85),
-(974, 143, 2, 2, 8, 76),
-(975, 143, 3, 2, 9, 68),
-(976, 143, 4, 2, 10, 92),
-(977, 143, 5, 2, 11, 59),
-(978, 143, 6, 2, 12, 82),
-(979, 144, 1, 2, 7, 88),
-(980, 144, 2, 2, 8, 75),
-(981, 144, 3, 2, 9, 67),
-(982, 144, 4, 2, 10, 90),
-(983, 144, 5, 2, 11, 61),
-(984, 144, 6, 2, 12, 82),
-(985, 145, 1, 2, 7, 84),
-(986, 145, 2, 2, 8, 76),
-(987, 145, 3, 2, 9, 65),
-(988, 145, 4, 2, 10, 92),
-(989, 145, 5, 2, 11, 58),
-(990, 145, 6, 2, 12, 82),
-(991, 146, 1, 2, 7, 90),
-(992, 146, 2, 2, 8, 79),
-(993, 146, 3, 2, 9, 66),
-(994, 146, 4, 2, 10, 88),
-(995, 146, 5, 2, 11, 54),
-(996, 146, 6, 2, 12, 82),
-(997, 147, 1, 2, 7, 87),
-(998, 147, 2, 2, 8, 75),
-(999, 147, 3, 2, 9, 64),
-(1000, 147, 4, 2, 10, 91),
-(1001, 147, 5, 2, 11, 60),
-(1002, 147, 6, 2, 12, 82),
-(1003, 148, 1, 2, 7, 89),
-(1004, 148, 2, 2, 8, 78),
-(1005, 148, 3, 2, 9, 67),
-(1006, 148, 4, 2, 10, 90),
-(1007, 148, 5, 2, 11, 61),
-(1008, 148, 6, 2, 12, 82),
-(1009, 149, 1, 2, 7, 85),
-(1010, 149, 2, 2, 8, 76),
-(1011, 149, 3, 2, 9, 68),
-(1012, 149, 4, 2, 10, 92),
-(1013, 149, 5, 2, 11, 59),
-(1014, 149, 6, 2, 12, 82),
-(1015, 150, 1, 2, 7, 88),
-(1016, 150, 2, 2, 8, 75),
-(1017, 150, 3, 2, 9, 67),
-(1018, 150, 4, 2, 10, 90),
-(1019, 150, 5, 2, 11, 61),
-(1020, 150, 6, 2, 12, 82),
-(1021, 151, 1, 2, 7, 84),
-(1022, 151, 2, 2, 8, 76),
-(1023, 151, 3, 2, 9, 65),
-(1024, 151, 4, 2, 10, 92),
-(1025, 151, 5, 2, 11, 58),
-(1026, 151, 6, 2, 12, 82),
-(1027, 152, 1, 2, 7, 90),
-(1028, 152, 2, 2, 8, 79),
-(1029, 152, 3, 2, 9, 66),
-(1030, 152, 4, 2, 10, 90),
-(1031, 152, 5, 2, 11, 54),
-(1032, 152, 6, 2, 12, 82),
-(1033, 153, 1, 2, 7, 87),
-(1034, 153, 2, 2, 8, 75),
-(1035, 153, 3, 2, 9, 64),
-(1036, 153, 4, 2, 10, 92),
-(1037, 153, 5, 2, 11, 59),
-(1038, 153, 6, 2, 12, 82),
-(1039, 154, 1, 2, 7, 89),
-(1040, 154, 2, 2, 8, 78),
-(1041, 154, 3, 2, 9, 67),
-(1042, 154, 4, 2, 10, 90),
-(1043, 154, 5, 2, 11, 61),
-(1044, 154, 6, 2, 12, 82),
-(1045, 155, 1, 2, 7, 85),
-(1046, 155, 2, 2, 8, 78),
-(1047, 155, 3, 2, 9, 66),
-(1048, 155, 4, 2, 10, 91),
-(1049, 155, 5, 2, 11, 59),
-(1050, 155, 6, 2, 12, 82),
-(1051, 156, 1, 2, 7, 88),
-(1052, 156, 2, 2, 8, 75),
-(1053, 156, 3, 2, 9, 67),
-(1054, 156, 4, 2, 10, 90),
-(1055, 156, 5, 2, 11, 61),
-(1056, 156, 6, 2, 12, 82),
-(1057, 157, 1, 2, 7, 84),
-(1058, 157, 2, 2, 8, 76),
-(1059, 157, 3, 2, 9, 68),
-(1060, 157, 4, 2, 10, 92),
-(1061, 157, 5, 2, 11, 59),
-(1062, 157, 6, 2, 12, 82),
-(1063, 158, 1, 2, 7, 88),
-(1064, 158, 2, 2, 8, 75),
-(1065, 158, 3, 2, 9, 67),
-(1066, 158, 4, 2, 10, 90),
-(1067, 158, 5, 2, 11, 61),
-(1068, 158, 6, 2, 12, 82),
-(1069, 159, 1, 2, 7, 85),
-(1070, 159, 2, 2, 8, 76),
-(1071, 159, 3, 2, 9, 68),
-(1072, 159, 4, 2, 10, 92),
-(1073, 159, 5, 2, 11, 59),
-(1074, 159, 6, 2, 12, 82),
-(1075, 160, 1, 2, 7, 89),
-(1076, 160, 2, 2, 8, 78),
-(1077, 160, 3, 2, 9, 67),
-(1078, 160, 4, 2, 10, 90),
-(1079, 160, 5, 2, 11, 61),
-(1080, 160, 6, 2, 12, 82),
-(1081, 161, 1, 2, 7, 85),
-(1082, 161, 2, 2, 8, 78),
-(1083, 161, 3, 2, 9, 66),
-(1084, 161, 4, 2, 10, 91),
-(1085, 161, 5, 2, 11, 59),
-(1086, 161, 6, 2, 12, 82),
-(1087, 162, 1, 2, 7, 88),
-(1088, 162, 2, 2, 8, 75),
-(1089, 162, 3, 2, 9, 67),
-(1090, 162, 4, 2, 10, 90),
-(1091, 162, 5, 2, 11, 61),
-(1092, 162, 6, 2, 12, 82),
-(1093, 163, 1, 2, 7, 84),
-(1094, 163, 2, 2, 8, 76),
-(1095, 163, 3, 2, 9, 68),
-(1096, 163, 4, 2, 10, 92),
-(1097, 163, 5, 2, 11, 59),
-(1098, 163, 6, 2, 12, 82),
-(1099, 164, 1, 2, 7, 89),
-(1100, 164, 2, 2, 8, 75),
-(1101, 164, 3, 2, 9, 67),
-(1102, 164, 4, 2, 10, 90),
-(1103, 164, 5, 2, 11, 61),
-(1104, 164, 6, 2, 12, 82),
-(1105, 165, 1, 2, 7, 85),
-(1106, 165, 2, 2, 8, 78),
-(1107, 165, 3, 2, 9, 66),
-(1108, 165, 4, 2, 10, 91),
-(1109, 165, 5, 2, 11, 59),
-(1110, 165, 6, 2, 12, 82),
-(1111, 166, 1, 2, 7, 89),
-(1112, 166, 2, 2, 8, 79),
-(1113, 166, 3, 2, 9, 66),
-(1114, 166, 4, 2, 10, 88),
-(1115, 166, 5, 2, 11, 54),
-(1116, 166, 6, 2, 12, 82),
-(1117, 167, 1, 2, 7, 87),
-(1118, 167, 2, 2, 8, 75),
-(1119, 167, 3, 2, 9, 64),
-(1120, 167, 4, 2, 10, 91),
-(1121, 167, 5, 2, 11, 60),
-(1122, 167, 6, 2, 12, 82),
-(1123, 168, 1, 2, 7, 89),
-(1124, 168, 2, 2, 8, 78),
-(1125, 168, 3, 2, 9, 67),
-(1126, 168, 4, 2, 10, 90),
-(1127, 168, 5, 2, 11, 61),
-(1128, 168, 6, 2, 12, 82),
-(1129, 169, 1, 2, 7, 85),
-(1130, 169, 2, 2, 8, 76),
-(1131, 169, 3, 2, 9, 68),
-(1132, 169, 4, 2, 10, 92),
-(1133, 169, 5, 2, 11, 59),
-(1134, 169, 6, 2, 12, 82),
-(1135, 170, 1, 2, 7, 88),
-(1136, 170, 2, 2, 8, 75),
-(1137, 170, 3, 2, 9, 67),
-(1138, 170, 4, 2, 10, 90),
-(1139, 170, 5, 2, 11, 61),
-(1140, 170, 6, 2, 12, 82),
-(1141, 171, 1, 2, 7, 84),
-(1142, 171, 2, 2, 8, 76),
-(1143, 171, 3, 2, 9, 68),
-(1144, 171, 4, 2, 10, 92),
-(1145, 171, 5, 2, 11, 59),
-(1146, 171, 6, 2, 12, 82),
-(1147, 172, 1, 2, 7, 88),
-(1148, 172, 2, 2, 8, 75),
-(1149, 172, 3, 2, 9, 67),
-(1150, 172, 4, 2, 10, 90),
-(1151, 172, 5, 2, 11, 61),
-(1152, 172, 6, 2, 12, 82),
-(1153, 173, 1, 2, 7, 85),
-(1154, 173, 2, 2, 8, 76),
-(1155, 173, 3, 2, 9, 68),
-(1156, 173, 4, 2, 10, 92),
-(1157, 173, 5, 2, 11, 59),
-(1158, 173, 6, 2, 12, 82),
-(1159, 174, 1, 2, 7, 89),
-(1160, 174, 2, 2, 8, 78),
-(1161, 174, 3, 2, 9, 67),
-(1162, 174, 4, 2, 10, 90),
-(1163, 174, 5, 2, 11, 61),
-(1164, 174, 6, 2, 12, 82),
-(1165, 175, 1, 2, 7, 85),
-(1166, 175, 2, 2, 8, 78),
-(1167, 175, 3, 2, 9, 66),
-(1168, 175, 4, 2, 10, 91),
-(1169, 175, 5, 2, 11, 59),
-(1170, 175, 6, 2, 12, 82),
-(1171, 176, 1, 2, 7, 89),
-(1172, 176, 2, 2, 8, 79),
-(1173, 176, 3, 2, 9, 66),
-(1174, 176, 4, 2, 10, 88),
-(1175, 176, 5, 2, 11, 54),
-(1176, 176, 6, 2, 12, 82),
-(1177, 177, 1, 2, 7, 87),
-(1178, 177, 2, 2, 8, 75),
-(1179, 177, 3, 2, 9, 64),
-(1180, 177, 4, 2, 10, 91),
-(1181, 177, 5, 2, 11, 60),
-(1182, 177, 6, 2, 12, 82),
-(1183, 178, 1, 2, 7, 89),
-(1184, 178, 2, 2, 8, 78),
-(1185, 178, 3, 2, 9, 67),
-(1186, 178, 4, 2, 10, 90),
-(1187, 178, 5, 2, 11, 61),
-(1188, 178, 6, 2, 12, 82),
-(1189, 179, 1, 2, 7, 85),
-(1190, 179, 2, 2, 8, 76),
-(1191, 179, 3, 2, 9, 68),
-(1192, 179, 4, 2, 10, 92),
-(1193, 179, 5, 2, 11, 59),
-(1194, 179, 6, 2, 12, 82),
-(1195, 180, 1, 2, 7, 88),
-(1196, 180, 2, 2, 8, 75),
-(1197, 180, 3, 2, 9, 67),
-(1198, 180, 4, 2, 10, 90),
-(1199, 180, 5, 2, 11, 61),
-(1200, 180, 6, 2, 12, 82),
-(1201, 181, 1, 2, 7, 84),
-(1202, 181, 2, 2, 8, 76),
-(1203, 181, 3, 2, 9, 68),
-(1204, 181, 4, 2, 10, 92),
-(1205, 181, 5, 2, 11, 59),
-(1206, 181, 6, 2, 12, 82),
-(1207, 182, 1, 2, 7, 88),
-(1208, 182, 2, 2, 8, 75),
-(1209, 182, 3, 2, 9, 67),
-(1210, 182, 4, 2, 10, 90),
-(1211, 182, 5, 2, 11, 61),
-(1212, 182, 6, 2, 12, 82),
-(1213, 183, 1, 2, 7, 84),
-(1214, 183, 2, 2, 8, 76),
-(1215, 183, 3, 2, 9, 68),
-(1216, 183, 4, 2, 10, 92),
-(1217, 183, 5, 2, 11, 59),
-(1218, 183, 6, 2, 12, 82),
-(1219, 184, 1, 2, 7, 89),
-(1220, 184, 2, 2, 8, 78),
-(1221, 184, 3, 2, 9, 67),
-(1222, 184, 4, 2, 10, 90),
-(1223, 184, 5, 2, 11, 61),
-(1224, 184, 6, 2, 12, 82),
-(1225, 185, 1, 2, 7, 85),
-(1226, 185, 2, 2, 8, 78),
-(1227, 185, 3, 2, 9, 66),
-(1228, 185, 4, 2, 10, 91),
-(1229, 185, 5, 2, 11, 59),
-(1230, 185, 6, 2, 12, 82),
-(1231, 186, 1, 2, 7, 89),
-(1232, 186, 2, 2, 8, 79),
-(1233, 186, 3, 2, 9, 66),
-(1234, 186, 4, 2, 10, 88),
-(1235, 186, 5, 2, 11, 54),
-(1236, 186, 6, 2, 12, 82),
-(1237, 187, 1, 2, 7, 87),
-(1238, 187, 2, 2, 8, 75),
-(1239, 187, 3, 2, 9, 64),
-(1240, 187, 4, 2, 10, 91),
-(1241, 187, 5, 2, 11, 60),
-(1242, 187, 6, 2, 12, 82),
-(1243, 188, 1, 2, 7, 89),
-(1244, 188, 2, 2, 8, 78),
-(1245, 188, 3, 2, 9, 67),
-(1246, 188, 4, 2, 10, 90),
-(1247, 188, 5, 2, 11, 61),
-(1248, 188, 6, 2, 12, 82),
-(1249, 189, 1, 2, 7, 85),
-(1250, 189, 2, 2, 8, 76),
-(1251, 189, 3, 2, 9, 68),
-(1252, 189, 4, 2, 10, 92),
-(1253, 189, 5, 2, 11, 59),
-(1254, 189, 6, 2, 12, 82),
-(1255, 190, 1, 2, 7, 88),
-(1256, 190, 2, 2, 8, 75),
-(1257, 190, 3, 2, 9, 67),
-(1258, 190, 4, 2, 10, 90),
-(1259, 190, 5, 2, 11, 61),
-(1260, 190, 6, 2, 12, 82),
-(1261, 191, 1, 2, 7, 84),
-(1262, 191, 2, 2, 8, 76),
-(1263, 191, 3, 2, 9, 68),
-(1264, 191, 4, 2, 10, 92),
-(1265, 191, 5, 2, 11, 59),
-(1266, 191, 6, 2, 12, 82),
-(1267, 192, 1, 2, 7, 88),
-(1268, 192, 2, 2, 8, 75),
-(1269, 192, 3, 2, 9, 67),
-(1270, 192, 4, 2, 10, 90),
-(1271, 192, 5, 2, 11, 61),
-(1272, 192, 6, 2, 12, 82),
-(1273, 193, 1, 2, 7, 84),
-(1274, 193, 2, 2, 8, 76),
-(1275, 193, 3, 2, 9, 68),
-(1276, 193, 4, 2, 10, 92),
-(1277, 193, 5, 2, 11, 59),
-(1278, 193, 6, 2, 12, 82),
-(1279, 194, 1, 2, 7, 89),
-(1280, 194, 2, 2, 8, 78),
-(1281, 194, 3, 2, 9, 67),
-(1282, 194, 4, 2, 10, 90),
-(1283, 194, 5, 2, 11, 61),
-(1284, 194, 6, 2, 12, 82),
-(1285, 195, 1, 2, 7, 85),
-(1286, 195, 2, 2, 8, 78),
-(1287, 195, 3, 2, 9, 66),
-(1288, 195, 4, 2, 10, 91),
-(1289, 195, 5, 2, 11, 59),
-(1290, 195, 6, 2, 12, 82),
-(1291, 196, 1, 2, 7, 89),
-(1292, 196, 2, 2, 8, 75),
-(1293, 196, 3, 2, 9, 67),
-(1294, 196, 4, 2, 10, 90),
-(1295, 196, 5, 2, 11, 61),
-(1296, 196, 6, 2, 12, 82),
-(1297, 197, 1, 2, 7, 85),
-(1298, 197, 2, 2, 8, 76),
-(1299, 197, 3, 2, 9, 68),
-(1300, 197, 4, 2, 10, 92),
-(1301, 197, 5, 2, 11, 59),
-(1302, 197, 6, 2, 12, 82),
-(1303, 198, 1, 2, 7, 89),
-(1304, 198, 2, 2, 8, 78),
-(1305, 198, 3, 2, 9, 67),
-(1306, 198, 4, 2, 10, 90),
-(1307, 198, 5, 2, 11, 61),
-(1308, 198, 6, 2, 12, 82),
-(1309, 199, 1, 2, 7, 85),
-(1310, 199, 2, 2, 8, 78),
-(1311, 199, 3, 2, 9, 66),
-(1312, 199, 4, 2, 10, 91),
-(1313, 199, 5, 2, 11, 59),
-(1314, 199, 6, 2, 12, 82),
-(1315, 200, 1, 2, 7, 89),
-(1316, 200, 2, 2, 8, 77),
-(1317, 200, 3, 2, 9, 68),
-(1318, 200, 4, 2, 10, 92),
-(1319, 200, 5, 2, 11, 60),
-(1320, 200, 6, 2, 12, 81);
+-- -- TEACHERS (Oracle-compatible multi-row insert, 60 records)
+-- INSERT ALL
+--   INTO teacher (id, name) VALUES (1, 'Alice Johnson')
+--   INTO teacher (id, name) VALUES (2, 'Bob Smith')
+--   INTO teacher (id, name) VALUES (3, 'Carol Lee')
+--   INTO teacher (id, name) VALUES (4, 'David Kim')
+--   INTO teacher (id, name) VALUES (5, 'Eva Brown')
+--   INTO teacher (id, name) VALUES (6, 'Frank White')
+--   INTO teacher (id, name) VALUES (7, 'Grace Green')
+--   INTO teacher (id, name) VALUES (8, 'Henry Black')
+--   INTO teacher (id, name) VALUES (9, 'Ivy Young')
+--   INTO teacher (id, name) VALUES (10, 'Jack King')
+--   INTO teacher (id, name) VALUES (11, 'Kathy Hall')
+--   INTO teacher (id, name) VALUES (12, 'Leo Scott')
+--   INTO teacher (id, name) VALUES (13, 'Mona Adams')
+--   INTO teacher (id, name) VALUES (14, 'Nina Clark')
+--   INTO teacher (id, name) VALUES (15, 'Oscar Lewis')
+--   INTO teacher (id, name) VALUES (16, 'Paul Walker')
+--   INTO teacher (id, name) VALUES (17, 'Quinn Allen')
+--   INTO teacher (id, name) VALUES (18, 'Rita Baker')
+--   INTO teacher (id, name) VALUES (19, 'Sam Carter')
+--   INTO teacher (id, name) VALUES (20, 'Tina Davis')
+--   INTO teacher (id, name) VALUES (21, 'Uma Evans')
+--   INTO teacher (id, name) VALUES (22, 'Vera Foster')
+--   INTO teacher (id, name) VALUES (23, 'Will Harris')
+--   INTO teacher (id, name) VALUES (24, 'Xena James')
+--   INTO teacher (id, name) VALUES (25, 'Yuri Kelly')
+--   INTO teacher (id, name) VALUES (26, 'Zane Lopez')
+--   INTO teacher (id, name) VALUES (27, 'Amy Moore')
+--   INTO teacher (id, name) VALUES (28, 'Ben Nelson')
+--   INTO teacher (id, name) VALUES (29, 'Cody Ortiz')
+--   INTO teacher (id, name) VALUES (30, 'Dina Perez')
+--   INTO teacher (id, name) VALUES (31, 'Eli Reed')
+--   INTO teacher (id, name) VALUES (32, 'Fay Shaw')
+--   INTO teacher (id, name) VALUES (33, 'Gus Turner')
+--   INTO teacher (id, name) VALUES (34, 'Hope Underwood')
+--   INTO teacher (id, name) VALUES (35, 'Ian Vincent')
+--   INTO teacher (id, name) VALUES (36, 'Jill Ward')
+--   INTO teacher (id, name) VALUES (37, 'Kyle Xu')
+--   INTO teacher (id, name) VALUES (38, 'Lara Young')
+--   INTO teacher (id, name) VALUES (39, 'Mick Zane')
+--   INTO teacher (id, name) VALUES (40, 'Nora Abbott')
+--   INTO teacher (id, name) VALUES (41, 'Omar Brooks')
+--   INTO teacher (id, name) VALUES (42, 'Pia Cruz')
+--   INTO teacher (id, name) VALUES (43, 'Qing Du')
+--   INTO teacher (id, name) VALUES (44, 'Rex Fox')
+--   INTO teacher (id, name) VALUES (45, 'Sia Grant')
+--   INTO teacher (id, name) VALUES (46, 'Tom Hill')
+--   INTO teacher (id, name) VALUES (47, 'Usha Iyer')
+--   INTO teacher (id, name) VALUES (48, 'Vic Jones')
+--   INTO teacher (id, name) VALUES (49, 'Walt Kim')
+--   INTO teacher (id, name) VALUES (50, 'Yana Lin')
+--   INTO teacher (id, name) VALUES (51, 'Zara Patel')
+--   INTO teacher (id, name) VALUES (52, 'Rohan Mehta')
+--   INTO teacher (id, name) VALUES (53, 'Priya Singh')
+--   INTO teacher (id, name) VALUES (54, 'Anil Kumar')
+--   INTO teacher (id, name) VALUES (55, 'Meena Rao')
+--   INTO teacher (id, name) VALUES (56, 'Deepak Shah')
+--   INTO teacher (id, name) VALUES (57, 'Sonal Jain')
+--   INTO teacher (id, name) VALUES (58, 'Vikas Gupta')
+--   INTO teacher (id, name) VALUES (59, 'Ritu Verma')
+--   INTO teacher (id, name) VALUES (60, 'Amit Sinha')
+-- SELECT * FROM DUAL;
 
--- ENROLLMENTS: Class 3 (students 251–300, all 6 subjects)
-INSERT INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES
-(1621, 251, 1, 3, 13, 87),
-(1622, 251, 2, 3, 14, 78),
-(1623, 251, 3, 3, 15, 69),
-(1624, 251, 4, 3, 16, 91),
-(1625, 251, 5, 3, 17, 60),
-(1626, 251, 6, 3, 18, 80),
-(1627, 252, 1, 3, 13, 88),
-(1628, 252, 2, 3, 14, 75),
-(1629, 252, 3, 3, 15, 67),
-(1630, 252, 4, 3, 16, 90),
-(1631, 252, 5, 3, 17, 61),
-(1632, 252, 6, 3, 18, 82),
-(1633, 253, 1, 3, 13, 84),
-(1634, 253, 2, 3, 14, 76),
-(1635, 253, 3, 3, 15, 68),
-(1636, 253, 4, 3, 16, 92),
-(1637, 253, 5, 3, 17, 60),
-(1638, 253, 6, 3, 18, 80),
-(1639, 254, 1, 3, 13, 89),
-(1640, 254, 2, 3, 14, 78),
-(1641, 254, 3, 3, 15, 67),
-(1642, 254, 4, 3, 16, 90),
-(1643, 254, 5, 3, 17, 61),
-(1644, 254, 6, 3, 18, 82),
-(1645, 255, 1, 3, 13, 85),
-(1646, 255, 2, 3, 14, 76),
-(1647, 255, 3, 3, 15, 68),
-(1648, 255, 4, 3, 16, 92),
-(1649, 255, 5, 3, 17, 59),
-(1650, 255, 6, 3, 18, 80),
-(1651, 256, 1, 3, 13, 88),
-(1652, 256, 2, 3, 14, 75),
-(1653, 256, 3, 3, 15, 67),
-(1654, 256, 4, 3, 16, 90),
-(1655, 256, 5, 3, 17, 61),
-(1656, 256, 6, 3, 18, 82),
-(1657, 257, 1, 3, 13, 84),
-(1658, 257, 2, 3, 14, 76),
-(1659, 257, 3, 3, 15, 68),
-(1660, 257, 4, 3, 16, 92),
-(1661, 257, 5, 3, 17, 59),
-(1662, 257, 6, 3, 18, 80),
-(1663, 258, 1, 3, 13, 88),
-(1664, 258, 2, 3, 14, 75),
-(1665, 258, 3, 3, 15, 67),
-(1666, 258, 4, 3, 16, 90),
-(1667, 258, 5, 3, 17, 61),
-(1668, 258, 6, 3, 18, 82),
-(1669, 259, 1, 3, 13, 85),
-(1670, 259, 2, 3, 14, 76),
-(1671, 259, 3, 3, 15, 68),
-(1672, 259, 4, 3, 16, 92),
-(1673, 259, 5, 3, 17, 59),
-(1674, 259, 6, 3, 18, 80),
-(1675, 260, 1, 3, 13, 89),
-(1676, 260, 2, 3, 14, 78),
-(1677, 260, 3, 3, 15, 67),
-(1678, 260, 4, 3, 16, 90),
-(1679, 260, 5, 3, 17, 61),
-(1680, 260, 6, 3, 18, 82),
-(1681, 261, 1, 3, 13, 85),
-(1682, 261, 2, 3, 14, 76),
-(1683, 261, 3, 3, 15, 65),
-(1684, 261, 4, 3, 16, 92),
-(1685, 261, 5, 3, 17, 58),
-(1686, 261, 6, 3, 18, 81),
-(1687, 262, 1, 3, 13, 90),
-(1688, 262, 2, 3, 14, 79),
-(1689, 262, 3, 3, 15, 66),
-(1690, 262, 4, 3, 16, 90),
-(1691, 262, 5, 3, 17, 61),
-(1692, 262, 6, 3, 18, 82),
-(1693, 263, 1, 3, 13, 84),
-(1694, 263, 2, 3, 14, 76),
-(1695, 263, 3, 3, 15, 68),
-(1696, 263, 4, 3, 16, 92),
-(1697, 263, 5, 3, 17, 59),
-(1698, 263, 6, 3, 18, 80),
-(1699, 264, 1, 3, 13, 88),
-(1700, 264, 2, 3, 14, 75),
-(1701, 264, 3, 3, 15, 67),
-(1702, 264, 4, 3, 16, 90),
-(1703, 264, 5, 3, 17, 61),
-(1704, 264, 6, 3, 18, 82),
-(1705, 265, 1, 3, 13, 85),
-(1706, 265, 2, 3, 14, 76),
-(1707, 265, 3, 3, 15, 68),
-(1708, 265, 4, 3, 16, 92),
-(1709, 265, 5, 3, 17, 59),
-(1710, 265, 6, 3, 18, 80),
-(1711, 266, 1, 3, 13, 89),
-(1712, 266, 2, 3, 14, 78),
-(1713, 266, 3, 3, 15, 67),
-(1714, 266, 4, 3, 16, 90),
-(1715, 266, 5, 3, 17, 61),
-(1716, 266, 6, 3, 18, 82),
-(1717, 267, 1, 3, 13, 85),
-(1718, 267, 2, 3, 14, 76),
-(1719, 267, 3, 3, 15, 68),
-(1720, 267, 4, 3, 16, 92),
-(1721, 267, 5, 3, 17, 59),
-(1722, 267, 6, 3, 18, 80),
-(1723, 268, 1, 3, 13, 88),
-(1724, 268, 2, 3, 14, 75),
-(1725, 268, 3, 3, 15, 67),
-(1726, 268, 4, 3, 16, 90),
-(1727, 268, 5, 3, 17, 61),
-(1728, 268, 6, 3, 18, 82),
-(1729, 269, 1, 3, 13, 84),
-(1730, 269, 2, 3, 14, 76),
-(1731, 269, 3, 3, 15, 68),
-(1732, 269, 4, 3, 16, 92),
-(1733, 269, 5, 3, 17, 59),
-(1734, 269, 6, 3, 18, 80),
-(1735, 270, 1, 3, 13, 89),
-(1736, 270, 2, 3, 14, 78),
-(1737, 270, 3, 3, 15, 67),
-(1738, 270, 4, 3, 16, 90),
-(1739, 270, 5, 3, 17, 61),
-(1740, 270, 6, 3, 18, 82),
-(1741, 271, 1, 3, 13, 85),
-(1742, 271, 2, 3, 14, 76),
-(1743, 271, 3, 3, 15, 68),
-(1744, 271, 4, 3, 16, 92),
-(1745, 271, 5, 3, 17, 59),
-(1746, 271, 6, 3, 18, 80),
-(1747, 272, 1, 3, 13, 88),
-(1748, 272, 2, 3, 14, 75),
-(1749, 272, 3, 3, 15, 67),
-(1750, 272, 4, 3, 16, 90),
-(1751, 272, 5, 3, 17, 61),
-(1752, 272, 6, 3, 18, 82),
-(1753, 273, 1, 3, 13, 84),
-(1754, 273, 2, 3, 14, 76),
-(1755, 273, 3, 3, 15, 68),
-(1756, 273, 4, 3, 16, 92),
-(1757, 273, 5, 3, 17, 59),
-(1758, 273, 6, 3, 18, 80),
-(1759, 274, 1, 3, 13, 89),
-(1760, 274, 2, 3, 14, 78),
-(1761, 274, 3, 3, 15, 67),
-(1762, 274, 4, 3, 16, 90),
-(1763, 274, 5, 3, 17, 61),
-(1764, 274, 6, 3, 18, 82),
-(1765, 275, 1, 3, 13, 85),
-(1766, 275, 2, 3, 14, 76),
-(1767, 275, 3, 3, 15, 68),
-(1768, 275, 4, 3, 16, 92),
-(1769, 275, 5, 3, 17, 59),
-(1770, 275, 6, 3, 18, 80),
-(1771, 276, 1, 3, 13, 88),
-(1772, 276, 2, 3, 14, 75),
-(1773, 276, 3, 3, 15, 67),
-(1774, 276, 4, 3, 16, 90),
-(1775, 276, 5, 3, 17, 61),
-(1776, 276, 6, 3, 18, 82),
-(1777, 277, 1, 3, 13, 84),
-(1778, 277, 2, 3, 14, 76),
-(1779, 277, 3, 2, 9, 68),
-(1780, 277, 4, 3, 16, 92),
-(1781, 277, 5, 3, 17, 59),
-(1782, 277, 6, 3, 18, 80),
-(1783, 278, 1, 3, 13, 89),
-(1784, 278, 2, 3, 14, 78),
-(1785, 278, 3, 3, 15, 67),
-(1786, 278, 4, 3, 16, 90),
-(1787, 278, 5, 3, 17, 61),
-(1788, 278, 6, 3, 18, 82),
-(1789, 279, 1, 3, 13, 85),
-(1790, 279, 2, 3, 14, 76),
-(1791, 279, 3, 3, 15, 68),
-(1792, 279, 4, 3, 16, 92),
-(1793, 279, 5, 3, 17, 59),
-(1794, 279, 6, 3, 18, 80),
-(1795, 280, 1, 3, 13, 88),
-(1796, 280, 2, 3, 14, 75),
-(1797, 280, 3, 3, 15, 67),
-(1798, 280, 4, 3, 16, 90),
-(1799, 280, 5, 3, 17, 61),
-(1800, 280, 6, 3, 18, 82),
-(1801, 281, 1, 3, 13, 84),
-(1802, 281, 2, 3, 14, 76),
-(1803, 281, 3, 2, 9, 68),
-(1804, 281, 4, 3, 16, 92),
-(1805, 281, 5, 3, 17, 59),
-(1806, 281, 6, 3, 18, 80),
-(1807, 282, 1, 3, 13, 89),
-(1808, 282, 2, 3, 14, 78),
-(1809, 282, 3, 3, 15, 67),
-(1810, 282, 4, 3, 16, 90),
-(1811, 282, 5, 3, 17, 61),
-(1812, 282, 6, 3, 18, 82),
-(1813, 283, 1, 3, 13, 85),
-(1814, 283, 2, 3, 14, 76),
-(1815, 283, 3, 3, 15, 68),
-(1816, 283, 4, 3, 16, 92),
-(1817, 283, 5, 3, 17, 59),
-(1818, 283, 6, 3, 18, 80),
-(1819, 284, 1, 3, 13, 88),
-(1820, 284, 2, 3, 14, 75),
-(1821, 284, 3, 3, 15, 67),
-(1822, 284, 4, 3, 16, 90),
-(1823, 284, 5, 3, 17, 61),
-(1824, 284, 6, 3, 18, 82),
-(1825, 285, 1, 3, 13, 84),
-(1826, 285, 2, 3, 14, 76),
-(1827, 285, 3, 3, 15, 68),
-(1828, 285, 4, 3, 16, 92),
-(1829, 285, 5, 3, 17, 59),
-(1830, 285, 6, 3, 18, 80),
-(1831, 286, 1, 3, 13, 89),
-(1832, 286, 2, 3, 14, 78),
-(1833, 286, 3, 3, 15, 67),
-(1834, 286, 4, 3, 16, 90),
-(1835, 286, 5, 3, 17, 61),
-(1836, 286, 6, 3, 18, 82),
-(1837, 287, 1, 3, 13, 85),
-(1838, 287, 2, 3, 14, 76),
-(1839, 287, 3, 3, 15, 68),
-(1840, 287, 4, 3, 16, 92),
-(1841, 287, 5, 3, 17, 59),
-(1842, 287, 6, 3, 18, 80),
-(1843, 288, 1, 3, 13, 88),
-(1844, 288, 2, 3, 14, 75),
-(1845, 288, 3, 3, 15, 67),
-(1846, 288, 4, 3, 16, 90),
-(1847, 288, 5, 3, 17, 61),
-(1848, 288, 6, 3, 18, 82),
-(1849, 289, 1, 3, 13, 84),
-(1850, 289, 2, 3, 14, 76),
-(1851, 289, 3, 3, 15, 68),
-(1852, 289, 4, 3, 16, 92),
-(1853, 289, 5, 3, 17, 59),
-(1854, 289, 6, 3, 18, 80),
-(1855, 290, 1, 3, 13, 89),
-(1856, 290, 2, 3, 14, 78),
-(1857, 290, 3, 3, 15, 67),
-(1858, 290, 4, 3, 16, 90),
-(1859, 290, 5, 3, 17, 61),
-(1860, 290, 6, 3, 18, 82),
-(1861, 291, 1, 3, 13, 85),
-(1862, 291, 2, 3, 14, 76),
-(1863, 291, 3, 3, 15, 68),
-(1864, 291, 4, 3, 16, 92),
-(1865, 291, 5, 3, 17, 59),
-(1866, 291, 6, 3, 18, 80),
-(1867, 292, 1, 3, 13, 88),
-(1868, 292, 2, 3, 14, 75),
-(1869, 292, 3, 3, 15, 67),
-(1870, 292, 4, 3, 16, 90),
-(1871, 292, 5, 3, 17, 61),
-(1872, 292, 6, 3, 18, 82),
-(1873, 293, 1, 3, 13, 84),
-(1874, 293, 2, 3, 14, 76),
-(1875, 293, 3, 3, 15, 68),
-(1876, 293, 4, 3, 16, 92),
-(1877, 293, 5, 3, 17, 59),
-(1878, 293, 6, 3, 18, 80),
-(1879, 294, 1, 3, 13, 89),
-(1880, 294, 2, 3, 14, 78),
-(1881, 294, 3, 3, 15, 67),
-(1882, 294, 4, 3, 16, 90),
-(1883, 294, 5, 3, 17, 61),
-(1884, 294, 6, 3, 18, 82),
-(1885, 295, 1, 3, 13, 85),
-(1886, 295, 2, 3, 14, 76),
-(1887, 295, 3, 3, 15, 68),
-(1888, 295, 4, 3, 16, 92),
-(1889, 295, 5, 3, 17, 59),
-(1890, 295, 6, 3, 18, 80),
-(1891, 296, 1, 3, 13, 88),
-(1892, 296, 2, 3, 14, 75),
-(1893, 296, 3, 3, 15, 67),
-(1894, 296, 4, 3, 16, 90),
-(1895, 296, 5, 3, 17, 61),
-(1896, 296, 6, 3, 18, 82),
-(1897, 297, 1, 3, 13, 84),
-(1898, 297, 2, 3, 14, 76),
-(1899, 297, 3, 3, 15, 68),
-(1900, 297, 4, 3, 16, 92),
-(1901, 297, 5, 3, 17, 59),
-(1902, 297, 6, 3, 18, 80),
-(1903, 298, 1, 3, 13, 89),
-(1904, 298, 2, 3, 14, 78),
-(1905, 298, 3, 3, 15, 67),
-(1906, 298, 4, 3, 16, 90),
-(1907, 298, 5, 3, 17, 61),
-(1908, 298, 6, 3, 18, 82),
-(1909, 299, 1, 3, 13, 85),
-(1910, 299, 2, 3, 14, 76),
-(1911, 299, 3, 3, 15, 68),
-(1912, 299, 4, 3, 16, 92),
-(1913, 299, 5, 3, 17, 59),
-(1914, 299, 6, 3, 18, 80),
-(1915, 300, 1, 3, 13, 89),
-(1916, 300, 2, 3, 14, 77),
-(1917, 300, 3, 3, 15, 68),
-(1918, 300, 4, 3, 16, 92),
-(1919, 300, 5, 3, 17, 60),
-(1920, 300, 6, 3, 18, 81);
+-- -- STUDENTS: Class 1 (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO student (id, name, classroom_id) VALUES (300, 'Student_300', 4)
+  INTO student (id, name, classroom_id) VALUES (301, 'Student_301', 4)
+  INTO student (id, name, classroom_id) VALUES (302, 'Student_302', 4)
+  INTO student (id, name, classroom_id) VALUES (303, 'Student_303', 4)
+  INTO student (id, name, classroom_id) VALUES (304, 'Student_304', 4)
+  INTO student (id, name, classroom_id) VALUES (305, 'Student_305', 4)
+  INTO student (id, name, classroom_id) VALUES (306, 'Student_306', 4)
+  INTO student (id, name, classroom_id) VALUES (307, 'Student_307', 4)
+  INTO student (id, name, classroom_id) VALUES (308, 'Student_308', 4)
+  INTO student (id, name, classroom_id) VALUES (309, 'Student_309', 4)
+  INTO student (id, name, classroom_id) VALUES (310, 'Student_310', 4)
+  INTO student (id, name, classroom_id) VALUES (311, 'Student_311', 4)
+  INTO student (id, name, classroom_id) VALUES (312, 'Student_312', 4)
+  INTO student (id, name, classroom_id) VALUES (313, 'Student_313', 4)
+  INTO student (id, name, classroom_id) VALUES (314, 'Student_314', 4)
+  INTO student (id, name, classroom_id) VALUES (315, 'Student_315', 4)
+  INTO student (id, name, classroom_id) VALUES (316, 'Student_316', 4)
+  INTO student (id, name, classroom_id) VALUES (317, 'Student_317', 4)
+  INTO student (id, name, classroom_id) VALUES (318, 'Student_318', 4)
+  INTO student (id, name, classroom_id) VALUES (319, 'Student_319', 4)
+  INTO student (id, name, classroom_id) VALUES (320, 'Student_320', 4)
+  INTO student (id, name, classroom_id) VALUES (321, 'Student_321', 4)
+  INTO student (id, name, classroom_id) VALUES (322, 'Student_322', 4)
+  INTO student (id, name, classroom_id) VALUES (323, 'Student_323', 4)
+  INTO student (id, name, classroom_id) VALUES (324, 'Student_324', 4)
+  INTO student (id, name, classroom_id) VALUES (325, 'Student_325', 4)
+  INTO student (id, name, classroom_id) VALUES (326, 'Student_326', 4)
+  INTO student (id, name, classroom_id) VALUES (327, 'Student_327', 4)
+  INTO student (id, name, classroom_id) VALUES (328, 'Student_328', 4)
+  INTO student (id, name, classroom_id) VALUES (329, 'Student_329', 4)
+  INTO student (id, name, classroom_id) VALUES (330, 'Student_330', 4)
+  INTO student (id, name, classroom_id) VALUES (331, 'Student_331', 4)
+  INTO student (id, name, classroom_id) VALUES (332, 'Student_332', 4)
+  INTO student (id, name, classroom_id) VALUES (333, 'Student_333', 4)
+  INTO student (id, name, classroom_id) VALUES (334, 'Student_334', 4)
+  INTO student (id, name, classroom_id) VALUES (335, 'Student_335', 4)
+  INTO student (id, name, classroom_id) VALUES (336, 'Student_336', 4)
+  INTO student (id, name, classroom_id) VALUES (337, 'Student_337', 4)
+  INTO student (id, name, classroom_id) VALUES (338, 'Student_338', 4)
+  INTO student (id, name, classroom_id) VALUES (339, 'Student_339', 4)
+  INTO student (id, name, classroom_id) VALUES (340, 'Student_340', 4)
+  INTO student (id, name, classroom_id) VALUES (341, 'Student_341', 4)
+  INTO student (id, name, classroom_id) VALUES (342, 'Student_342', 4)
+  INTO student (id, name, classroom_id) VALUES (343, 'Student_343', 4)
+  INTO student (id, name, classroom_id) VALUES (344, 'Student_344', 4)
+  INTO student (id, name, classroom_id) VALUES (345, 'Student_345', 4)
+  INTO student (id, name, classroom_id) VALUES (346, 'Student_346', 4)
+  INTO student (id, name, classroom_id) VALUES (347, 'Student_347', 4)
+  INTO student (id, name, classroom_id) VALUES (348, 'Student_348', 4)
+  INTO student (id, name, classroom_id) VALUES (349, 'Student_349', 4)
+  INTO student (id, name, classroom_id) VALUES (350, 'Student_350', 4)
+  INTO student (id, name, classroom_id) VALUES (351, 'Student_351', 4)
+  INTO student (id, name, classroom_id) VALUES (352, 'Student_352', 4)
+  INTO student (id, name, classroom_id) VALUES (353, 'Student_353', 4)
+  INTO student (id, name, classroom_id) VALUES (354, 'Student_354', 4)
+  INTO student (id, name, classroom_id) VALUES (355, 'Student_355', 4)
+  INTO student (id, name, classroom_id) VALUES (356, 'Student_356', 4)
+  INTO student (id, name, classroom_id) VALUES (357, 'Student_357', 4)
+  INTO student (id, name, classroom_id) VALUES (358, 'Student_358', 4)
+  INTO student (id, name, classroom_id) VALUES (359, 'Student_359', 4)
+  INTO student (id, name, classroom_id) VALUES (360, 'Student_360', 4)
+  INTO student (id, name, classroom_id) VALUES (361, 'Student_361', 4)
+  INTO student (id, name, classroom_id) VALUES (362, 'Student_362', 4)
+  INTO student (id, name, classroom_id) VALUES (363, 'Student_363', 4)
+  INTO student (id, name, classroom_id) VALUES (364, 'Student_364', 4)
+  INTO student (id, name, classroom_id) VALUES (365, 'Student_365', 4)
+  INTO student (id, name, classroom_id) VALUES (366, 'Student_366', 4)
+  INTO student (id, name, classroom_id) VALUES (367, 'Student_367', 4)
+  INTO student (id, name, classroom_id) VALUES (368, 'Student_368', 4)
+  INTO student (id, name, classroom_id) VALUES (369, 'Student_369', 4)
+  INTO student (id, name, classroom_id) VALUES (370, 'Student_370', 4)
+  INTO student (id, name, classroom_id) VALUES (371, 'Student_371', 4)
+  INTO student (id, name, classroom_id) VALUES (372, 'Student_372', 4)
+  INTO student (id, name, classroom_id) VALUES (373, 'Student_373', 4)
+  INTO student (id, name, classroom_id) VALUES (374, 'Student_374', 4)
+  INTO student (id, name, classroom_id) VALUES (375, 'Student_375', 4)
+  INTO student (id, name, classroom_id) VALUES (376, 'Student_376', 4)
+  INTO student (id, name, classroom_id) VALUES (377, 'Student_377', 4)
+  INTO student (id, name, classroom_id) VALUES (378, 'Student_378', 4)
+  INTO student (id, name, classroom_id) VALUES (379, 'Student_379', 4)
+  INTO student (id, name, classroom_id) VALUES (380, 'Student_380', 4)
+  INTO student (id, name, classroom_id) VALUES (381, 'Student_381', 4)
+  INTO student (id, name, classroom_id) VALUES (382, 'Student_382', 4)
+  INTO student (id, name, classroom_id) VALUES (383, 'Student_383', 4)
+  INTO student (id, name, classroom_id) VALUES (384, 'Student_384', 4)
+  INTO student (id, name, classroom_id) VALUES (385, 'Student_385', 4)
+  INTO student (id, name, classroom_id) VALUES (386, 'Student_386', 4)
+  INTO student (id, name, classroom_id) VALUES (387, 'Student_387', 4)
+  INTO student (id, name, classroom_id) VALUES (388, 'Student_388', 4)
+  INTO student (id, name, classroom_id) VALUES (389, 'Student_389', 4)
+  INTO student (id, name, classroom_id) VALUES (390, 'Student_390', 4)
+  INTO student (id, name, classroom_id) VALUES (391, 'Student_391', 4)
+  INTO student (id, name, classroom_id) VALUES (392, 'Student_392', 4)
+  INTO student (id, name, classroom_id) VALUES (393, 'Student_393', 4)
+  INTO student (id, name, classroom_id) VALUES (394, 'Student_394', 4)
+  INTO student (id, name, classroom_id) VALUES (395, 'Student_395', 4)
+  INTO student (id, name, classroom_id) VALUES (396, 'Student_396', 4)
+  INTO student (id, name, classroom_id) VALUES (397, 'Student_397', 4)
+  INTO student (id, name, classroom_id) VALUES (398, 'Student_398', 4)
+  INTO student (id, name, classroom_id) VALUES (399, 'Student_399', 4)
+  INTO student (id, name, classroom_id) VALUES (400, 'Student_400', 4)
+SELECT * FROM DUAL;
 
--- ENROLLMENTS: Class 4 (students 301–400, all 6 subjects)
-INSERT INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES
-(1921, 301, 1, 4, 19, 88),
-(1922, 301, 2, 4, 20, 77),
-(1923, 301, 3, 4, 21, 69),
-(1924, 301, 4, 4, 22, 92),
-(1925, 301, 5, 4, 23, 60),
-(1926, 301, 6, 4, 24, 81),
-(1927, 302, 1, 4, 19, 85),
-(1928, 302, 2, 4, 20, 78),
-(1929, 302, 3, 4, 21, 68),
-(1930, 302, 4, 4, 22, 90),
-(1931, 302, 5, 4, 23, 61),
-(1932, 302, 6, 4, 24, 82),
-(1933, 303, 1, 4, 19, 84),
-(1934, 303, 2, 4, 20, 76),
-(1935, 303, 3, 4, 21, 68),
-(1936, 303, 4, 4, 22, 92),
-(1937, 303, 5, 4, 23, 60),
-(1938, 303, 6, 4, 24, 81),
-(1939, 304, 1, 4, 19, 89),
-(1940, 304, 2, 4, 20, 78),
-(1941, 304, 3, 4, 21, 67),
-(1942, 304, 4, 4, 22, 90),
-(1943, 304, 5, 4, 23, 61),
-(1944, 304, 6, 4, 24, 82),
-(1945, 305, 1, 4, 19, 85),
-(1946, 305, 2, 4, 20, 76),
-(1947, 305, 3, 4, 21, 68),
-(1948, 305, 4, 4, 22, 92),
-(1949, 305, 5, 4, 23, 60),
-(1950, 305, 6, 4, 24, 81),
-(1951, 306, 1, 4, 19, 88),
-(1952, 306, 2, 4, 20, 75),
-(1953, 306, 3, 4, 21, 67),
-(1954, 306, 4, 4, 22, 90),
-(1955, 306, 5, 4, 23, 61),
-(1956, 306, 6, 4, 24, 82),
-(1957, 307, 1, 4, 19, 84),
-(1958, 307, 2, 4, 20, 76),
-(1959, 307, 3, 4, 21, 68),
-(1960, 307, 4, 4, 22, 92),
-(1961, 307, 5, 4, 23, 60),
-(1962, 307, 6, 4, 24, 81),
-(1963, 308, 1, 4, 19, 89),
-(1964, 308, 2, 4, 20, 78),
-(1965, 308, 3, 4, 21, 67),
-(1966, 308, 4, 4, 22, 90),
-(1967, 308, 5, 4, 23, 61),
-(1968, 308, 6, 4, 24, 82),
-(1969, 309, 1, 4, 19, 85),
-(1970, 309, 2, 4, 20, 76),
-(1971, 309, 3, 4, 21, 68),
-(1972, 309, 4, 4, 22, 92),
-(1973, 309, 5, 4, 23, 60),
-(1974, 309, 6, 4, 24, 81),
-(1975, 310, 1, 4, 19, 88),
-(1976, 310, 2, 4, 20, 75),
-(1977, 310, 3, 4, 21, 67),
-(1978, 310, 4, 4, 22, 90),
-(1979, 310, 5, 4, 23, 61),
-(1980, 310, 6, 4, 24, 82),
-(1981, 311, 1, 4, 19, 84),
-(1982, 311, 2, 4, 20, 76),
-(1983, 311, 3, 4, 21, 68),
-(1984, 311, 4, 4, 22, 92),
-(1985, 311, 5, 4, 23, 60),
-(1986, 311, 6, 4, 24, 81),
-(1987, 312, 1, 4, 19, 89),
-(1988, 312, 2, 4, 20, 78),
-(1989, 312, 3, 4, 21, 67),
-(1990, 312, 4, 4, 22, 90),
-(1991, 312, 5, 4, 23, 61),
-(1992, 312, 6, 4, 24, 82),
-(1993, 313, 1, 4, 19, 85),
-(1994, 313, 2, 4, 20, 76),
-(1995, 313, 3, 4, 21, 68),
-(1996, 313, 4, 4, 22, 92),
-(1997, 313, 5, 4, 23, 60),
-(1998, 313, 6, 4, 24, 81),
-(1999, 314, 1, 4, 19, 88),
-(2000, 314, 2, 4, 20, 75),
-(2001, 314, 3, 4, 21, 67),
-(2002, 314, 4, 4, 22, 90),
-(2003, 314, 5, 4, 23, 61),
-(2004, 314, 6, 4, 24, 82),
-(2005, 315, 1, 4, 19, 84),
-(2006, 315, 2, 4, 20, 76),
-(2007, 315, 3, 4, 21, 68),
-(2008, 315, 4, 4, 22, 92),
-(2009, 315, 5, 4, 23, 60),
-(2010, 315, 6, 4, 24, 81),
-(2011, 316, 1, 4, 19, 89),
-(2012, 316, 2, 4, 20, 78),
-(2013, 316, 3, 4, 21, 67),
-(2014, 316, 4, 4, 22, 90),
-(2015, 316, 5, 4, 23, 61),
-(2016, 316, 6, 4, 24, 82),
-(2017, 317, 1, 4, 19, 85),
-(2018, 317, 2, 4, 20, 76),
-(2019, 317, 3, 4, 21, 68),
-(2020, 317, 4, 4, 22, 92),
-(2021, 317, 5, 4, 23, 60),
-(2022, 317, 6, 4, 24, 81),
-(2023, 318, 1, 4, 19, 88),
-(2024, 318, 2, 4, 20, 75),
-(2025, 318, 3, 4, 21, 67),
-(2026, 318, 4, 4, 22, 90),
-(2027, 318, 5, 4, 23, 61),
-(2028, 318, 6, 4, 24, 82),
-(2029, 319, 1, 4, 19, 84),
-(2030, 319, 2, 4, 20, 76),
-(2031, 319, 3, 4, 21, 68),
-(2032, 319, 4, 4, 22, 92),
-(2033, 319, 5, 4, 23, 60),
-(2034, 319, 6, 4, 24, 81),
-(2035, 320, 1, 4, 19, 89),
-(2036, 320, 2, 4, 20, 78),
-(2037, 320, 3, 4, 21, 67),
-(2038, 320, 4, 4, 22, 90),
-(2039, 320, 5, 4, 23, 61),
-(2040, 320, 6, 4, 24, 82),
-(2041, 321, 1, 4, 19, 85),
-(2042, 321, 2, 4, 20, 76),
-(2043, 321, 3, 4, 21, 68),
-(2044, 321, 4, 4, 22, 92),
-(2045, 321, 5, 4, 23, 60),
-(2046, 321, 6, 4, 24, 81),
-(2047, 322, 1, 4, 19, 88),
-(2048, 322, 2, 4, 20, 75),
-(2049, 322, 3, 4, 21, 67),
-(2050, 322, 4, 4, 22, 90),
-(2051, 322, 5, 4, 23, 61),
-(2052, 322, 6, 4, 24, 82),
-(2053, 323, 1, 4, 19, 84),
-(2054, 323, 2, 4, 20, 76),
-(2055, 323, 3, 4, 21, 68),
-(2056, 323, 4, 4, 22, 92),
-(2057, 323, 5, 4, 23, 60),
-(2058, 323, 6, 4, 24, 81),
-(2059, 324, 1, 4, 19, 89),
-(2060, 324, 2, 4, 20, 78),
-(2061, 324, 3, 4, 21, 67),
-(2062, 324, 4, 4, 22, 90),
-(2063, 324, 5, 4, 23, 61),
-(2064, 324, 6, 4, 24, 82),
-(2065, 325, 1, 4, 19, 85),
-(2066, 325, 2, 4, 20, 76),
-(2067, 325, 3, 4, 21, 68),
-(2068, 325, 4, 4, 22, 92),
-(2069, 325, 5, 4, 23, 60),
-(2070, 325, 6, 4, 24, 81),
-(2071, 326, 1, 4,  19, 88),
-(2072, 326, 2, 4, 20, 75),
-(2073, 326, 3, 4, 21, 67),
-(2074, 326, 4, 4, 22, 90),
-(2075, 326, 5, 4, 23, 61),
-(2076, 326, 6, 4, 24, 82),
-(2077, 327, 1, 4, 19, 84),
-(2078, 327, 2, 4, 20, 76),
-(2079, 327, 3, 4, 21, 68),
-(2080, 327, 4, 4, 22, 92),
-(2081, 327, 5, 4, 23, 60),
-(2082, 327, 6, 4, 24, 81),
-(2083, 328, 1, 4, 19, 89),
-(2084, 328, 2, 4, 20, 78),
-(2085, 328, 3, 4, 21, 67),
-(2086, 328, 4, 4, 22, 90),
-(2087, 328, 5, 4, 23, 61),
-(2088, 328, 6, 4, 24, 82),
-(2089, 329, 1, 4, 19, 85),
-(2090, 329, 2, 4, 20, 76),
-(2091, 329, 3, 4, 21, 68),
-(2092, 329, 4, 4, 22, 92),
-(2093, 329, 5, 4, 23, 60),
-(2094, 329, 6, 4, 24, 81),
-(2095, 330, 1, 4, 19, 88),
-(2096, 330, 2, 4, 20, 75),
-(2097, 330, 3, 4, 21, 67),
-(2098, 330, 4, 4, 22, 90),
-(2099, 330, 5, 4, 23, 61),
-(2100, 330, 6, 4, 24, 82),
-(2101, 331, 1, 4, 19, 84),
-(2102, 331, 2, 4, 20, 76),
-(2103, 331, 3, 4, 21, 68),
-(2104, 331, 4, 4, 22, 92),
-(2105, 331, 5, 4, 23, 60),
-(2106, 331, 6, 4, 24, 81),
-(2107, 332, 1, 4, 19, 89),
-(2108, 332, 2, 4, 20, 78),
-(2109, 332, 3, 4, 21, 67),
-(2110, 332, 4, 4, 22, 90),
-(2111, 332, 5, 4, 23, 61),
-(2112, 332, 6, 4, 24, 82),
-(2113, 333, 1, 4, 19, 85),
-(2114, 333, 2, 4, 20, 76),
-(2115, 333, 3, 4, 21, 68),
-(2116, 333, 4, 4, 22, 92),
-(2117, 333, 5, 4, 23, 60),
-(2118, 333, 6, 4, 24, 81),
-(2119, 334, 1, 4, 19, 88),
-(2120, 334, 2, 4, 20, 75),
-(2121, 334, 3, 4, 21, 67),
-(2122, 334, 4, 4, 22, 90),
-(2123, 334, 5, 4, 23, 61),
-(2124, 334, 6, 4, 24, 82),
-(2125, 335, 1, 4, 19, 84),
-(2126, 335, 2, 4, 20, 76),
-(2127, 335, 3, 4, 21, 68),
-(2128, 335, 4, 4, 22, 92),
-(2129, 335, 5, 4, 23, 60),
-(2130, 335, 6, 4, 24, 81),
-(2131, 336, 1, 4, 19, 89),
-(2132, 336, 2, 4, 20, 78),
-(2133, 336, 3, 4, 21, 67),
-(2134, 336, 4, 4, 22, 90),
-(2135, 336, 5, 4, 23, 61),
-(2136, 336, 6, 4, 24, 82),
-(2137, 337, 1, 4, 19, 85),
-(2138, 337, 2, 4, 20, 76),
-(2139, 337, 3, 4, 21, 68),
-(2140, 337, 4, 4, 22, 92),
-(2141, 337, 5, 4, 23, 60),
-(2142, 337, 6, 4, 24, 81),
-(2143, 338, 1, 4, 19, 88),
-(2144, 338, 2, 4, 20, 75),
-(2145, 338, 3, 4, 21, 67),
-(2146, 338, 4, 4, 22, 90),
-(2147, 338, 5, 4, 23, 61),
-(2148, 338, 6, 4, 24, 82),
-(2149, 339, 1, 4, 19, 84),
-(2150, 339, 2, 4, 20, 76),
-(2151, 339, 3, 4, 21, 68),
-(2152, 339, 4, 4, 22, 92),
-(2153, 339, 5, 4, 23, 60),
-(2154, 339, 6, 4, 24, 81),
-(2155, 340, 1, 4, 19, 89),
-(2156, 340, 2, 4, 20, 78),
-(2157, 340, 3, 4, 21, 67),
-(2158, 340, 4, 4, 22, 90),
-(2159, 340, 5, 4, 23, 61),
-(2160, 340, 6, 4, 24, 82),
-(2161, 341, 1, 4, 19, 85),
-(2162, 341, 2, 4, 20, 76),
-(2163, 341, 3, 4, 21, 68),
-(2164, 341, 4, 4, 22, 92),
-(2165, 341, 5, 4, 23, 60),
-(2166, 341, 6, 4, 24, 81),
-(2167, 342, 1, 4, 19, 88),
-(2168, 342, 2, 4, 20, 75),
-(2169, 342, 3, 4, 21, 67),
-(2170, 342, 4, 4, 22, 90),
-(2171, 342, 5, 4, 23, 61),
-(2172, 342, 6, 4, 24, 82),
-(2173, 343, 1, 4, 19, 84),
-(2174, 343, 2, 4, 20, 76),
-(2175, 343, 3, 4, 21, 68),
-(2176, 343, 4, 4, 22, 92),
-(2177, 343, 5, 4, 23, 60),
-(2178, 343, 6, 4, 24, 81),
-(2179, 344, 1, 4, 19, 89),
-(2180, 344, 2, 4, 20, 78),
-(2181, 344, 3, 4, 21, 67),
-(2182, 344, 4, 4, 22, 90),
-(2183, 344, 5, 4, 23, 61),
-(2184, 344, 6, 4, 24, 82),
-(2185, 345, 1, 4, 19, 85),
-(2186, 345, 2, 4, 20, 76),
-(2187, 345, 3, 4, 21, 68),
-(2188, 345, 4, 4, 22, 92),
-(2189, 345, 5, 4, 23, 60),
-(2190, 345, 6, 4, 24, 81),
-(2191, 346, 1, 4, 19, 88),
-(2192, 346, 2, 4, 20, 75),
-(2193, 346, 3, 4, 21, 67),
-(2194, 346, 4, 4, 22, 90),
-(2195, 346, 5, 4, 23, 61),
-(2196, 346, 6, 4, 24, 82),
-(2197, 347, 1, 4, 19, 84),
-(2198, 347, 2, 4, 20, 76),
-(2199, 347, 3, 4, 21, 68),
-(2200, 347, 4, 4, 22, 92),
-(2201, 347, 5, 4, 23, 60),
-(2202, 347, 6, 4, 24, 81),
-(2203, 348, 1, 4, 19, 89),
-(2204, 348, 2, 4, 20, 78),
-(2205, 348, 3, 4, 21, 67),
-(2206, 348, 4, 4, 22, 90),
-(2207, 348, 5, 4, 23, 61),
-(2208, 348, 6, 4, 24, 82),
-(2209, 349, 1, 4, 19, 85),
-(2210, 349, 2, 4, 20, 76),
-(2211, 349, 3, 4, 21, 68),
-(2212, 349, 4, 4, 22, 92),
-(2213, 349, 5, 4, 23, 60),
-(2214, 349, 6, 4, 24, 81),
-(2215, 350, 1, 4, 19, 88),
-(2216, 350, 2, 4, 20, 75),
-(2217, 350, 3, 4, 21, 67),
-(2218, 350, 4, 4, 22, 90),
-(2219, 350, 5, 4, 23, 61),
-(2220, 350, 6, 4, 24, 82),
-(2221, 351, 1, 4, 19, 84),
-(2222, 351, 2, 4, 20, 76),
-(2223, 351, 3, 4, 21, 68),
-(2224, 351, 4, 4, 22, 92),
-(2225, 351, 5, 4, 23, 60),
-(2226, 351, 6, 4, 24, 81),
-(2227, 352, 1, 4, 19, 89),
-(2228, 352, 2, 4, 20, 78),
-(2229, 352, 3, 4, 21, 67),
-(2230, 352, 4, 4, 22, 90),
-(2231, 352, 5, 4, 23, 61),
-(2232, 352, 6, 4, 24, 82),
-(2233, 353, 1, 4, 19, 85),
-(2234, 353, 2, 4, 20, 76),
-(2235, 353, 3, 4, 21, 68),
-(2236, 353, 4, 4, 22, 92),
-(2237, 353, 5, 4, 23, 60),
-(2238, 353, 6, 4, 24, 81),
-(2239, 354, 1, 4, 19, 88),
-(2240, 354, 2, 4, 20, 75),
-(2241, 354, 3, 4, 21, 67),
-(2242, 354, 4, 4, 22, 90),
-(2243, 354, 5, 4, 23, 61),
-(2244, 354, 6, 4, 24, 82),
-(2245, 355, 1, 4, 19, 84),
-(2246, 355, 2, 4, 20, 76),
-(2247, 355, 3, 4, 21, 68),
-(2248, 355, 4, 4, 22, 92),
-(2249, 355, 5, 4, 23, 60),
-(2250, 355, 6, 4, 24, 81),
-(2251, 356, 1, 4, 19, 89),
-(2252, 356, 2, 4, 20, 78),
-(2253, 356, 3, 4, 21, 67),
-(2254, 356, 4, 4, 22, 90),
-(2255, 356, 5, 4, 23, 61),
-(2256, 356, 6, 4, 24, 82),
-(2257, 357, 1, 4, 19, 85),
-(2258, 357, 2, 4, 20, 76),
-(2259, 357, 3, 4, 21, 68),
-(2260, 357, 4, 4, 22, 92),
-(2261, 357, 5, 4, 23, 60),
-(2262, 357, 6, 4, 24, 81),
-(2263, 358, 1, 4, 19, 88),
-(2264, 358, 2, 4, 20, 75),
-(2265, 358, 3, 4, 21, 67),
-(2266, 358, 4, 4, 22, 90),
-(2267, 358, 5, 4, 23, 61),
-(2268, 358, 6, 4, 24, 82),
-(2269, 359, 1, 4, 19, 85),
-(2270, 359, 2, 4, 20, 76),
-(2271, 359, 3, 4, 21, 68),
-(2272, 359, 4, 4, 22, 92),
-(2273, 359, 5, 4, 23, 60),
-(2274, 359, 6, 4, 24, 81),
-(2275, 360, 1, 4, 19, 88),
-(2276, 360, 2, 4, 20, 75),
-(2277, 360, 3, 4, 21, 67),
-(2278, 360, 4, 4, 22, 90),
-(2279, 360, 5, 4, 23, 61),
-(2280, 360, 6, 4, 24, 82),
-(2281, 361, 1, 4, 19, 85),
-(2282, 361, 2, 4, 20, 76),
-(2283, 361, 3, 4, 21, 68),
-(2284, 361, 4, 4, 22, 92),
-(2285, 361, 5, 4, 23, 60),
-(2286, 361, 6, 4, 24, 81),
-(2287, 362, 1, 4, 19, 88),
-(2288, 362, 2, 4, 20, 75),
-(2289, 362, 3, 4, 21, 67),
-(2290, 362, 4, 4, 22, 90),
-(2291, 362, 5, 4, 23, 61),
-(2292, 362, 6, 4, 24, 82),
-(2293, 363, 1, 4, 19, 84),
-(2294, 363, 2, 4, 20, 76),
-(2295, 363, 3, 4, 21, 68),
-(2296, 363, 4, 4, 22, 92),
-(2297, 363, 5, 4, 23, 60),
-(2298, 363, 6, 4, 24, 81),
-(2299, 364, 1, 4, 19, 89),
-(2300, 364, 2, 4, 20, 78),
-(2301, 364, 3, 4, 21, 67),
-(2302, 364, 4, 4, 22, 90),
-(2303, 364, 5, 4, 23, 61),
-(2304, 364, 6, 4, 24, 82),
-(2305, 365, 1, 4, 19, 85),
-(2306, 365, 2, 4, 20, 76),
-(2307, 365, 3, 4, 21, 68),
-(2308, 365, 4, 4, 22, 92),
-(2309, 365, 5, 4, 23, 60),
-(2310, 365, 6, 4, 24, 81),
-(2311, 366, 1, 4, 19, 88),
-(2312, 366, 2, 4, 20, 75),
-(2313, 366, 3, 4, 21, 67),
-(2314, 366, 4, 4, 22, 90),
-(2315, 366, 5, 4, 23, 61),
-(2316, 366, 6, 4, 24, 82),
-(2317, 367, 1, 4, 19, 84),
-(2318, 367, 2, 4, 20, 76),
-(2319, 367, 3, 4, 21, 68),
-(2320, 367, 4, 4, 22, 92),
-(2321, 367, 5, 4, 23, 60),
-(2322, 367, 6, 4, 24, 81),
-(2323, 368, 1, 4, 19, 89),
-(2324, 368, 2, 4, 20, 78),
-(2325, 368, 3, 4, 21, 67),
-(2326, 368, 4, 4, 22, 90),
-(2327, 368, 5, 4, 23, 61),
-(2328, 368, 6, 4, 24, 82),
-(2329, 369, 1, 4, 19, 85),
-(2330, 369, 2, 4, 20, 76),
-(2331, 369, 3, 4, 21, 68),
-(2332, 369, 4, 4, 22, 92),
-(2333, 369, 5, 4, 23, 60),
-(2334, 369, 6, 4, 24, 81),
-(2335, 370, 1, 4, 19, 88),
-(2336, 370, 2, 4, 20, 75),
-(2337, 370, 3, 4, 21, 67),
-(2338, 370, 4, 4, 22, 90),
-(2339, 370, 5, 4, 23, 61),
-(2340, 370, 6, 4, 24, 82),
-(2341, 371, 1, 4, 19, 84),
-(2342, 371, 2, 4, 20, 76),
-(2343, 371, 3, 4, 21, 68),
-(2344, 371, 4, 4, 22, 92),
-(2345, 371, 5, 4, 23, 60),
-(2346, 371, 6, 4, 24, 81),
-(2347, 372, 1, 4, 19, 89),
-(2348, 372, 2, 4, 20, 78),
-(2349, 372, 3, 4, 21, 67),
-(2350, 372, 4, 4, 22, 90),
-(2351, 372, 5, 4, 23, 61),
-(2352, 372, 6, 4, 24, 82),
-(2353, 373, 1, 4, 19, 85),
-(2354, 373, 2, 4, 20, 76),
-(2355, 373, 3, 4, 21, 68),
-(2356, 373, 4, 4, 22, 92),
-(2357, 373, 5, 4, 23, 60),
-(2358, 373, 6, 4, 24, 81),
-(2359, 374, 1, 4, 19, 89),
-(2360, 374, 2, 4, 20, 75),
-(2361, 374, 3, 4, 21, 67),
-(2362, 374, 4, 4, 22, 90),
-(2363, 374, 5, 4, 23, 61),
-(2364, 374, 6, 4, 24, 82),
-(2365, 375, 1, 4, 19, 85),
-(2366, 375, 2, 4, 20, 76),
-(2367, 375, 3, 4, 21, 68),
-(2368, 375, 4, 4, 22, 92),
-(2369, 375, 5, 4, 23, 60),
-(2370, 375, 6, 4, 24, 81),
-(2371, 376, 1, 4, 19, 89),
-(2372, 376, 2, 4, 20, 78),
-(2373, 376, 3, 4, 21, 67),
-(2374, 376, 4, 4, 22, 90),
-(2375, 376, 5, 4, 23, 61),
-(2376, 376, 6, 4, 24, 82),
-(2377, 377, 1, 4, 19, 85),
-(2378, 377, 2, 4, 20, 76),
-(2379, 377, 3, 4, 21, 68),
-(2380, 377, 4, 4, 22, 92),
-(2381, 377, 5, 4, 23, 60),
-(2382, 377, 6, 4, 24, 81),
-(2383, 378, 1, 4, 19, 88),
-(2384, 378, 2, 4, 20, 75),
-(2385, 378, 3, 4, 21, 67),
-(2386, 378, 4, 4, 22, 90),
-(2387, 378, 5, 4, 23, 61),
-(2388, 378, 6, 4, 24, 82),
-(2389, 379, 1, 4, 19, 85),
-(2390, 379, 2, 4, 20, 76),
-(2391, 379, 3, 4, 21, 68),
-(2392, 379, 4, 4, 22, 92),
-(2393, 379, 5, 4, 23, 60),
-(2394, 379, 6, 4, 24, 81),
-(2395, 380, 1, 4, 19, 88),
-(2396, 380, 2, 4, 20, 75),
-(2397, 380, 3, 4, 21, 67),
-(2398, 380, 4, 4, 22, 90),
-(2399, 380, 5, 4, 23, 61),
-(2400, 380, 6, 4, 24, 82),
-(2401, 381, 1, 4, 19, 85),
-(2402, 381, 2, 4, 20, 76),
-(2403, 381, 3, 4, 21, 68),
-(2404, 381, 4, 4, 22, 92),
-(2405, 381, 5, 4, 23, 60),
-(2406, 381, 6, 4, 24, 81),
-(2407, 382, 1, 4, 19, 88),
-(2408, 382, 2, 4, 20, 75),
-(2409, 382, 3, 4, 21, 67),
-(2410, 382, 4, 4, 22, 90),
-(2411, 382, 5, 4, 23, 61),
-(2412, 382, 6, 4, 24, 82),
-(2413, 383, 1, 4, 19, 84),
-(2414, 383, 2, 4, 20, 76),
-(2415, 383, 3, 4, 21, 68),
-(2416, 383, 4, 4, 22, 92),
-(2417, 383, 5, 4, 23, 60),
-(2418, 383, 6, 4, 24, 81),
-(2419, 384, 1, 4, 19, 89),
-(2420, 384, 2, 4, 20, 78),
-(2421, 384, 3, 4, 21, 67),
-(2422, 384, 4, 4, 22, 90),
-(2423, 384, 5, 4, 23, 61),
-(2424, 384, 6, 4, 24, 82),
-(2425, 385, 1, 4, 19, 85),
-(2426, 385, 2, 4, 20, 76),
-(2427, 385, 3, 4, 21, 68),
-(2428, 385, 4, 4, 22, 92),
-(2429, 385, 5, 4, 23, 60),
-(2430, 385, 6, 4, 24, 81),
-(2431, 386, 1, 4, 19, 88),
-(2432, 386, 2, 4, 20, 75),
-(2433, 386, 3, 4, 21, 67),
-(2434, 386, 4, 4, 22, 90),
-(2435, 386, 5, 4, 23, 61),
-(2436, 386, 6, 4, 24, 82),
-(2437, 387, 1, 4, 19, 84),
-(2438, 387, 2, 4, 20, 76),
-(2439, 387, 3, 4, 21, 68),
-(2440, 387, 4, 4, 22, 92),
-(2441, 387, 5, 4, 23, 60),
-(2442, 387, 6, 4, 24, 81),
-(2443, 388, 1, 4, 19, 89),
-(2444, 388, 2, 4, 20, 78),
-(2445, 388, 3, 4, 21, 67),
-(2446, 388, 4, 4, 22, 90),
-(2447, 388, 5, 4, 23, 61),
-(2448, 388, 6, 4, 24, 82),
-(2449, 389, 1, 4, 19, 85),
-(2450, 389, 2, 4, 20, 76),
-(2451, 389, 3, 4, 21, 68),
-(2452, 389, 4, 4, 22, 92),
-(2453, 389, 5, 4, 23, 60),
-(2454, 389, 6, 4, 24, 81),
-(2455, 390, 1, 4, 19, 88),
-(2456, 390, 2, 4, 20, 75),
-(2457, 390, 3, 4, 21, 67),
-(2458, 390, 4, 4, 22, 90),
-(2459, 390, 5, 4, 23, 61),
-(2460, 390, 6, 4, 24, 82),
-(2461, 391, 1, 4, 19, 84),
-(2462, 391, 2, 4, 20, 76),
-(2463, 391, 3, 4, 21, 68),
-(2464, 391, 4, 4, 22, 92),
-(2465, 391, 5, 4, 23, 60),
-(2466, 391, 6, 4, 24, 81),
-(2467, 392, 1, 4, 19, 89),
-(2468, 392, 2, 4, 20, 78),
-(2469, 392, 3, 4, 21, 67),
-(2470, 392, 4, 4, 22, 90),
-(2471, 392, 5, 4, 23, 61),
-(2472, 392, 6, 4, 24, 82),
-(2473, 393, 1, 4, 19, 85),
-(2474, 393, 2, 4, 20, 76),
-(2475, 393, 3, 4, 21, 68),
-(2476, 393, 4, 4, 22, 92),
-(2477, 393, 5, 4, 23, 60),
-(2478, 393, 6, 4, 24, 81),
-(2479, 394, 1, 4, 19, 88),
-(2480, 394, 2, 4, 20, 75),
-(2481, 394, 3, 4, 21, 67),
-(2482, 394, 4, 4, 22, 90),
-(2483, 394, 5, 4, 23, 61),
-(2484, 394, 6, 4, 24, 82),
-(2485, 395, 1, 4, 19, 85),
-(2486, 395, 2, 4, 20, 76),
-(2487, 395, 3, 4, 21, 68),
-(2488, 395, 4, 4, 22, 92),
-(2489, 395, 5, 4, 23, 60),
-(2490, 395, 6, 4, 24, 81),
-(2491, 396, 1, 4, 19, 88),
-(2492, 396, 2, 4, 20, 75),
-(2493, 396, 3, 4, 21, 67),
-(2494, 396, 4, 4, 22, 90),
-(2495, 396, 5, 4, 23, 61),
-(2496, 396, 6, 4, 24, 82),
-(2497, 397, 1, 4, 19, 85),
-(2498, 397, 2, 4, 20, 76),
-(2499, 397, 3, 4, 21, 68),
-(2500, 397, 4, 4, 22, 92),
-(2501, 397, 5, 4, 23, 60),
-(2502, 397, 6, 4, 24, 81),
-(2503, 398, 1, 4, 19, 88),
-(2504, 398, 2, 4, 20, 75),
-(2505, 398, 3, 4, 21, 67),
-(2506, 398, 4, 4, 22, 90),
-(2507, 398, 5, 4, 23, 61),
-(2508, 398, 6, 4, 24, 82),
-(2509, 399, 1, 4, 19, 85),
-(2510, 399, 2, 4, 20, 76),
-(2511, 399, 3, 4, 21, 68),
-(2512, 399, 4, 4, 22, 92),
-(2513, 399, 5, 4, 23, 60),
-(2514, 399, 6, 4, 24, 81),
-(2515, 400, 1, 4, 19, 89),
-(2516, 400, 2, 4, 20, 77),
-(2517, 400, 3, 4, 21, 68),
-(2518, 400, 4, 4, 22, 92),
-(2519, 400, 5, 4, 23, 60),
-(2520, 400, 6, 4, 24, 81);
+-- ENROLLMENTS: Class 1, students 1–100, each assigned a course and teacher (Oracle-compatible multi-row insert)
+INSERT ALL
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (1, 1, 1, 1, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (2, 2, 2, 1, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (3, 3, 3, 1, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (4, 4, 4, 1, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (5, 5, 5, 1, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (6, 6, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (7, 7, 1, 1, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (8, 8, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (9, 9, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (10, 10, 4, 1, 4, 73)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (11, 11, 5, 1, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (12, 12, 6, 1, 6, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (13, 13, 1, 1, 1, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (14, 14, 2, 1, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (15, 15, 3, 1, 3, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (16, 16, 4, 1, 4, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (17, 17, 5, 1, 5, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (18, 18, 6, 1, 6, 86)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (19, 19, 1, 1, 1, 83)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (20, 20, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (21, 21, 3, 1, 3, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (22, 22, 4, 1, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (23, 23, 5, 1, 5, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (24, 24, 6, 1, 6, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (25, 25, 1, 1, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (26, 26, 2, 1, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (27, 27, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (28, 28, 4, 1, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (29, 29, 5, 1, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (30, 30, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (31, 31, 1, 1, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (32, 32, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (33, 33, 3, 1, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (34, 34, 4, 1, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (35, 35, 5, 1, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (36, 36, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (37, 37, 1, 1, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (38, 38, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (39, 39, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (40, 40, 4, 1, 4, 73)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (41, 41, 5, 1, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (42, 42, 6, 1, 6, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (43, 43, 1, 1, 1, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (44, 44, 2, 1, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (45, 45, 3, 1, 3, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (46, 46, 4, 1, 4, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (47, 47, 5, 1, 5, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (48, 48, 6, 1, 6, 86)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (49, 49, 1, 1, 1, 83)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (50, 50, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (51, 51, 3, 1, 3, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (52, 52, 4, 1, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (53, 53, 5, 1, 5, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (54, 54, 6, 1, 6, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (55, 55, 1, 1, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (56, 56, 2, 1, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (57, 57, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (58, 58, 4, 1, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (59, 59, 5, 1, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (60, 60, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (61, 61, 1, 1, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (62, 62, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (63, 63, 3, 1, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (64, 64, 4, 1, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (65, 65, 5, 1, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (66, 66, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (67, 67, 1, 1, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (68, 68, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (69, 69, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (70, 70, 4, 1, 4, 73)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (71, 71, 5, 1, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (72, 72, 6, 1, 6, 84)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (73, 73, 1, 1, 1, 80)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (74, 74, 2, 1, 2, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (75, 75, 3, 1, 3, 92)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (76, 76, 4, 1, 4, 75)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (77, 77, 5, 1, 5, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (78, 78, 6, 1, 6, 86)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (79, 79, 1, 1, 1, 83)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (80, 80, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (81, 81, 3, 1, 3, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (82, 82, 4, 1, 4, 72)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (83, 83, 5, 1, 5, 77)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (84, 84, 6, 1, 6, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (85, 85, 1, 1, 1, 81)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (86, 86, 2, 1, 2, 78)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (87, 87, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (88, 88, 4, 1, 4, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (89, 89, 5, 1, 5, 76)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (90, 90, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (91, 91, 1, 1, 1, 85)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (92, 92, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (93, 93, 3, 1, 3, 91)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (94, 94, 4, 1, 4, 67)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (95, 95, 5, 1, 5, 74)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (96, 96, 6, 1, 6, 88)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (97, 97, 1, 1, 1, 82)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (98, 98, 2, 1, 2, 79)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (99, 99, 3, 1, 3, 90)
+  INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES (100, 100, 4, 1, 4, 75)
+SELECT * FROM DUAL;
 
--- ENROLLMENTS: Class 5 (students 451–500, all 6 subjects)
-INSERT INTO enrollment (id, student_id, course_id, classroom_id, teacher_id, marks) VALUES
-(2821, 451, 1, 5, 25, 88),
-(2822, 451, 2, 5, 26, 77),
-(2823, 451, 3, 5, 27, 69),
-(2824, 451, 4, 5, 28, 92),
-(2825, 451, 5, 5, 29, 60),
-(2826, 451, 6, 5, 30, 81),
-(2827, 452, 1, 5, 25, 85),
-(2828, 452, 2, 5, 26, 78),
-(2829, 452, 3, 5, 27, 68),
-(2830, 452, 4, 5, 28, 90),
-(2831, 452, 5, 5, 29, 61),
-(2832, 452, 6, 5, 30, 82),
-(2833, 453, 1, 5, 25, 84),
-(2834, 453, 2, 5, 26, 76),
-(2835, 453, 3, 5, 27, 68),
-(2836, 453, 4, 5, 28, 92),
-(2837, 453, 5, 5, 29, 60),
-(2838, 453, 6, 5, 30, 81),
-(2839, 454, 1, 5, 25, 89),
-(2840, 454, 2, 5, 26, 78),
-(2841, 454, 3, 5, 27, 67),
-(2842, 454, 4, 5, 28, 90),
-(2843, 454, 5, 5, 29, 61),
-(2844, 454, 6, 5, 30, 82),
-(2845, 455, 1, 5, 25, 85),
-(2846, 455, 2, 5, 26, 76),
-(2847, 455, 3, 5, 27, 68),
-(2848, 455, 4, 5, 28, 92),
-(2849, 455, 5, 5, 29, 60),
-(2850, 455, 6, 5, 30, 81),
-(2851, 456, 1, 5, 25, 88),
-(2852, 456, 2, 5, 26, 75),
-(2853, 456, 3, 5, 27, 67),
-(2854, 456, 4, 5, 28, 90),
-(2855, 456, 5, 5, 29, 61),
-(2856, 456, 6, 5, 30, 82),
-(2857, 457, 1, 5, 25, 84),
-(2858, 457, 2, 5, 26, 76),
-(2859, 457, 3, 5, 27, 68),
-(2860, 457, 4, 5, 28, 92),
-(2861, 457, 5, 5, 29, 60),
-(2862, 457, 6, 5, 30, 81),
-(2863, 458, 1, 5, 25, 89),
-(2864, 458, 2, 5, 26, 78),
-(2865, 458, 3, 5, 27, 67),
-(2866, 458, 4, 5, 28, 90),
-(2867, 458, 5, 5, 29, 61),
-(2868, 458, 6, 5, 30, 82),
-(2869, 459, 1, 5, 25, 85),
-(2870, 459, 2, 5, 26, 76),
-(2871, 459, 3, 5, 27, 68),
-(2872, 459, 4, 5, 28, 92),
-(2873, 459, 5, 5, 29, 60),
-(2874, 459, 6, 5, 30, 81),
-(2875, 460, 1, 5, 25, 88),
-(2876, 460, 2, 5, 26, 75),
-(2877, 460, 3, 5, 27, 67),
-(2878, 460, 4, 5, 28, 90),
-(2879, 460, 5, 5, 29, 61),
-(2880, 460, 6, 5, 30, 82),
-(2881, 461, 1, 5, 25, 84),
-(2882, 461, 2, 5, 26, 76),
-(2883, 461, 3, 5, 27, 68),
-(2884, 461, 4, 5, 28, 92),
-(2885, 461, 5, 5, 29, 60),
-(2886, 461, 6, 5, 30, 81),
-(2887, 462, 1, 5, 25, 89),
-(2888, 462, 2, 5, 26, 78),
-(2889, 462, 3, 5, 27, 67),
-(2890, 462, 4, 5, 28, 90),
-(2891, 462, 5, 5, 29, 61),
-(2892, 462, 6, 5, 30, 82),
-(2893, 463, 1, 5, 25, 85),
-(2894, 463, 2, 5, 26, 76),
-(2895, 463, 3, 5, 27, 68),
-(2896, 463, 4, 5, 28, 92),
-(2897, 463, 5, 5, 29, 60),
-(2898, 463, 6, 5, 30, 81),
-(2899, 464, 1, 5, 25, 88),
-(2900, 464, 2, 5, 26, 75),
-(2901, 464, 3, 5, 27, 67),
-(2902, 464, 4, 5, 28, 90),
-(2903, 464, 5, 5, 29, 61),
-(2904, 464, 6, 5, 30, 82),
-(2905, 465, 1, 5, 25, 84),
-(2906, 465, 2, 5, 26, 76),
-(2907, 465, 3, 5, 27, 68),
-(2908, 465, 4, 5, 28, 92),
-(2909, 465, 5, 5, 29, 60),
-(2910, 465, 6, 5, 30, 81),
-(2911, 466, 1, 5, 25, 89),
-(2912, 466, 2, 5, 26, 75),
-(2913, 466, 3, 5, 27, 67),
-(2914, 466, 4, 5, 28, 90),
-(2915, 466, 5, 5, 29, 61),
-(2916, 466, 6, 5, 30, 82),
-(2917, 467, 1, 5, 25, 85),
-(2918, 467, 2, 5, 26, 76),
-(2919, 467, 3, 5, 27, 68),
-(2920, 467, 4, 5, 28, 92),
-(2921, 467, 5, 5, 29, 60),
-(2922, 467, 6, 5, 30, 81),
-(2923, 468, 1, 5, 25, 88),
-(2924, 468, 2, 5, 26, 75),
-(2925, 468, 3, 5, 27, 67),
-(2926, 468, 4, 5, 28, 90),
-(2927, 468, 5, 5, 29, 61),
-(2928, 468, 6, 5, 30, 82),
-(2929, 469, 1, 5, 25, 84),
-(2930, 469, 2, 5, 26, 76),
-(2931, 469, 3, 5, 27, 68),
-(2932, 469, 4, 5, 28, 92),
-(2933, 469, 5, 5, 29, 60),
-(2934, 469, 6, 5, 30, 81),
-(2935, 470, 1, 5, 25, 89),
-(2936, 470, 2, 5, 26, 75),
-(2937, 470, 3, 5, 27, 67),
-(2938, 470, 4, 5, 28, 90),
-(2939, 470, 5, 5, 29, 61),
-(2940, 470, 6, 5, 30, 82),
-(2941, 471, 1, 5, 25, 85),
-(2942, 471, 2, 5, 26, 76),
-(2943, 471, 3, 5, 27, 68),
-(2944, 471, 4, 5, 28, 92),
-(2945, 471, 5, 5, 29, 60),
-(2946, 471, 6, 5, 30, 81),
-(2947, 472, 1, 5, 25, 88),
-(2948, 472, 2, 5, 26, 75),
-(2949, 472, 3, 5, 27, 67),
-(2950, 472, 4, 5, 28, 90),
-(2951, 472, 5, 5, 29, 61),
-(2952, 472, 6, 5, 30, 82),
-(2953, 473, 1, 5, 25, 84),
-(2954, 473, 2, 5, 26, 76),
-(2955, 473, 3, 5, 27, 68),
-(2956, 473, 4, 5, 28, 92),
-(2957, 473, 5, 5, 29, 60),
-(2958, 473, 6, 5, 30, 81),
-(2959, 474, 1, 5, 25, 89),
-(2960, 474, 2, 5, 26, 75),
-(2961, 474, 3, 5, 27, 67),
-(2962, 474, 4, 5, 28, 90),
-(2963, 474, 5, 5, 29, 61),
-(2964, 474, 6, 5, 30, 82),
-(2965, 475, 1, 5, 25, 85),
-(2966, 475, 2, 5, 26, 76),
-(2967, 475, 3, 5, 27, 68),
-(2968, 475, 4, 5, 28, 92),
-(2969, 475, 5, 5, 29, 60),
-(2970, 475, 6, 5, 30, 81),
-(2971, 476, 1, 5, 25, 88),
-(2972, 476, 2, 5, 26, 75),
-(2973, 476, 3, 5, 27, 67),
-(2974, 476, 4, 5, 28, 90),
-(2975, 476, 5, 5, 29, 61),
-(2976, 476, 6, 5, 30, 82),
-(2977, 477, 1, 5, 25, 84),
-(2978, 477, 2, 5, 26, 76),
-(2979, 477, 3, 5, 27, 68),
-(2980, 477, 4, 5, 28, 92),
-(2981, 477, 5, 5, 29, 60),
-(2982, 477, 6, 5, 30, 81),
-(2983, 478, 1, 5, 25, 89),
-(2984, 478, 2, 5, 26, 75),
-(2985, 478, 3, 5, 27, 67),
-(2986, 478, 4, 5, 28, 90),
-(2987, 478, 5, 5, 29, 61),
-(2988, 478, 6, 5, 30, 82),
-(2989, 479, 1, 5, 25, 85),
-(2990, 479, 2, 5, 26, 76),
-(2991, 479, 3, 5, 27, 68),
-(2992, 479, 4, 5, 28, 92),
-(2993, 479, 5, 5, 29, 60),
-(2994, 479, 6, 5, 30, 81),
-(2995, 480, 1, 5, 25, 88),
-(2996, 480, 2, 5, 26, 75),
-(2997, 480, 3, 5, 27, 67),
-(2998, 480, 4, 5, 28, 90),
-(2999, 480, 5, 5, 29, 61),
-(3000, 480, 6, 5, 30, 82),
-(3001, 481, 1, 5, 25, 84),
-(3002, 481, 2, 5, 26, 76),
-(3003, 481, 3, 5, 27, 68),
-(3004, 481, 4, 5, 28, 92),
-(3005, 481, 5, 5, 29, 60),
-(3006, 481, 6, 5, 30, 81),
-(3007, 482, 1, 5, 25, 89),
-(3008, 482, 2, 5, 26, 75),
-(3009, 482, 3, 5, 27, 67),
-(3010, 482, 4, 5, 28, 90),
-(3011, 482, 5, 5, 29, 61),
-(3012, 482, 6, 5, 30, 82),
-(3013, 483, 1, 5, 25, 85),
-(3014, 483, 2, 5, 26, 76),
-(3015, 483, 3, 5, 27, 68),
-(3016, 483, 4, 5, 28, 92),
-(3017, 483, 5, 5, 29, 60),
-(3018, 483, 6, 5, 30, 81),
-(3019, 484, 1, 5, 25, 88),
-(3020, 484, 2, 5, 26, 75),
-(3021, 484, 3, 5, 27, 67),
-(3022, 484, 4, 5, 28, 90),
-(3023, 484, 5, 5, 29, 61),
-(3024, 484, 6, 5, 30, 82),
-(3025, 485, 1, 5, 25, 84),
-(3026, 485, 2, 5, 26, 76),
-(3027, 485, 3, 5, 27, 68),
-(3028, 485, 4, 5, 28, 92),
-(3029, 485, 5, 5, 29, 60),
-(3030, 485, 6, 5, 30, 81),
-(3031, 486, 1, 5, 25, 89),
-(3032, 486, 2, 5, 26, 75),
-(3033, 486, 3, 5, 27, 67),
-(3034, 486, 4, 5, 28, 90),
-(3035, 486, 5, 5, 29, 61),
-(3036, 486, 6, 5, 30, 82),
-(3037, 487, 1, 5, 25, 85),
-(3038, 487, 2, 5, 26, 76),
-(3039, 487, 3, 5, 27, 68),
-(3040, 487, 4, 5, 28, 92),
-(3041, 487, 5, 5, 29, 60),
-(3042, 487, 6, 5, 30, 81),
-(3043, 488, 1, 5, 25, 88),
-(3044, 488, 2, 5, 26, 75),
-(3045, 488, 3, 5, 27, 67),
-(3046, 488, 4, 5, 28, 90),
-(3047, 488, 5, 5, 29, 61),
-(3048, 488, 6, 5, 30, 82),
-(3049, 489, 1, 5, 25, 85),
-(3050, 489, 2, 5, 26, 76),
-(3051, 489, 3, 5, 27, 68),
-(3052, 489, 4, 5, 28, 92),
-(3053, 489, 5, 5, 29, 60),
-(3054, 489, 6, 5, 30, 81),
-(3055, 490, 1, 5, 25, 88),
-(3056, 490, 2, 5, 26, 75),
-(3057, 490, 3, 5, 27, 67),
-(3058, 490, 4, 5, 28, 90),
-(3059, 490, 5, 5, 29, 61),
-(3060, 490, 6, 5, 30, 82),
-(3061, 491, 1, 5, 25, 85),
-(3062, 491, 2, 5, 26, 76),
-(3063, 491, 3, 5, 27, 68),
-(3064, 491, 4, 5, 28, 92),
-(3065, 491, 5, 5, 29, 60),
-(3066, 491, 6, 5, 30, 81),
-(3067, 492, 1, 5, 25, 88),
-(3068, 492, 2, 5, 26, 75),
-(3069, 492, 3, 5, 27, 67),
-(3070, 492, 4, 5, 28, 90),
-(3071, 492, 5, 5, 29, 61),
-(3072, 492, 6, 5, 30, 82),
-(3073, 493, 1, 5, 25, 85),
-(3074, 493, 2, 5, 26, 76),
-(3075, 493, 3, 5, 27, 68),
-(3076, 493, 4, 5, 28, 92),
-(3077, 493, 5, 5, 29, 60),
-(3078, 493, 6, 5, 30, 81),
-(3079, 494, 1, 5, 25, 88),
-(3080, 494, 2, 5, 26, 75),
-(3081, 494, 3, 5, 27, 67),
-(3082, 494, 4, 5, 28, 90),
-(3083, 494, 5, 5, 29, 61),
-(3084, 494, 6, 5, 30, 82),
-(3085, 495, 1, 5, 25, 85),
-(3086, 495, 2, 5, 26, 76),
-(3087, 495, 3, 5, 27, 68),
-(3088, 495, 4, 5, 28, 92),
-(3089, 495, 5, 5, 29, 60),
-(3090, 495, 6, 5, 30, 81),
-(3091, 496, 1, 5, 25, 88),
-(3092, 496, 2, 5, 26, 75),
-(3093, 496, 3, 5, 27, 67),
-(3094, 496, 4, 5, 28, 90),
-(3095, 496, 5, 5, 29, 61),
-(3096, 496, 6, 5, 30, 82),
-(3097, 497, 1, 5, 25, 85),
-(3098, 497, 2, 5, 26, 76),
-(3099, 497, 3, 5, 27, 68),
-(3100, 497, 4, 5, 28, 92),
-(3101, 497, 5, 5, 29, 60),
-(3102, 497, 6, 5, 30, 81),
-(3103, 498, 1, 5, 25, 88),
-(3104, 498, 2, 5, 26, 75),
-(3105, 498, 3, 5, 27, 67),
-(3106, 498, 4, 5, 28, 90),
-(3107, 498, 5, 5, 29, 61),
-(3108, 498, 6, 5, 30, 82),
-(3109, 499, 1, 5, 25, 85),
-(3110, 499, 2, 5, 26, 76),
-(3111, 499, 3, 5, 27, 68),
-(3112, 499, 4, 5, 28, 92),
-(3113, 499, 5, 5, 29, 60),
-(3114, 499, 6, 5, 30, 81),
-(3115, 500, 1, 5, 25, 89),
-(3116, 500, 2, 5, 26, 77),
-(3117, 500, 3, 5, 27, 68),
-(3118, 500, 4, 5, 28, 92),
-(3119, 500, 5, 5, 29, 60),
-(3120, 500, 6, 5, 30, 81);
 
--- ENROLLMENTS: Class 6 will follow in the next batch...
--- ...existing code...
+

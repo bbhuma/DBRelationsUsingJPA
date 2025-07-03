@@ -1,3 +1,0 @@
-# Attendance Tracking
-
-...existing content from 05-ATTENDANCE-TRACKING.md...

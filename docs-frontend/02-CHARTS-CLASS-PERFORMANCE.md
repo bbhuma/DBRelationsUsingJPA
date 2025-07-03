@@ -1,3 +1,0 @@
-# Charts: Class Performance
-
-...existing content from 02-CHARTS-CLASS-PERFORMANCE.md...

@@ -1,3 +1,0 @@
-# OAuth2 Bean Conflict Error
-
-...existing content from 12-OAUTH2-BEAN-CONFLICT-ERROR.md...

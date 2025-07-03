@@ -1,3 +1,0 @@
-# Authentication
-
-...existing content from 08-AUTHENTICATION.md...

@@ -1,3 +1,0 @@
-# Assignment Enrollment
-
-...existing content from 03-ASSIGNMENT-ENROLLMENT.md...

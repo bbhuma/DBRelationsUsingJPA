@@ -1,0 +1,3 @@
+# Profile Editing
+
+...existing content from 07-PROFILE-EDITING.md...
